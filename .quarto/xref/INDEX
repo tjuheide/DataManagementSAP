@@ -1,0 +1,35 @@
+{
+  "00_pe.qmd": {
+    "00_pe.html": "708804e3"
+  },
+  "01_nuac.qmd": {
+    "01_nuac.html": "df2bb7c4"
+  },
+  "index.qmd": {
+    "index.html": "83f7fae3"
+  },
+  "00_basics.qmd": {
+    "00_basics.html": "33cf5e26"
+  },
+  "10_pe.qmd": {
+    "10_pe.html": "5772ef56"
+  },
+  "11_nuac.qmd": {
+    "11_nuac.html": "3d137ff0"
+  },
+  "00_index.qmd": {
+    "00_index.html": "f77a8793"
+  },
+  "01_basics.qmd": {
+    "01_basics.html": "a7d04ec6"
+  },
+  "basics.qmd": {
+    "basics.html": "421625a4"
+  },
+  "nuac.qmd": {
+    "nuac.html": "88c94eef"
+  },
+  "pe.qmd": {
+    "pe.html": "fbdf7583"
+  }
+}

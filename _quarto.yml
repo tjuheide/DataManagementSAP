@@ -1,0 +1,28 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "Data management and statistical analysis plans"
+  sidebar:
+    style: "docked"
+    search: true
+    contents:
+      - href: index.qmd
+        text: Home
+        contents: 
+        - basics.qmd
+      - section: "Pharmacoepidemiology"
+        href: pe.qmd
+        contents: 
+        - nuac.qmd
+
+format:
+  html:
+    toc: true
+    html-table-processing: none
+    theme:
+      - united
+
+
+

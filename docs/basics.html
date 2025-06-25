@@ -1,0 +1,1977 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.42">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>General thoughts – Data management and statistical analysis plans</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-f4b1d36c07c6c2edd9cf407a0ee283bc.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar docked">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Home</a></li><li class="breadcrumb-item"><a href="./basics.html">General thoughts</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Data management and statistical analysis plans</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Home</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./basics.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">General thoughts</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./pe.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Pharmacoepidemiology</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./nuac.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">SGLT2i vs GLP-1RA and the risk of Plague and Cholera</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#motivation" id="toc-motivation" class="nav-link active" data-scroll-target="#motivation"><span class="header-section-number">1</span> Motivation</a>
+  <ul class="collapse">
+  <li><a href="#the-research-question---what-is-the-estimand" id="toc-the-research-question---what-is-the-estimand" class="nav-link" data-scroll-target="#the-research-question---what-is-the-estimand"><span class="header-section-number">1.1</span> The research question - what is the estimand?</a></li>
+  <li><a href="#definitions-and-data" id="toc-definitions-and-data" class="nav-link" data-scroll-target="#definitions-and-data"><span class="header-section-number">1.2</span> Definitions and data</a></li>
+  <li><a href="#two-documents-or-one" id="toc-two-documents-or-one" class="nav-link" data-scroll-target="#two-documents-or-one"><span class="header-section-number">1.3</span> Two documents or one?</a></li>
+  </ul></li>
+  <li><a href="#elements-of-the-sap" id="toc-elements-of-the-sap" class="nav-link" data-scroll-target="#elements-of-the-sap"><span class="header-section-number">2</span> Elements of the SAP</a>
+  <ul class="collapse">
+  <li><a href="#log-of-changes" id="toc-log-of-changes" class="nav-link" data-scroll-target="#log-of-changes"><span class="header-section-number">2.1</span> Log of changes</a></li>
+  <li><a href="#background-and-aims-objectives" id="toc-background-and-aims-objectives" class="nav-link" data-scroll-target="#background-and-aims-objectives"><span class="header-section-number">2.2</span> Background and aims / objectives</a></li>
+  <li><a href="#miscellaneous-methods" id="toc-miscellaneous-methods" class="nav-link" data-scroll-target="#miscellaneous-methods"><span class="header-section-number">2.3</span> Miscellaneous methods</a></li>
+  <li><a href="#study-population-and-index-date" id="toc-study-population-and-index-date" class="nav-link" data-scroll-target="#study-population-and-index-date"><span class="header-section-number">2.4</span> Study population and index date</a></li>
+  <li><a href="#variables" id="toc-variables" class="nav-link" data-scroll-target="#variables"><span class="header-section-number">2.5</span> Variables</a></li>
+  <li><a href="#statistical-analyses" id="toc-statistical-analyses" class="nav-link" data-scroll-target="#statistical-analyses"><span class="header-section-number">2.6</span> Statistical analyses</a></li>
+  <li><a href="#missing-data" id="toc-missing-data" class="nav-link" data-scroll-target="#missing-data"><span class="header-section-number">2.7</span> Missing data</a></li>
+  <li><a href="#stratified-analyses" id="toc-stratified-analyses" class="nav-link" data-scroll-target="#stratified-analyses"><span class="header-section-number">2.8</span> Stratified analyses</a></li>
+  <li><a href="#sensitivity-analyses-including-subgroup-analyses" id="toc-sensitivity-analyses-including-subgroup-analyses" class="nav-link" data-scroll-target="#sensitivity-analyses-including-subgroup-analyses"><span class="header-section-number">2.9</span> Sensitivity analyses including subgroup analyses</a></li>
+  <li><a href="#table-shells" id="toc-table-shells" class="nav-link" data-scroll-target="#table-shells"><span class="header-section-number">2.10</span> Table shells</a></li>
+  <li><a href="#figure-shells" id="toc-figure-shells" class="nav-link" data-scroll-target="#figure-shells"><span class="header-section-number">2.11</span> Figure shells</a></li>
+  <li><a href="#sec-codingTable" id="toc-sec-codingTable" class="nav-link" data-scroll-target="#sec-codingTable"><span class="header-section-number">2.12</span> Coding table</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><span class="header-section-number">2.13</span> References</a></li>
+  </ul></li>
+  <li><a href="#pitfalls-to-avoid" id="toc-pitfalls-to-avoid" class="nav-link" data-scroll-target="#pitfalls-to-avoid"><span class="header-section-number">3</span> Pitfalls to avoid</a></li>
+  <li><a href="#simple-tip-for-specifying-the-order-of-inclusion-exclusion-criteria" id="toc-simple-tip-for-specifying-the-order-of-inclusion-exclusion-criteria" class="nav-link" data-scroll-target="#simple-tip-for-specifying-the-order-of-inclusion-exclusion-criteria"><span class="header-section-number">4</span> Simple tip for specifying the order of inclusion-/exclusion criteria</a></li>
+  <li><a href="#external-links" id="toc-external-links" class="nav-link" data-scroll-target="#external-links"><span class="header-section-number">5</span> External links</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Home</a></li><li class="breadcrumb-item"><a href="./basics.html">General thoughts</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">General thoughts</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="motivation" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="motivation"><span class="header-section-number">1</span> Motivation</h2>
+<p>The purpose of a statistical analysis plan (SAP) - which will often also contain a (partial) data management plan - is to improve the quality of studies. The SAP will often be based on (or an appendix to) a protocol where the overall outline of a study is presented with fewer technical details.</p>
+<section id="the-research-question---what-is-the-estimand" class="level3" data-number="1.1">
+<h3 data-number="1.1" class="anchored" data-anchor-id="the-research-question---what-is-the-estimand"><span class="header-section-number">1.1</span> The research question - what is the estimand?</h3>
+<p>Writing a detailed SAP forces the researcher/study group to think clearly about what the aim of the study is (which estimand<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> needs to be estimated?), and how to achieve this aim (which estimator can provide the best estimate?).</p>
+<p>Speaking from experience, it is not uncommon that a researcher wants an answer to a question that is so vague that several different analyses could be carried out, and all be said to provide a relevant answer to the overall question.</p>
+<p>A question like “What is the occurrence of dementia in individuals with chronic kidney disease (CKD)?” can be a good overall question, but there is no unique answer to that because the question is not specific. It could be interpreted in several ways:</p>
+<ol type="1">
+<li>Among people with CKD living in Denmark today, how large a proportion also have dementia?
+<ul>
+<li>This question could be answered using a cross sectional design.</li>
+</ul></li>
+<li>Among people who lived with CKD in Denmark 10 years ago how large a proportion have had dementia since?
+<ul>
+<li>This question could be answered with a cohort design, using appropriate time-to-event methods to take censoring and the competing risk of death into account.</li>
+</ul></li>
+<li>Among people with incident CKD in the period 2010-2025 without prevalent dementia at the time of CKD, how large a proportion have developed dementia since?
+<ul>
+<li>Again, a cohort design with time-to-event methods could be used to answer this question, but notice that it will be a different cohort compared to the above.</li>
+</ul></li>
+</ol>
+<p>Even these questions are not completely clear. The first question interprets “occurrence” as “prevalence”, while the second and third aim to provide estimates of an incompletely defined “risk”, seeing that risk strictly speaking only makes sense if a time frame is also specified, e.g., 10-year risk.</p>
+<p>If the question is not clear before the answer is sought, there is a significant risk of p-hacking or HARKing.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
+</section>
+<section id="definitions-and-data" class="level3" data-number="1.2">
+<h3 data-number="1.2" class="anchored" data-anchor-id="definitions-and-data"><span class="header-section-number">1.2</span> Definitions and data</h3>
+<p>Once it is clear what the specific research question is, i.e., what the estimand is, it is also relevant to consider how the population and the individual variables are defined.</p>
+<p>Continuing with the example of CKD and dementia, there will be several ways to identify these conditions from registries. Therefore, even if a SAP has been written in great detail, i.e., considerations on how to handle missing data are made, relevant subgroups specified, estimation methods described, table shells ready to be populated etc., it is still important to also describe how a population with “incident CKD”, say, can be identified from registries. Likewise, it needs to be specified how “dementia” and any other variable necessary for the analyses should be defined.</p>
+<p>Defining populations and variables is data management and not statistical analyses per se. That does not make specification of these aspects less important, this is just to point out that a data management plan is also essential.</p>
+</section>
+<section id="two-documents-or-one" class="level3" data-number="1.3">
+<h3 data-number="1.3" class="anchored" data-anchor-id="two-documents-or-one"><span class="header-section-number">1.3</span> Two documents or one?</h3>
+<p>The data management plan and the SAP can often be written as one coherent document with no explicit distinction between the two parts. However, it can still be relevant to keep in mind that data management and statistical analyses are in principle separate parts/phases of a study. In international/multicenter studies, it is generally advisable to use a common data model, so that analytic scripts (scripts needed to carry out statistical analyses as specified in the SAP) can be shared, ensuring the same methods are applied at all centers. To facilitate this, each center must provide a data set that complies with certain rules (specific variable names, types, formats, …) specified by the coordinating center.</p>
+<p>However, data management will generally have to differ between centers at some initial level. At the most low-practical level, registries and their variables will have different names and structures. There can also be qualitative differences, e.g., primary vs.&nbsp;secondary care data, granularity of diagnosis/procedure/… codes, or precision of time variables,<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> all of which may require different approaches between centers.</p>
+<p>In the following, it will be assumed that the data management plan is incorporated into the SAP.</p>
+</section>
+</section>
+<section id="elements-of-the-sap" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="elements-of-the-sap"><span class="header-section-number">2</span> Elements of the SAP</h2>
+<section id="log-of-changes" class="level3" data-number="2.1">
+<h3 data-number="2.1" class="anchored" data-anchor-id="log-of-changes"><span class="header-section-number">2.1</span> Log of changes</h3>
+<p>Near the start of the SAP there should be a log of changes, documenting any changes made after the data management or analyses are started. The log should contain dates where changes are made, what the changes are, and reasons for the changes. This will both serve as a reminder within the group of why decisions were made, and if the statistician is replaced the new statistician will be able to get a quick overview of the history of the project (and find reasons for deviations between what is actually done, and what was specified in the protocol).<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a></p>
+<div class="cell">
+<div id="tbl-changelog" class="cell quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl quarto-uncaptioned" id="tbl-changelog-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;1
+</figcaption>
+<div aria-describedby="tbl-changelog-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<div id="gaoeeyijlc" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#gaoeeyijlc table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#gaoeeyijlc thead, #gaoeeyijlc tbody, #gaoeeyijlc tfoot, #gaoeeyijlc tr, #gaoeeyijlc td, #gaoeeyijlc th {
+  border-style: none;
+}
+
+#gaoeeyijlc p {
+  margin: 0;
+  padding: 0;
+}
+
+#gaoeeyijlc .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#gaoeeyijlc .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#gaoeeyijlc .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#gaoeeyijlc .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#gaoeeyijlc .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#gaoeeyijlc .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#gaoeeyijlc .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#gaoeeyijlc .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#gaoeeyijlc .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#gaoeeyijlc .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#gaoeeyijlc .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#gaoeeyijlc .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#gaoeeyijlc .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#gaoeeyijlc .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#gaoeeyijlc .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#gaoeeyijlc .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#gaoeeyijlc .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#gaoeeyijlc .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#gaoeeyijlc .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#gaoeeyijlc .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#gaoeeyijlc .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#gaoeeyijlc .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#gaoeeyijlc .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#gaoeeyijlc .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#gaoeeyijlc .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#gaoeeyijlc .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#gaoeeyijlc .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#gaoeeyijlc .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#gaoeeyijlc .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#gaoeeyijlc .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#gaoeeyijlc .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#gaoeeyijlc .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#gaoeeyijlc .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#gaoeeyijlc .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#gaoeeyijlc .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#gaoeeyijlc .gt_left {
+  text-align: left;
+}
+
+#gaoeeyijlc .gt_center {
+  text-align: center;
+}
+
+#gaoeeyijlc .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#gaoeeyijlc .gt_font_normal {
+  font-weight: normal;
+}
+
+#gaoeeyijlc .gt_font_bold {
+  font-weight: bold;
+}
+
+#gaoeeyijlc .gt_font_italic {
+  font-style: italic;
+}
+
+#gaoeeyijlc .gt_super {
+  font-size: 65%;
+}
+
+#gaoeeyijlc .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#gaoeeyijlc .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#gaoeeyijlc .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#gaoeeyijlc .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#gaoeeyijlc .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#gaoeeyijlc .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#gaoeeyijlc .gt_indent_5 {
+  text-indent: 25px;
+}
+
+#gaoeeyijlc .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#gaoeeyijlc div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
+</style>
+<table class="gt_table" style="table-layout:fixed;width:100%;" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+  <colgroup>
+    <col style="width:20%;">
+    <col style="width:40%;">
+    <col style="width:40%;">
+  </colgroup>
+  <thead>
+    <tr class="gt_heading">
+      <td colspan="3" class="gt_heading gt_title gt_font_normal gt_bottom_border" style="font-weight: bold;">Log of changes</td>
+    </tr>
+    
+    <tr class="gt_col_headings">
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" style="font-weight: bold;" scope="col" id="Date">Date</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" style="font-weight: bold;" scope="col" id="Change">Change</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" style="font-weight: bold;" scope="col" id="Reason">Reason</th>
+    </tr>
+  </thead>
+  <tbody class="gt_table_body">
+    <tr><td headers="Date" class="gt_row gt_left">20/06/2023</td>
+<td headers="Change" class="gt_row gt_left">NA (First version)</td>
+<td headers="Reason" class="gt_row gt_left">NA</td></tr>
+    <tr><td headers="Date" class="gt_row gt_left">08/12/2023</td>
+<td headers="Change" class="gt_row gt_left">HRs estimated by Cox regression replaced by RRs estimated from Aalen-Johansen estimator</td>
+<td headers="Reason" class="gt_row gt_left">Non-proportional hazards</td></tr>
+    <tr><td headers="Date" class="gt_row gt_left">31/03/2024</td>
+<td headers="Change" class="gt_row gt_left">Sensitivity analysis added where CKD is defined by eGFR persistently below 60 mL/min/1.73m² for at least 90 days</td>
+<td headers="Reason" class="gt_row gt_left">Reviewer 2 was critical of our initial definition of CKD. We maintain our original definition for primary analyses.</td></tr>
+  </tbody>
+  
+  
+</table>
+</div>
+</div>
+</div>
+</figure>
+</div>
+</div>
+</section>
+<section id="background-and-aims-objectives" class="level3" data-number="2.2">
+<h3 data-number="2.2" class="anchored" data-anchor-id="background-and-aims-objectives"><span class="header-section-number">2.2</span> Background and aims / objectives</h3>
+<p>A brief description of why the study is important, and what the aims or objectives are.</p>
+<p>Consider who the reader is. If this is for a statistician to implement, 2 pages of biology, chemistry and/or anatomy are not helpful. The point is not to copy everything from the protocol (if one exists), but to add the necessary context for the analyses.</p>
+</section>
+<section id="miscellaneous-methods" class="level3" data-number="2.3">
+<h3 data-number="2.3" class="anchored" data-anchor-id="miscellaneous-methods"><span class="header-section-number">2.3</span> Miscellaneous methods</h3>
+<p>It is likely that there are several pieces of information that are relevant to write but are rather matter-of-fact in nature and need no further explanation. These parameters may include:</p>
+<ul>
+<li>A list the registries to be used.</li>
+<li>Study period and recruitment period: if these are specified exactly once, they only need to be changed once in the document if they are revised while running the study.</li>
+<li>Time: how long is a month (e.g., 28, 30 or 30.5 days) and/or a year (e.g., 360, 365 or 365.25 days), if these are relevant units of time. Consider if a year should be the same as 12 months if both units are used in the project.</li>
+<li>Exposure groups: If there is an exposure/intervention/… and a control/comparison/reference… group, consider specifying these. E.g., the exposure group is SGLT2i-users and the control group is GLP-1RA-users.</li>
+<li>If the independent variable of primary interest is continuous, consider specifying the reference value. E.g., comparing risk of dementia for different eGFR-values, with a value of 60 mL/min/1.73m<sup>2</sup> as the reference</li>
+</ul>
+</section>
+<section id="study-population-and-index-date" class="level3" data-number="2.4">
+<h3 data-number="2.4" class="anchored" data-anchor-id="study-population-and-index-date"><span class="header-section-number">2.4</span> Study population and index date</h3>
+<p>List in detail how the study population is derived from the raw registry data. This will often require defining an index date from raw data (make sure it is clear what the index date is), and then a series of in- and exclusion criteria to be applied on this index date.<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a></p>
+<p>Prepare a figure shell for a flowchart, and make sure the order of the criteria in the figure aligns with the order the criteria are listed in the text. In some situations it can be relevant to leave out some of the steps used to go from raw data to an index date from the flowchart, however, all exclusion criteria that are applied after the index date is defined should be included in the flowchart by default.</p>
+</section>
+<section id="variables" class="level3" data-number="2.5">
+<h3 data-number="2.5" class="anchored" data-anchor-id="variables"><span class="header-section-number">2.5</span> Variables</h3>
+<p>Depending on the study design, different types of variables are necessary to define. A table of codes to be used for the individual variable should always be supplied. This table can be a separate file or an appendix within the same document. (See also <a href="#sec-codingTable" class="quarto-xref">Section&nbsp;2.12</a> below.)</p>
+<p>Some variables will likely have different roles, and it might be relevant to have separate paragraphs outlining (as relevant):</p>
+<ul>
+<li>how different levels of the exposure variable will be defined,</li>
+<li>how the outcome is defined,
+<ul>
+<li>if time-to-event-data; list competing and censoring events,</li>
+</ul></li>
+<li>other covariates to be reported.</li>
+</ul>
+<p>Note that rather than listing all variables in the text, it can be advantageous to point to a table shell (typically for Table 1 describing baseline characteristics), and state that these are the covariates to be included.</p>
+</section>
+<section id="statistical-analyses" class="level3" data-number="2.6">
+<h3 data-number="2.6" class="anchored" data-anchor-id="statistical-analyses"><span class="header-section-number">2.6</span> Statistical analyses</h3>
+<p>This is the key element of the statistical part of the SAP.</p>
+<p>Some aspects need little explanation. E.g., populating the table shell for Table 1 with baseline characteristics (in generic studies), does not generally require any particular explanation. It might be relevant to explicitly state that continuous variables (except calendar time) will be reported by their median and interquartile interval (Q1-Q3); that for dichotomous variables only one level (e.g., only the number of individuals <em>with</em> heart failure, not those without) will be reported; that for multilevel categorical variables all levels will be reported.</p>
+<p>The analyses need to be done should be specified. Things to consider:</p>
+<ul>
+<li>which type of (regression) model, if any, should be used,</li>
+<li>how should variables be included into the models (e.g., continuous variables as splines, or using some other transformation?),</li>
+<li>how should assumptions be assessed, and what should be done if they do not hold,</li>
+<li>which non-parametric methods (Kaplan-Meier, Aalen-Johansen, …) should be used,</li>
+<li>how should missing data be handled (this can be a section on its own),</li>
+<li>how will uncertainty be estimated if it cannot simply be extracted from standard output,</li>
+<li>bias analyses to handle unmeasured confounding (possibly move this to sensitivity analyses),</li>
+<li>sensitivity- and subgroup analyses should have their own sections, but changes from the main analyses could be mentioned here, e.g., we might not assess assumptions for a sensitivity analysis, if they appear to hold for the primary analysis,</li>
+<li>which software packages to use (R, SAS, Stata, …)</li>
+</ul>
+<p>To reduce the risk of p-hacking, it is a good idea to pre-specify interim results to evaluate before moving on. E.g., the size of the population and numbers of exposed might be worth sharing within the group before looking into baseline characteristics. If the numbers are off, something needs to be changed. Likewise, it can be a good idea to produce and share the table with descriptive characteristics before looking into outcome analyses (if relevant), again, to see if something is off before the first version of the main results of the study are known. In this way the risk of rerunning analyses until the desired results are found is reduced.</p>
+</section>
+<section id="missing-data" class="level3" data-number="2.7">
+<h3 data-number="2.7" class="anchored" data-anchor-id="missing-data"><span class="header-section-number">2.7</span> Missing data</h3>
+<p>If missing data are expected it will generally be a good idea to write something about this in advance. Not just how to handle missing data (which can be outlined under statistical analyses), but rather which variables are expected to contain missing data and to what extent.</p>
+</section>
+<section id="stratified-analyses" class="level3" data-number="2.8">
+<h3 data-number="2.8" class="anchored" data-anchor-id="stratified-analyses"><span class="header-section-number">2.8</span> Stratified analyses</h3>
+<p>Specify if the analyses should be repeated within strata of some variables. Also specify if the results should be compared across strata, i.e., if effect-heterogeneity is assessed in some formal way, e.g., by estimating a parameter for an interaction term, with eyeballing being the implicit alternative.</p>
+</section>
+<section id="sensitivity-analyses-including-subgroup-analyses" class="level3" data-number="2.9">
+<h3 data-number="2.9" class="anchored" data-anchor-id="sensitivity-analyses-including-subgroup-analyses"><span class="header-section-number">2.9</span> Sensitivity analyses including subgroup analyses</h3>
+<p>Having gotten this far, surely, some arbitrary choices will have been made, and the impact of some of these might be relevant to consider in sensitivity analyses. Examples could be</p>
+<ul>
+<li>use of secondary diagnoses for outcome identification,</li>
+<li>length of follow-up,</li>
+<li>washout- or grace periods,</li>
+<li>recruitment period,</li>
+<li>lookback period for variables,</li>
+<li>in- or exclusion of specific patient groups.</li>
+</ul>
+<p>If residual confounding is a concern, restriction to specific subgroups can be used.<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a> E.g., if obesity, alcohol consumption, smoking or other variables that are hard to measure are important confounders, an analysis restricted to individuals who are known or presumed to be similar with respect to these variables (have a record compatible with obesity, alcoholism, COPD, etc.) may be important to run.<a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a></p>
+<p>Splitting and reanalyzing the population on calendar time can be relevant. Perhaps the demographics of the population or the indication of a treatment changes over time, introducing a shift in the confounding pattern. However, calendar time in itself is generally hard to interpret as an effect modifier. At best it is a proxy for some other variable. Therefore calendar time stratification arguably belongs under sensitivity analyses rather than stratified analyses.</p>
+</section>
+<section id="table-shells" class="level3" data-number="2.10">
+<h3 data-number="2.10" class="anchored" data-anchor-id="table-shells"><span class="header-section-number">2.10</span> Table shells</h3>
+<p>Make a set of tables that are empty but otherwise ready to be published. There should a table shell for each table to be included in the manuscript or supplementary materials of the publication.</p>
+</section>
+<section id="figure-shells" class="level3" data-number="2.11">
+<h3 data-number="2.11" class="anchored" data-anchor-id="figure-shells"><span class="header-section-number">2.11</span> Figure shells</h3>
+<p>As for table shells, there should be a specification of each figure to be included in the publication. Remember to make a figure shell for the flow chart!</p>
+<p>It is generally harder to make shells for figures than for tables, so consider copying/linking to figures from other publications that can be used as templates. Specify axis-labels, colors etc. if they need to be specific.<a href="#fn8" class="footnote-ref" id="fnref8" role="doc-noteref"><sup>8</sup></a></p>
+</section>
+<section id="sec-codingTable" class="level3" data-number="2.12">
+<h3 data-number="2.12" class="anchored" data-anchor-id="sec-codingTable"><span class="header-section-number">2.12</span> Coding table</h3>
+<p>Provide all (diagnosis/procedure/ATC/SNOMED/NPU/…) codes needed to define the study population, exposure, outcome, and covariates, in a structured manner. The coding table can be a separate file (e.g., a spreadsheet) or part of the SAP. Make it easy to copy/import codes from the coding table to analytic scripts so they do not have to be transcribed manually.</p>
+<p>Columns to include in the coding table could be:</p>
+<ul>
+<li>explicit variable names<a href="#fn9" class="footnote-ref" id="fnref9" role="doc-noteref"><sup>9</sup></a> (typically not necessary but can be relevant when using a common data model across sites),</li>
+<li>informal variable names,<a href="#fn10" class="footnote-ref" id="fnref10" role="doc-noteref"><sup>10</sup></a></li>
+<li>data source from which the codes are pulled, e.g., the Danish National Patient Registry (DNPR),</li>
+<li>the actual codes to be used, e.g., DN18,</li>
+<li>patient- and diagnosis type (applicable to Danish National Patient Registry); in-, out-, ER-patients, primary or secondary diagnoses,</li>
+<li>lookback from index date,</li>
+<li>notes on issues that are relevant for a specific variable that does not warrant a column in it self. E.g., thresholds for biomarkers defining conditions like CKD (eGFR) or type 2 diabetes mellitus (HbA1c); that a diagnosis code mycosis fungoides must be made a department of dermatology to be included</li>
+</ul>
+<p>Further structure can be added as in <a href="#tbl-codingtable" class="quarto-xref">Table&nbsp;2</a> where variables are sorted by their role (exposure, in-/exclusion, outcomes, etc.).</p>
+<div class="cell">
+<div id="tbl-codingtable" class="cell quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-codingtable-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;2: Suggested structure for a coding table
+</figcaption>
+<div aria-describedby="tbl-codingtable-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<div id="qpxnlyfapj" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#qpxnlyfapj table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#qpxnlyfapj thead, #qpxnlyfapj tbody, #qpxnlyfapj tfoot, #qpxnlyfapj tr, #qpxnlyfapj td, #qpxnlyfapj th {
+  border-style: none;
+}
+
+#qpxnlyfapj p {
+  margin: 0;
+  padding: 0;
+}
+
+#qpxnlyfapj .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#qpxnlyfapj .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#qpxnlyfapj .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#qpxnlyfapj .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#qpxnlyfapj .gt_heading {
+  background-color: #FFFFFF;
+  text-align: left;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#qpxnlyfapj .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#qpxnlyfapj .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#qpxnlyfapj .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#qpxnlyfapj .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#qpxnlyfapj .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#qpxnlyfapj .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#qpxnlyfapj .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#qpxnlyfapj .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#qpxnlyfapj .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#qpxnlyfapj .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#qpxnlyfapj .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#qpxnlyfapj .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#qpxnlyfapj .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#qpxnlyfapj .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#qpxnlyfapj .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#qpxnlyfapj .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#qpxnlyfapj .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#qpxnlyfapj .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#qpxnlyfapj .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#qpxnlyfapj .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#qpxnlyfapj .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#qpxnlyfapj .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#qpxnlyfapj .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#qpxnlyfapj .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#qpxnlyfapj .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#qpxnlyfapj .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#qpxnlyfapj .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#qpxnlyfapj .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#qpxnlyfapj .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#qpxnlyfapj .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#qpxnlyfapj .gt_left {
+  text-align: left;
+}
+
+#qpxnlyfapj .gt_center {
+  text-align: center;
+}
+
+#qpxnlyfapj .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#qpxnlyfapj .gt_font_normal {
+  font-weight: normal;
+}
+
+#qpxnlyfapj .gt_font_bold {
+  font-weight: bold;
+}
+
+#qpxnlyfapj .gt_font_italic {
+  font-style: italic;
+}
+
+#qpxnlyfapj .gt_super {
+  font-size: 65%;
+}
+
+#qpxnlyfapj .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#qpxnlyfapj .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#qpxnlyfapj .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#qpxnlyfapj .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#qpxnlyfapj .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#qpxnlyfapj .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#qpxnlyfapj .gt_indent_5 {
+  text-indent: 25px;
+}
+
+#qpxnlyfapj .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#qpxnlyfapj div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
+</style>
+<table class="gt_table" style="table-layout:fixed;width:100%;" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+  <colgroup>
+    <col style="width:14%;">
+    <col style="width:14%;">
+    <col style="width:16%;">
+    <col style="width:14%;">
+    <col style="width:14%;">
+    <col style="width:14%;">
+    <col style="width:14%;">
+  </colgroup>
+  <thead>
+    <tr class="gt_heading">
+      <td colspan="7" class="gt_heading gt_title gt_font_normal gt_bottom_border" style="font-weight: bold;">Coding table</td>
+    </tr>
+    
+    <tr class="gt_col_headings">
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" style="font-weight: bold;" scope="col" id="Variable">Variable</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" style="font-weight: bold;" scope="col" id="Data-source">Data source</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" style="font-weight: bold;" scope="col" id="Codes">Codes</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" style="font-weight: bold;" scope="col" id="Patient-type">Patient type</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" style="font-weight: bold;" scope="col" id="Diagnosis-types">Diagnosis types</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" style="font-weight: bold;" scope="col" id="Lookback">Lookback</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" style="font-weight: bold;" scope="col" id="Notes">Notes</th>
+    </tr>
+  </thead>
+  <tbody class="gt_table_body">
+    <tr><td headers="Variable" class="gt_row gt_left" style="font-style: italic; background-color: #CCCCCC;">Exposure</td>
+<td headers="Data source" class="gt_row gt_left" style="background-color: #CCCCCC;"></td>
+<td headers="Codes" class="gt_row gt_left" style="background-color: #CCCCCC;"></td>
+<td headers="Patient type" class="gt_row gt_left" style="background-color: #CCCCCC;">NA</td>
+<td headers="Diagnosis types" class="gt_row gt_left" style="background-color: #CCCCCC;">NA</td>
+<td headers="Lookback" class="gt_row gt_left" style="background-color: #CCCCCC;">NA</td>
+<td headers="Notes" class="gt_row gt_left" style="background-color: #CCCCCC;"></td></tr>
+    <tr><td headers="Variable" class="gt_row gt_left">SGLT2i</td>
+<td headers="Data source" class="gt_row gt_left">Prescription registry</td>
+<td headers="Codes" class="gt_row gt_left"></td>
+<td headers="Patient type" class="gt_row gt_left"></td>
+<td headers="Diagnosis types" class="gt_row gt_left"></td>
+<td headers="Lookback" class="gt_row gt_left"></td>
+<td headers="Notes" class="gt_row gt_left"></td></tr>
+    <tr><td headers="Variable" class="gt_row gt_left">GLP-1RA</td>
+<td headers="Data source" class="gt_row gt_left">Prescription registry</td>
+<td headers="Codes" class="gt_row gt_left"></td>
+<td headers="Patient type" class="gt_row gt_left"></td>
+<td headers="Diagnosis types" class="gt_row gt_left"></td>
+<td headers="Lookback" class="gt_row gt_left"></td>
+<td headers="Notes" class="gt_row gt_left">Exclude brand names Saxenda and Wegovy</td></tr>
+    <tr><td headers="Variable" class="gt_row gt_left" style="font-style: italic; background-color: #CCCCCC;">In-/exclusion</td>
+<td headers="Data source" class="gt_row gt_left" style="background-color: #CCCCCC;"></td>
+<td headers="Codes" class="gt_row gt_left" style="background-color: #CCCCCC;"></td>
+<td headers="Patient type" class="gt_row gt_left" style="background-color: #CCCCCC;"></td>
+<td headers="Diagnosis types" class="gt_row gt_left" style="background-color: #CCCCCC;"></td>
+<td headers="Lookback" class="gt_row gt_left" style="background-color: #CCCCCC;"></td>
+<td headers="Notes" class="gt_row gt_left" style="background-color: #CCCCCC;"></td></tr>
+    <tr><td headers="Variable" class="gt_row gt_left">T2DM/Glucose lowering drugs</td>
+<td headers="Data source" class="gt_row gt_left">Prescription registry</td>
+<td headers="Codes" class="gt_row gt_left"></td>
+<td headers="Patient type" class="gt_row gt_left">NA</td>
+<td headers="Diagnosis types" class="gt_row gt_left">NA</td>
+<td headers="Lookback" class="gt_row gt_left">1 year</td>
+<td headers="Notes" class="gt_row gt_left"></td></tr>
+    <tr><td headers="Variable" class="gt_row gt_left">T2DM/HbA1c</td>
+<td headers="Data source" class="gt_row gt_left">Laboratory registry</td>
+<td headers="Codes" class="gt_row gt_left"></td>
+<td headers="Patient type" class="gt_row gt_left">NA</td>
+<td headers="Diagnosis types" class="gt_row gt_left">NA</td>
+<td headers="Lookback" class="gt_row gt_left">3 years</td>
+<td headers="Notes" class="gt_row gt_left">Any HbA1c &gt; … indicates T2DM</td></tr>
+    <tr><td headers="Variable" class="gt_row gt_left">T2DM/diagnoses</td>
+<td headers="Data source" class="gt_row gt_left">Patient registry</td>
+<td headers="Codes" class="gt_row gt_left"></td>
+<td headers="Patient type" class="gt_row gt_left">All</td>
+<td headers="Diagnosis types" class="gt_row gt_left">Primary, secondary</td>
+<td headers="Lookback" class="gt_row gt_left">10 years</td>
+<td headers="Notes" class="gt_row gt_left"></td></tr>
+    <tr><td headers="Variable" class="gt_row gt_left">Recent plague or Cholera</td>
+<td headers="Data source" class="gt_row gt_left">Patient registry</td>
+<td headers="Codes" class="gt_row gt_left"></td>
+<td headers="Patient type" class="gt_row gt_left">All</td>
+<td headers="Diagnosis types" class="gt_row gt_left">Primary, secondary</td>
+<td headers="Lookback" class="gt_row gt_left">90 days</td>
+<td headers="Notes" class="gt_row gt_left"></td></tr>
+    <tr><td headers="Variable" class="gt_row gt_left">…</td>
+<td headers="Data source" class="gt_row gt_left"></td>
+<td headers="Codes" class="gt_row gt_left"></td>
+<td headers="Patient type" class="gt_row gt_left"></td>
+<td headers="Diagnosis types" class="gt_row gt_left"></td>
+<td headers="Lookback" class="gt_row gt_left"></td>
+<td headers="Notes" class="gt_row gt_left"></td></tr>
+    <tr><td headers="Variable" class="gt_row gt_left" style="font-style: italic; background-color: #CCCCCC;">Outcomes</td>
+<td headers="Data source" class="gt_row gt_left" style="background-color: #CCCCCC;"></td>
+<td headers="Codes" class="gt_row gt_left" style="background-color: #CCCCCC;"></td>
+<td headers="Patient type" class="gt_row gt_left" style="background-color: #CCCCCC;">Inpatient</td>
+<td headers="Diagnosis types" class="gt_row gt_left" style="background-color: #CCCCCC;">Primary</td>
+<td headers="Lookback" class="gt_row gt_left" style="background-color: #CCCCCC;"></td>
+<td headers="Notes" class="gt_row gt_left" style="background-color: #CCCCCC;">Only at a department of infectious diseases</td></tr>
+    <tr><td headers="Variable" class="gt_row gt_left">Plague</td>
+<td headers="Data source" class="gt_row gt_left">Patient registry</td>
+<td headers="Codes" class="gt_row gt_left"></td>
+<td headers="Patient type" class="gt_row gt_left"></td>
+<td headers="Diagnosis types" class="gt_row gt_left"></td>
+<td headers="Lookback" class="gt_row gt_left"></td>
+<td headers="Notes" class="gt_row gt_left"></td></tr>
+    <tr><td headers="Variable" class="gt_row gt_left">Cholera</td>
+<td headers="Data source" class="gt_row gt_left">Patient registry</td>
+<td headers="Codes" class="gt_row gt_left"></td>
+<td headers="Patient type" class="gt_row gt_left"></td>
+<td headers="Diagnosis types" class="gt_row gt_left"></td>
+<td headers="Lookback" class="gt_row gt_left"></td>
+<td headers="Notes" class="gt_row gt_left"></td></tr>
+    <tr><td headers="Variable" class="gt_row gt_left" style="font-style: italic; background-color: #CCCCCC;">Comorbidities</td>
+<td headers="Data source" class="gt_row gt_left" style="background-color: #CCCCCC;"></td>
+<td headers="Codes" class="gt_row gt_left" style="background-color: #CCCCCC;"></td>
+<td headers="Patient type" class="gt_row gt_left" style="background-color: #CCCCCC;"></td>
+<td headers="Diagnosis types" class="gt_row gt_left" style="background-color: #CCCCCC;"></td>
+<td headers="Lookback" class="gt_row gt_left" style="background-color: #CCCCCC;"></td>
+<td headers="Notes" class="gt_row gt_left" style="background-color: #CCCCCC;"></td></tr>
+    <tr><td headers="Variable" class="gt_row gt_left">…</td>
+<td headers="Data source" class="gt_row gt_left"></td>
+<td headers="Codes" class="gt_row gt_left"></td>
+<td headers="Patient type" class="gt_row gt_left"></td>
+<td headers="Diagnosis types" class="gt_row gt_left"></td>
+<td headers="Lookback" class="gt_row gt_left"></td>
+<td headers="Notes" class="gt_row gt_left"></td></tr>
+    <tr><td headers="Variable" class="gt_row gt_left" style="font-style: italic; background-color: #CCCCCC;">Comedication</td>
+<td headers="Data source" class="gt_row gt_left" style="background-color: #CCCCCC;"></td>
+<td headers="Codes" class="gt_row gt_left" style="background-color: #CCCCCC;"></td>
+<td headers="Patient type" class="gt_row gt_left" style="background-color: #CCCCCC;"></td>
+<td headers="Diagnosis types" class="gt_row gt_left" style="background-color: #CCCCCC;"></td>
+<td headers="Lookback" class="gt_row gt_left" style="background-color: #CCCCCC;"></td>
+<td headers="Notes" class="gt_row gt_left" style="background-color: #CCCCCC;"></td></tr>
+    <tr><td headers="Variable" class="gt_row gt_left">…</td>
+<td headers="Data source" class="gt_row gt_left"></td>
+<td headers="Codes" class="gt_row gt_left"></td>
+<td headers="Patient type" class="gt_row gt_left"></td>
+<td headers="Diagnosis types" class="gt_row gt_left"></td>
+<td headers="Lookback" class="gt_row gt_left"></td>
+<td headers="Notes" class="gt_row gt_left"></td></tr>
+    <tr><td headers="Variable" class="gt_row gt_left" style="font-style: italic; background-color: #CCCCCC;">Biomarkers</td>
+<td headers="Data source" class="gt_row gt_left" style="background-color: #CCCCCC;"></td>
+<td headers="Codes" class="gt_row gt_left" style="background-color: #CCCCCC;"></td>
+<td headers="Patient type" class="gt_row gt_left" style="background-color: #CCCCCC;"></td>
+<td headers="Diagnosis types" class="gt_row gt_left" style="background-color: #CCCCCC;"></td>
+<td headers="Lookback" class="gt_row gt_left" style="background-color: #CCCCCC;"></td>
+<td headers="Notes" class="gt_row gt_left" style="background-color: #CCCCCC;"></td></tr>
+    <tr><td headers="Variable" class="gt_row gt_left">…</td>
+<td headers="Data source" class="gt_row gt_left"></td>
+<td headers="Codes" class="gt_row gt_left"></td>
+<td headers="Patient type" class="gt_row gt_left"></td>
+<td headers="Diagnosis types" class="gt_row gt_left"></td>
+<td headers="Lookback" class="gt_row gt_left"></td>
+<td headers="Notes" class="gt_row gt_left"></td></tr>
+  </tbody>
+  
+  
+</table>
+</div>
+</div>
+</div>
+</figure>
+</div>
+</div>
+</section>
+<section id="references" class="level3" data-number="2.13">
+<h3 data-number="2.13" class="anchored" data-anchor-id="references"><span class="header-section-number">2.13</span> References</h3>
+<p>List of literature referenced in the SAP</p>
+</section>
+</section>
+<section id="pitfalls-to-avoid" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="pitfalls-to-avoid"><span class="header-section-number">3</span> Pitfalls to avoid</h2>
+<ol type="1">
+<li>Avoid repetitions.
+<ul>
+<li>Whenever possible specify things exactly once, then there is exactly one place to change this when revising. This means that the statistician/statistical programmer does not accidentally read the recruitment period the one place you overlooked when revising.</li>
+</ul></li>
+<li>Do not write codes from the coding table in the text, it serves no purpose when it is also specified in a coding table (also see point 1.).</li>
+<li>Avoid circular reasoning/definitions. It can be necessary to refer to a later section of the SAP, but beware that this later section does not point back so that, e.g., the index date is defined as the date of the index date.</li>
+</ol>
+</section>
+<section id="simple-tip-for-specifying-the-order-of-inclusion-exclusion-criteria" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="simple-tip-for-specifying-the-order-of-inclusion-exclusion-criteria"><span class="header-section-number">4</span> Simple tip for specifying the order of inclusion-/exclusion criteria</h2>
+<p>Draw timelines of hypothetical patients’ records in registries. How might records of various conditions relative to each other and the recruitment period affect who gets in- and excluded? Who would you want to include and who not? How can you set up the order of in- and exclusion criteria to achieve this? Of particular importance is at which point in the ordering of your inclusion-/exclusion criteria you define the index date. Once the index date is set, it is generally of minor importance how subsequent criteria are ordered from the point of view of the data manager.</p>
+<p>Consider this description of a study population from a hypothetical protocol:</p>
+<blockquote class="blockquote">
+<p>We will include individuals diagnosed with herpes zoster between 2000 and 2020 using the Danish National Patient Registry. All patients are required to have been diagnosed at a department of dematology to be included. Patient will be included at the time of their first diagnosis.</p>
+</blockquote>
+<p>Beyond having a diagnosis of herpes zoster, the protocol outlines three key elements to consider, when settling on the order of the inclusion-/exclusion criteria:</p>
+<ul>
+<li>calendar time of diagnosis,</li>
+<li>department of dermatology, and</li>
+<li>first observation per patient.</li>
+</ul>
+<p>These criteria can be ordered in 6 different ways, and the above ordering is based on the ordering they are mentioned in the text, but that might not be optimal.</p>
+<p>To get a feeling of who you want to include and how you achieve that you might consider different hypothetical patients with a diagnosis code for herpes zoster as in <a href="#fig-timelines" class="quarto-xref">Figure&nbsp;1</a>.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-timelines" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-timelines-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="basics_files/figure-html/fig-timelines-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-timelines-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Hypothetical herpes zoster diagnosis patterns
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>If we had started by extracting all diagnosis codes from the Danish National Patient Registry and then applied the three criteria in the order given above, we would</p>
+<ol type="1">
+<li>ignore the first diagnosis of patients 1, 4 and 6 (they are before the study period - patient 6 is excluded),</li>
+<li>ignore the diagnoses given at non-dermatology departments (this removes patient 5), and</li>
+<li>include all remaining patients at their first (remaining) diagnosis at a department of dermatology.</li>
+</ol>
+<p>So, for this ordering of inclusion-/exclusion criteria, all patients, who had a diagnosis at a department of dermatology at some point during the study period, would be included regardless of their other diagnoses. That might be reasonable for a descriptive study, e.g.,</p>
+<ul>
+<li>What characterizes patients with herpes zoster at departments of dermatology in Denmark?</li>
+</ul>
+<p>but perhaps less so in a cohort study e.g.,</p>
+<ul>
+<li>What is the prognosis after incident herpes zoster?</li>
+</ul>
+<p>where you only want to include incident cases, so at least patient 4 should also be excluded. Depending on the positive predictive value of diagnoses codes for herpes zoster at non-dermatology departments, patients 1 and 3 can be in- or excluded.</p>
+<p>If specificity is prioritized, i.e., you want to increase certainty of the condition being incident, then you probably want to exclude patients with a prevalent diagnosis at a non-dermatology department at the cost of population size, including only patient 2 from <a href="#fig-timelines" class="quarto-xref">Figure&nbsp;1</a>. To do this, you can use the ordering:</p>
+<ol type="1">
+<li>restrict to the first observation per patient (this excludes no patient), the time of the diagnosis marks the index date,</li>
+<li>exclude patients with index dates outside of the study period (this excludes patients 1, 4 and 6),</li>
+<li>exclude patients not seen at a dermatology department on the index date (this excludes patients 3 and 5).</li>
+</ol>
+<p>Because they come after selection of the index date, the ordering of the latter two steps is irrelevant when it comes to the final study population. However, there might still be a natural ordering of these steps from a clinical point of view. Keep this in mind when specifying the inclusion-/exclusion sequence.</p>
+<p>If a more sensitive approach is used, e.g., because you don’t trust diagnosis codes from non-dermatology departments, you might argue that including patients 1-3 is reasonable within the scope of the project. This can be done by reordering the criteria as such:</p>
+<ol type="1">
+<li>include observations from dermatology departments only (patient 5 is excluded),</li>
+<li>restrict to the first diagnosis per patient, this marks the index date,</li>
+<li>restrict to index dates within the study period (patients 4 and 6 are excluded).</li>
+</ol>
+</section>
+<section id="external-links" class="level2" data-number="5">
+<h2 data-number="5" class="anchored" data-anchor-id="external-links"><span class="header-section-number">5</span> External links</h2>
+<p><a href="https://doi.org/10.7326/M18-3079">Graphical Depiction of Longitudinal Study Designs in Health Care Databases</a></p>
+<p><a href="https://doi.org/10.1002/pds.5529">Visualizations throughout pharmacoepidemiology study planning, implementation, and reporting</a></p>
+
+
+</section>
+
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>There are possibly several estimands.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p><a href="https://en.wikipedia.org/wiki/HARKing">Wikipedia on HARKing</a>.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>Examples from Danish registries include laboratory data which hold dates and time stamps (hours and minutes), whereas the National Health Insurance Service Registry only includes week number.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>In <a href="#tbl-changelog" class="quarto-xref">Table&nbsp;1</a> an entry is made for the completion of the first version of the SAP for timeline purposes. This is not necessary and can be omitted.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn5"><p>Sometimes there will be more than one day that is important. E.g., for a population with post-surgical infection, it might be necessary to apply some criteria on the date of the surgery and others on the date of the infection.<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn6"><p>Note the difference between a subgroup analysis and a stratified analysis.<a href="#fnref6" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn7"><p>Depending on the strength of the confounder it could be considered if the primary analysis should be within the restricted population, coming at the cost of generalizability This consideration should be made before running the analyses.<a href="#fnref7" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn8"><p>It will often be quick to change these parameters, but if you know in advance what they should be you might as well spell it out explicitly.<a href="#fnref8" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn9"><p>I.e., the name the variable should have in the analytic script, e.g., <code>gld_180d</code>. If formal variable names are used, they have to conform to the statistical software package used.<a href="#fnref9" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn10"><p>I.e., the name as you would refer to it in text, e.g., ‘glucose lowering drugs within 180 days’.<a href="#fnref10" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

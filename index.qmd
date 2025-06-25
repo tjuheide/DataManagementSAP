@@ -1,0 +1,9 @@
+---
+title: "Data management and statistical analysis plans"
+---
+
+### Welcome
+
+This site contains some thoughts on what to include in a data management and statistical analysis plan when conducting registry-based epidemiological studies. There is an implicit assumption that the setting is Danish health care registries, however, some of the points can likely be generalized to other settings and fields of research.
+
+The first version of the site will only feature a single example, however, depending on supply and demand more examples may be added over time.
