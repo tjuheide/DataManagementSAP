@@ -9,9 +9,11 @@ The purpose of a statistical analysis plan (SAP) - which will often also contain
 
 ### The research question - what is the estimand?
 
-Writing a detailed SAP forces the researcher/study group to think clearly about what the aim of the study is (which estimand[^1] needs to be estimated?), and how to achieve this aim (which estimator can provide the best estimate?).
+Writing a detailed SAP forces the researcher/study group to think clearly about what the aim of the study is (which estimand[^1] needs to be estimated?), and how to achieve this aim (which estimator can provide the best estimate?). Possibly, the group will come to the conclusion that a reliable estimate cannot be made with the data at hand, in which case they can abandon the study and save themselves (along with reviewers, editors, taxpayers, and other innocent bystanders) a lot of time and resources which can then be spent on something fruitful.
 
 [^1]: There are possibly several estimands.
+
+![[xkcd.com/1838](https://xkcd.com/1838/)](./figs/machine_learning.png){#fig-ml}
 
 Speaking from experience, it is not uncommon that a researcher wants an answer to a question that is so vague that several different analyses could be carried out, and all be said to provide a relevant answer to the overall question.
 
@@ -26,9 +28,11 @@ A question like "What is the occurrence of dementia in individuals with chronic 
 
 Even these questions are not completely clear. The first question interprets "occurrence" as "prevalence", while the second and third aim to provide estimates of an incompletely defined "risk", seeing that risk strictly speaking only makes sense if a time frame is also specified, e.g., 10-year risk.
 
-If the question is not clear before the answer is sought, there is a significant risk of p-hacking or HARKing.[^2]
+If the question is not clear before the answer is sought, there is a significant risk of p-hacking[^2] or HARKing.[^3]
 
-[^2]: [Wikipedia on HARKing](https://en.wikipedia.org/wiki/HARKing).
+[^2]: [xkcd on p-hacking](xkcd.com/882)
+
+[^3]: [Wikipedia on HARKing](https://en.wikipedia.org/wiki/HARKing).
 
 ### Definitions and data
 
@@ -42,9 +46,9 @@ Defining populations and variables is data management and not statistical analys
 
 The data management plan and the SAP can often be written as one coherent document with no explicit distinction between the two parts. However, it can still be relevant to keep in mind that data management and statistical analyses are in principle separate parts/phases of a study. In international/multicenter studies, it is generally advisable to use a common data model, so that analytic scripts (scripts needed to carry out statistical analyses as specified in the SAP) can be shared, ensuring the same methods are applied at all centers. To facilitate this, each center must provide a data set that complies with certain rules (specific variable names, types, formats, ...) specified by the coordinating center.
 
-However, data management will generally have to differ between centers at some initial level. At the most low-practical level, registries and their variables will have different names and structures. There can also be qualitative differences, e.g., primary vs. secondary care data, granularity of diagnosis/procedure/... codes, or precision of time variables,[^3] all of which may require different approaches between centers.
+However, data management will generally have to differ between centers at some initial level. At the most low-practical level, registries and their variables will have different names and structures. There can also be qualitative differences, e.g., primary vs. secondary care data, granularity of diagnosis/procedure/... codes, or precision of time variables,[^4] all of which may require different approaches between centers.
 
-[^3]: Examples from Danish registries include laboratory data which hold dates and time stamps (hours and minutes), whereas the National Health Insurance Service Registry only includes week number.
+[^4]: Examples from Danish registries include laboratory data which hold dates and time stamps (hours and minutes), whereas the National Health Insurance Service Registry only includes week number.
 
 In the following, it will be assumed that the data management plan is incorporated into the SAP.
 
@@ -52,9 +56,9 @@ In the following, it will be assumed that the data management plan is incorporat
 
 ### Log of changes
 
-Near the start of the SAP there should be a log of changes, documenting any changes made after the data management or analyses are started. The log should contain dates where changes are made, what the changes are, and reasons for the changes. This will both serve as a reminder within the group of why decisions were made, and if the statistician is replaced the new statistician will be able to get a quick overview of the history of the project (and find reasons for deviations between what is actually done, and what was specified in the protocol).[^4]
+Near the start of the SAP there should be a log of changes, documenting any changes made after the data management or analyses are started. The log should contain dates where changes are made, what the changes are, and reasons for the changes. This will both serve as a reminder within the group of why decisions were made, and if the statistician is replaced the new statistician will be able to get a quick overview of the history of the project (and find reasons for deviations between what is actually done, and what was specified in the protocol).[^5]
 
-[^4]: In @tbl-changelog an entry is made for the completion of the first version of the SAP for timeline purposes. This is not necessary and can be omitted.
+[^5]: In @tbl-changelog an entry is made for the completion of the first version of the SAP for timeline purposes. This is not necessary and can be omitted.
 
 ```{r, echo = FALSE, eval = TRUE}
 #| label: tbl-changelog
@@ -110,9 +114,9 @@ It is likely that there are several pieces of information that are relevant to w
 
 ### Study population and index date
 
-List in detail how the study population is derived from the raw registry data. This will often require defining an index date from raw data (make sure it is clear what the index date is), and then a series of in- and exclusion criteria to be applied on this index date.[^5]
+List in detail how the study population is derived from the raw registry data. This will often require defining an index date from raw data (make sure it is clear what the index date is), and then a series of in- and exclusion criteria to be applied on this index date.[^6]
 
-[^5]: Sometimes there will be more than one day that is important. E.g., for a population with post-surgical infection, it might be necessary to apply some criteria on the date of the surgery and others on the date of the infection.
+[^6]: Sometimes there will be more than one day that is important. E.g., for a population with post-surgical infection, it might be necessary to apply some criteria on the date of the surgery and others on the date of the infection.
 
 Prepare a figure shell for a flowchart, and make sure the order of the criteria in the figure aligns with the order the criteria are listed in the text. In some situations it can be relevant to leave out some of the steps used to go from raw data to an index date from the flowchart, however, all exclusion criteria that are applied after the index date is defined should be included in the flowchart by default.
 
@@ -168,11 +172,11 @@ Having gotten this far, surely, some arbitrary choices will have been made, and 
 -   lookback period for variables,
 -   in- or exclusion of specific patient groups.
 
-If residual confounding is a concern, restriction to specific subgroups can be used.[^6] E.g., if obesity, alcohol consumption, smoking or other variables that are hard to measure are important confounders, an analysis restricted to individuals who are known or presumed to be similar with respect to these variables (have a record compatible with obesity, alcoholism, COPD, etc.) may be important to run.[^7]
+If residual confounding is a concern, restriction to specific subgroups can be used.[^7] E.g., if obesity, alcohol consumption, smoking or other variables that are hard to measure are important confounders, an analysis restricted to individuals who are known or presumed to be similar with respect to these variables (have a record compatible with obesity, alcoholism, COPD, etc.) may be important to run.[^8]
 
-[^6]: Note the difference between a subgroup analysis and a stratified analysis.
+[^7]: Note the difference between a subgroup analysis and a stratified analysis.
 
-[^7]: Depending on the strength of the confounder it could be considered if the primary analysis should be within the restricted population, coming at the cost of generalizability This consideration should be made before running the analyses.
+[^8]: Depending on the strength of the confounder it could be considered if the primary analysis should be within the restricted population, coming at the cost of generalizability This consideration should be made before running the analyses.
 
 Splitting and reanalyzing the population on calendar time can be relevant. Perhaps the demographics of the population or the indication of a treatment changes over time, introducing a shift in the confounding pattern. However, calendar time in itself is generally hard to interpret as an effect modifier. At best it is a proxy for some other variable. Therefore calendar time stratification arguably belongs under sensitivity analyses rather than stratified analyses.
 
@@ -184,9 +188,9 @@ Make a set of tables that are empty but otherwise ready to be published. There s
 
 As for table shells, there should be a specification of each figure to be included in the publication. Remember to make a figure shell for the flow chart!
 
-It is generally harder to make shells for figures than for tables, so consider copying/linking to figures from other publications that can be used as templates. Specify axis-labels, colors etc. if they need to be specific.[^8]
+It is generally harder to make shells for figures than for tables, so consider copying/linking to figures from other publications that can be used as templates. Specify axis-labels, colors etc. if they need to be specific.[^9]
 
-[^8]: It will often be quick to change these parameters, but if you know in advance what they should be you might as well spell it out explicitly.
+[^9]: It will often be quick to change these parameters, but if you know in advance what they should be you might as well spell it out explicitly.
 
 ### Coding table {#sec-codingTable}
 
@@ -194,17 +198,17 @@ Provide all (diagnosis/procedure/ATC/SNOMED/NPU/...) codes needed to define the 
 
 Columns to include in the coding table could be:
 
-* explicit variable names[^9] (typically not necessary but can be relevant when using a common data model across sites),
-* informal variable names,[^10]
-* data source from which the codes are pulled, e.g., the Danish National Patient Registry (DNPR),
-* the actual codes to be used, e.g., DN18,
-* patient- and diagnosis type (applicable to Danish National Patient Registry); in-, out-, ER-patients, primary or secondary diagnoses,
-* lookback from index date,
-* notes on issues that are relevant for a specific variable that does not warrant a column in it self. E.g., thresholds for biomarkers defining conditions like CKD (eGFR) or type 2 diabetes mellitus (HbA1c); that a diagnosis code mycosis fungoides must be made a department of dermatology to be included
+-   explicit variable names[^10] (typically not necessary but can be relevant when using a common data model across sites),
+-   informal variable names,[^11]
+-   data source from which the codes are pulled, e.g., the Danish National Patient Registry (DNPR),
+-   the actual codes to be used, e.g., DN18,
+-   patient- and diagnosis type (applicable to Danish National Patient Registry); in-, out-, ER-patients, primary or secondary diagnoses,
+-   lookback from index date,
+-   notes on issues that are relevant for a specific variable that does not warrant a column in it self. E.g., thresholds for biomarkers defining conditions like CKD (eGFR) or type 2 diabetes mellitus (HbA1c); that a diagnosis code mycosis fungoides must be made a department of dermatology to be included
 
-[^9]: I.e., the name the variable should have in the analytic script, e.g., `gld_180d`. If formal variable names are used, they have to conform to the statistical software package used.
+[^10]: I.e., the name the variable should have in the analytic script, e.g., `gld_180d`. If formal variable names are used, they have to conform to the statistical software package used.
 
-[^10]: I.e., the name as you would refer to it in text, e.g., 'glucose lowering drugs within 180 days'.
+[^11]: I.e., the name as you would refer to it in text, e.g., 'glucose lowering drugs within 180 days'.
 
 Further structure can be added as in @tbl-codingtable where variables are sorted by their role (exposure, in-/exclusion, outcomes, etc.).
 
@@ -273,17 +277,16 @@ gt(tbl) |>
 
 ```
 
-
 ### References
 
 List of literature referenced in the SAP
 
 ## Pitfalls to avoid
 
-1. Avoid repetitions.
-    + Whenever possible specify things exactly once, then there is exactly one place to change this when revising. This means that the statistician/statistical programmer does not accidentally read the recruitment period the one place you overlooked when revising.
-2. Do not write codes from the coding table in the text, it serves no purpose when it is also specified in a coding table (also see point 1.).
-3. Avoid circular reasoning/definitions. It can be necessary to refer to a later section of the SAP, but beware that this later section does not point back so that, e.g., the index date is defined as the date of the index date.
+1.  Avoid repetitions.
+    -   Whenever possible specify things exactly once, then there is exactly one place to change this when revising. This means that the statistician/statistical programmer does not accidentally read the recruitment period the one place you overlooked when revising.
+2.  Do not write codes from the coding table in the text, it serves no purpose when it is also specified in a coding table (also see point 1.).
+3.  Avoid circular reasoning/definitions. It can be necessary to refer to a later section of the SAP, but beware that this later section does not point back so that, e.g., the index date is defined as the date of the index date.
 
 ## Simple tip for specifying the order of inclusion-/exclusion criteria
 
@@ -295,9 +298,9 @@ Consider this description of a study population from a hypothetical protocol:
 
 Beyond having a diagnosis of herpes zoster, the protocol outlines three key elements to consider, when settling on the order of the inclusion-/exclusion criteria:
 
-* calendar time of diagnosis,
-* department of dermatology, and
-* first observation per patient.
+-   calendar time of diagnosis,
+-   department of dermatology, and
+-   first observation per patient.
 
 These criteria can be ordered in 6 different ways, and the above ordering is based on the ordering they are mentioned in the text, but that might not be optimal.
 
@@ -368,35 +371,36 @@ ggplot(patients, aes(x = start, xend = stop, y = id, yend = id, group = id)) +
 
 If we had started by extracting all diagnosis codes from the Danish National Patient Registry and then applied the three criteria in the order given above, we would
 
-1. ignore the first diagnosis of patients 1, 4 and 6 (they are before the study period - patient 6 is excluded),
-2. ignore the diagnoses given at non-dermatology departments (this removes patient 5), and
-3. include all remaining patients at their first (remaining) diagnosis at a department of dermatology.
+1.  ignore the first diagnosis of patients 1, 4 and 6 (they are before the study period - patient 6 is excluded),
+2.  ignore the diagnoses given at non-dermatology departments (this removes patient 5), and
+3.  include all remaining patients at their first (remaining) diagnosis at a department of dermatology.
 
 So, for this ordering of inclusion-/exclusion criteria, all patients, who had a diagnosis at a department of dermatology at some point during the study period, would be included regardless of their other diagnoses. That might be reasonable for a descriptive study, e.g.,
 
-* What characterizes patients with herpes zoster at departments of dermatology in Denmark?
+-   What characterizes patients with herpes zoster at departments of dermatology in Denmark?
 
 but perhaps less so in a cohort study e.g.,
 
-* What is the prognosis after incident herpes zoster?
+-   What is the prognosis after incident herpes zoster?
 
 where you only want to include incident cases, so at least patient 4 should also be excluded. Depending on the positive predictive value of diagnoses codes for herpes zoster at non-dermatology departments, patients 1 and 3 can be in- or excluded.
 
 If specificity is prioritized, i.e., you want to increase certainty of the condition being incident, then you probably want to exclude patients with a prevalent diagnosis at a non-dermatology department at the cost of population size, including only patient 2 from @fig-timelines. To do this, you can use the ordering:
 
-1. restrict to the first observation per patient (this excludes no patient), the time of the diagnosis marks the index date,
-2. exclude patients with index dates outside of the study period (this excludes patients 1, 4 and 6),
-3. exclude patients not seen at a dermatology department on the index date (this excludes patients 3 and 5).
+1.  restrict to the first observation per patient (this excludes no patient), the time of the diagnosis marks the index date,
+2.  exclude patients with index dates outside of the study period (this excludes patients 1, 4 and 6),
+3.  exclude patients not seen at a dermatology department on the index date (this excludes patients 3 and 5).
 
 Because they come after selection of the index date, the ordering of the latter two steps is irrelevant when it comes to the final study population. However, there might still be a natural ordering of these steps from a clinical point of view. Keep this in mind when specifying the inclusion-/exclusion sequence.
 
 If a more sensitive approach is used, e.g., because you don't trust diagnosis codes from non-dermatology departments, you might argue that including patients 1-3 is reasonable within the scope of the project. This can be done by reordering the criteria as such:
 
-1. include observations from dermatology departments only (patient 5 is excluded),
-2. restrict to the first diagnosis per patient, this marks the index date,
-3. restrict to index dates within the study period (patients 4 and 6 are excluded).
+1.  include observations from dermatology departments only (patient 5 is excluded),
+2.  restrict to the first diagnosis per patient, this marks the index date,
+3.  restrict to index dates within the study period (patients 4 and 6 are excluded).
 
 ## External links
+
 [Graphical Depiction of Longitudinal Study Designs in Health Care Databases](https://doi.org/10.7326/M18-3079)
 
 [Visualizations throughout pharmacoepidemiology study planning, implementation, and reporting](https://doi.org/10.1002/pds.5529)

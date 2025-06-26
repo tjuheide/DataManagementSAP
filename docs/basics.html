@@ -203,7 +203,17 @@ ul.task-list li input[type="checkbox"] {
 <p>The purpose of a statistical analysis plan (SAP) - which will often also contain a (partial) data management plan - is to improve the quality of studies. The SAP will often be based on (or an appendix to) a protocol where the overall outline of a study is presented with fewer technical details.</p>
 <section id="the-research-question---what-is-the-estimand" class="level3" data-number="1.1">
 <h3 data-number="1.1" class="anchored" data-anchor-id="the-research-question---what-is-the-estimand"><span class="header-section-number">1.1</span> The research question - what is the estimand?</h3>
-<p>Writing a detailed SAP forces the researcher/study group to think clearly about what the aim of the study is (which estimand<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> needs to be estimated?), and how to achieve this aim (which estimator can provide the best estimate?).</p>
+<p>Writing a detailed SAP forces the researcher/study group to think clearly about what the aim of the study is (which estimand<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> needs to be estimated?), and how to achieve this aim (which estimator can provide the best estimate?). Possibly, the group will come to the conclusion that a reliable estimate cannot be made with the data at hand, in which case they can abandon the study and save themselves (along with reviewers, editors, taxpayers, and other innocent bystanders) a lot of time and resources which can then be spent on something fruitful.</p>
+<div id="fig-ml" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-ml-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="./figs/machine_learning.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ml-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: <a href="https://xkcd.com/1838/">xkcd.com/1838</a>
+</figcaption>
+</figure>
+</div>
 <p>Speaking from experience, it is not uncommon that a researcher wants an answer to a question that is so vague that several different analyses could be carried out, and all be said to provide a relevant answer to the overall question.</p>
 <p>A question like “What is the occurrence of dementia in individuals with chronic kidney disease (CKD)?” can be a good overall question, but there is no unique answer to that because the question is not specific. It could be interpreted in several ways:</p>
 <ol type="1">
@@ -221,7 +231,7 @@ ul.task-list li input[type="checkbox"] {
 </ul></li>
 </ol>
 <p>Even these questions are not completely clear. The first question interprets “occurrence” as “prevalence”, while the second and third aim to provide estimates of an incompletely defined “risk”, seeing that risk strictly speaking only makes sense if a time frame is also specified, e.g., 10-year risk.</p>
-<p>If the question is not clear before the answer is sought, there is a significant risk of p-hacking or HARKing.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
+<p>If the question is not clear before the answer is sought, there is a significant risk of p-hacking<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> or HARKing.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></p>
 </section>
 <section id="definitions-and-data" class="level3" data-number="1.2">
 <h3 data-number="1.2" class="anchored" data-anchor-id="definitions-and-data"><span class="header-section-number">1.2</span> Definitions and data</h3>
@@ -232,7 +242,7 @@ ul.task-list li input[type="checkbox"] {
 <section id="two-documents-or-one" class="level3" data-number="1.3">
 <h3 data-number="1.3" class="anchored" data-anchor-id="two-documents-or-one"><span class="header-section-number">1.3</span> Two documents or one?</h3>
 <p>The data management plan and the SAP can often be written as one coherent document with no explicit distinction between the two parts. However, it can still be relevant to keep in mind that data management and statistical analyses are in principle separate parts/phases of a study. In international/multicenter studies, it is generally advisable to use a common data model, so that analytic scripts (scripts needed to carry out statistical analyses as specified in the SAP) can be shared, ensuring the same methods are applied at all centers. To facilitate this, each center must provide a data set that complies with certain rules (specific variable names, types, formats, …) specified by the coordinating center.</p>
-<p>However, data management will generally have to differ between centers at some initial level. At the most low-practical level, registries and their variables will have different names and structures. There can also be qualitative differences, e.g., primary vs.&nbsp;secondary care data, granularity of diagnosis/procedure/… codes, or precision of time variables,<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> all of which may require different approaches between centers.</p>
+<p>However, data management will generally have to differ between centers at some initial level. At the most low-practical level, registries and their variables will have different names and structures. There can also be qualitative differences, e.g., primary vs.&nbsp;secondary care data, granularity of diagnosis/procedure/… codes, or precision of time variables,<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a> all of which may require different approaches between centers.</p>
 <p>In the following, it will be assumed that the data management plan is incorporated into the SAP.</p>
 </section>
 </section>
@@ -240,7 +250,7 @@ ul.task-list li input[type="checkbox"] {
 <h2 data-number="2" class="anchored" data-anchor-id="elements-of-the-sap"><span class="header-section-number">2</span> Elements of the SAP</h2>
 <section id="log-of-changes" class="level3" data-number="2.1">
 <h3 data-number="2.1" class="anchored" data-anchor-id="log-of-changes"><span class="header-section-number">2.1</span> Log of changes</h3>
-<p>Near the start of the SAP there should be a log of changes, documenting any changes made after the data management or analyses are started. The log should contain dates where changes are made, what the changes are, and reasons for the changes. This will both serve as a reminder within the group of why decisions were made, and if the statistician is replaced the new statistician will be able to get a quick overview of the history of the project (and find reasons for deviations between what is actually done, and what was specified in the protocol).<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a></p>
+<p>Near the start of the SAP there should be a log of changes, documenting any changes made after the data management or analyses are started. The log should contain dates where changes are made, what the changes are, and reasons for the changes. This will both serve as a reminder within the group of why decisions were made, and if the statistician is replaced the new statistician will be able to get a quick overview of the history of the project (and find reasons for deviations between what is actually done, and what was specified in the protocol).<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a></p>
 <div class="cell">
 <div id="tbl-changelog" class="cell quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
@@ -249,23 +259,23 @@ Table&nbsp;1
 </figcaption>
 <div aria-describedby="tbl-changelog-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="gaoeeyijlc" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#gaoeeyijlc table {
+<div id="oqrnquejri" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#oqrnquejri table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#gaoeeyijlc thead, #gaoeeyijlc tbody, #gaoeeyijlc tfoot, #gaoeeyijlc tr, #gaoeeyijlc td, #gaoeeyijlc th {
+#oqrnquejri thead, #oqrnquejri tbody, #oqrnquejri tfoot, #oqrnquejri tr, #oqrnquejri td, #oqrnquejri th {
   border-style: none;
 }
 
-#gaoeeyijlc p {
+#oqrnquejri p {
   margin: 0;
   padding: 0;
 }
 
-#gaoeeyijlc .gt_table {
+#oqrnquejri .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -291,12 +301,12 @@ Table&nbsp;1
   border-left-color: #D3D3D3;
 }
 
-#gaoeeyijlc .gt_caption {
+#oqrnquejri .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#gaoeeyijlc .gt_title {
+#oqrnquejri .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -308,7 +318,7 @@ Table&nbsp;1
   border-bottom-width: 0;
 }
 
-#gaoeeyijlc .gt_subtitle {
+#oqrnquejri .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -320,7 +330,7 @@ Table&nbsp;1
   border-top-width: 0;
 }
 
-#gaoeeyijlc .gt_heading {
+#oqrnquejri .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -332,13 +342,13 @@ Table&nbsp;1
   border-right-color: #D3D3D3;
 }
 
-#gaoeeyijlc .gt_bottom_border {
+#oqrnquejri .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#gaoeeyijlc .gt_col_headings {
+#oqrnquejri .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -353,7 +363,7 @@ Table&nbsp;1
   border-right-color: #D3D3D3;
 }
 
-#gaoeeyijlc .gt_col_heading {
+#oqrnquejri .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -373,7 +383,7 @@ Table&nbsp;1
   overflow-x: hidden;
 }
 
-#gaoeeyijlc .gt_column_spanner_outer {
+#oqrnquejri .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -385,15 +395,15 @@ Table&nbsp;1
   padding-right: 4px;
 }
 
-#gaoeeyijlc .gt_column_spanner_outer:first-child {
+#oqrnquejri .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#gaoeeyijlc .gt_column_spanner_outer:last-child {
+#oqrnquejri .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#gaoeeyijlc .gt_column_spanner {
+#oqrnquejri .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -405,11 +415,11 @@ Table&nbsp;1
   width: 100%;
 }
 
-#gaoeeyijlc .gt_spanner_row {
+#oqrnquejri .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#gaoeeyijlc .gt_group_heading {
+#oqrnquejri .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -435,7 +445,7 @@ Table&nbsp;1
   text-align: left;
 }
 
-#gaoeeyijlc .gt_empty_group_heading {
+#oqrnquejri .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -450,15 +460,15 @@ Table&nbsp;1
   vertical-align: middle;
 }
 
-#gaoeeyijlc .gt_from_md > :first-child {
+#oqrnquejri .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#gaoeeyijlc .gt_from_md > :last-child {
+#oqrnquejri .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#gaoeeyijlc .gt_row {
+#oqrnquejri .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -477,7 +487,7 @@ Table&nbsp;1
   overflow-x: hidden;
 }
 
-#gaoeeyijlc .gt_stub {
+#oqrnquejri .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -490,7 +500,7 @@ Table&nbsp;1
   padding-right: 5px;
 }
 
-#gaoeeyijlc .gt_stub_row_group {
+#oqrnquejri .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -504,15 +514,15 @@ Table&nbsp;1
   vertical-align: top;
 }
 
-#gaoeeyijlc .gt_row_group_first td {
+#oqrnquejri .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#gaoeeyijlc .gt_row_group_first th {
+#oqrnquejri .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#gaoeeyijlc .gt_summary_row {
+#oqrnquejri .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -522,16 +532,16 @@ Table&nbsp;1
   padding-right: 5px;
 }
 
-#gaoeeyijlc .gt_first_summary_row {
+#oqrnquejri .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#gaoeeyijlc .gt_first_summary_row.thick {
+#oqrnquejri .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#gaoeeyijlc .gt_last_summary_row {
+#oqrnquejri .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -541,7 +551,7 @@ Table&nbsp;1
   border-bottom-color: #D3D3D3;
 }
 
-#gaoeeyijlc .gt_grand_summary_row {
+#oqrnquejri .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -551,7 +561,7 @@ Table&nbsp;1
   padding-right: 5px;
 }
 
-#gaoeeyijlc .gt_first_grand_summary_row {
+#oqrnquejri .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -561,7 +571,7 @@ Table&nbsp;1
   border-top-color: #D3D3D3;
 }
 
-#gaoeeyijlc .gt_last_grand_summary_row_top {
+#oqrnquejri .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -571,11 +581,11 @@ Table&nbsp;1
   border-bottom-color: #D3D3D3;
 }
 
-#gaoeeyijlc .gt_striped {
+#oqrnquejri .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#gaoeeyijlc .gt_table_body {
+#oqrnquejri .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -584,7 +594,7 @@ Table&nbsp;1
   border-bottom-color: #D3D3D3;
 }
 
-#gaoeeyijlc .gt_footnotes {
+#oqrnquejri .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -598,7 +608,7 @@ Table&nbsp;1
   border-right-color: #D3D3D3;
 }
 
-#gaoeeyijlc .gt_footnote {
+#oqrnquejri .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -607,7 +617,7 @@ Table&nbsp;1
   padding-right: 5px;
 }
 
-#gaoeeyijlc .gt_sourcenotes {
+#oqrnquejri .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -621,7 +631,7 @@ Table&nbsp;1
   border-right-color: #D3D3D3;
 }
 
-#gaoeeyijlc .gt_sourcenote {
+#oqrnquejri .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -629,72 +639,72 @@ Table&nbsp;1
   padding-right: 5px;
 }
 
-#gaoeeyijlc .gt_left {
+#oqrnquejri .gt_left {
   text-align: left;
 }
 
-#gaoeeyijlc .gt_center {
+#oqrnquejri .gt_center {
   text-align: center;
 }
 
-#gaoeeyijlc .gt_right {
+#oqrnquejri .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#gaoeeyijlc .gt_font_normal {
+#oqrnquejri .gt_font_normal {
   font-weight: normal;
 }
 
-#gaoeeyijlc .gt_font_bold {
+#oqrnquejri .gt_font_bold {
   font-weight: bold;
 }
 
-#gaoeeyijlc .gt_font_italic {
+#oqrnquejri .gt_font_italic {
   font-style: italic;
 }
 
-#gaoeeyijlc .gt_super {
+#oqrnquejri .gt_super {
   font-size: 65%;
 }
 
-#gaoeeyijlc .gt_footnote_marks {
+#oqrnquejri .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#gaoeeyijlc .gt_asterisk {
+#oqrnquejri .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#gaoeeyijlc .gt_indent_1 {
+#oqrnquejri .gt_indent_1 {
   text-indent: 5px;
 }
 
-#gaoeeyijlc .gt_indent_2 {
+#oqrnquejri .gt_indent_2 {
   text-indent: 10px;
 }
 
-#gaoeeyijlc .gt_indent_3 {
+#oqrnquejri .gt_indent_3 {
   text-indent: 15px;
 }
 
-#gaoeeyijlc .gt_indent_4 {
+#oqrnquejri .gt_indent_4 {
   text-indent: 20px;
 }
 
-#gaoeeyijlc .gt_indent_5 {
+#oqrnquejri .gt_indent_5 {
   text-indent: 25px;
 }
 
-#gaoeeyijlc .katex-display {
+#oqrnquejri .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#gaoeeyijlc div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#oqrnquejri div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -754,7 +764,7 @@ Table&nbsp;1
 </section>
 <section id="study-population-and-index-date" class="level3" data-number="2.4">
 <h3 data-number="2.4" class="anchored" data-anchor-id="study-population-and-index-date"><span class="header-section-number">2.4</span> Study population and index date</h3>
-<p>List in detail how the study population is derived from the raw registry data. This will often require defining an index date from raw data (make sure it is clear what the index date is), and then a series of in- and exclusion criteria to be applied on this index date.<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a></p>
+<p>List in detail how the study population is derived from the raw registry data. This will often require defining an index date from raw data (make sure it is clear what the index date is), and then a series of in- and exclusion criteria to be applied on this index date.<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a></p>
 <p>Prepare a figure shell for a flowchart, and make sure the order of the criteria in the figure aligns with the order the criteria are listed in the text. In some situations it can be relevant to leave out some of the steps used to go from raw data to an index date from the flowchart, however, all exclusion criteria that are applied after the index date is defined should be included in the flowchart by default.</p>
 </section>
 <section id="variables" class="level3" data-number="2.5">
@@ -808,7 +818,7 @@ Table&nbsp;1
 <li>lookback period for variables,</li>
 <li>in- or exclusion of specific patient groups.</li>
 </ul>
-<p>If residual confounding is a concern, restriction to specific subgroups can be used.<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a> E.g., if obesity, alcohol consumption, smoking or other variables that are hard to measure are important confounders, an analysis restricted to individuals who are known or presumed to be similar with respect to these variables (have a record compatible with obesity, alcoholism, COPD, etc.) may be important to run.<a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a></p>
+<p>If residual confounding is a concern, restriction to specific subgroups can be used.<a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a> E.g., if obesity, alcohol consumption, smoking or other variables that are hard to measure are important confounders, an analysis restricted to individuals who are known or presumed to be similar with respect to these variables (have a record compatible with obesity, alcoholism, COPD, etc.) may be important to run.<a href="#fn8" class="footnote-ref" id="fnref8" role="doc-noteref"><sup>8</sup></a></p>
 <p>Splitting and reanalyzing the population on calendar time can be relevant. Perhaps the demographics of the population or the indication of a treatment changes over time, introducing a shift in the confounding pattern. However, calendar time in itself is generally hard to interpret as an effect modifier. At best it is a proxy for some other variable. Therefore calendar time stratification arguably belongs under sensitivity analyses rather than stratified analyses.</p>
 </section>
 <section id="table-shells" class="level3" data-number="2.10">
@@ -818,15 +828,15 @@ Table&nbsp;1
 <section id="figure-shells" class="level3" data-number="2.11">
 <h3 data-number="2.11" class="anchored" data-anchor-id="figure-shells"><span class="header-section-number">2.11</span> Figure shells</h3>
 <p>As for table shells, there should be a specification of each figure to be included in the publication. Remember to make a figure shell for the flow chart!</p>
-<p>It is generally harder to make shells for figures than for tables, so consider copying/linking to figures from other publications that can be used as templates. Specify axis-labels, colors etc. if they need to be specific.<a href="#fn8" class="footnote-ref" id="fnref8" role="doc-noteref"><sup>8</sup></a></p>
+<p>It is generally harder to make shells for figures than for tables, so consider copying/linking to figures from other publications that can be used as templates. Specify axis-labels, colors etc. if they need to be specific.<a href="#fn9" class="footnote-ref" id="fnref9" role="doc-noteref"><sup>9</sup></a></p>
 </section>
 <section id="sec-codingTable" class="level3" data-number="2.12">
 <h3 data-number="2.12" class="anchored" data-anchor-id="sec-codingTable"><span class="header-section-number">2.12</span> Coding table</h3>
 <p>Provide all (diagnosis/procedure/ATC/SNOMED/NPU/…) codes needed to define the study population, exposure, outcome, and covariates, in a structured manner. The coding table can be a separate file (e.g., a spreadsheet) or part of the SAP. Make it easy to copy/import codes from the coding table to analytic scripts so they do not have to be transcribed manually.</p>
 <p>Columns to include in the coding table could be:</p>
 <ul>
-<li>explicit variable names<a href="#fn9" class="footnote-ref" id="fnref9" role="doc-noteref"><sup>9</sup></a> (typically not necessary but can be relevant when using a common data model across sites),</li>
-<li>informal variable names,<a href="#fn10" class="footnote-ref" id="fnref10" role="doc-noteref"><sup>10</sup></a></li>
+<li>explicit variable names<a href="#fn10" class="footnote-ref" id="fnref10" role="doc-noteref"><sup>10</sup></a> (typically not necessary but can be relevant when using a common data model across sites),</li>
+<li>informal variable names,<a href="#fn11" class="footnote-ref" id="fnref11" role="doc-noteref"><sup>11</sup></a></li>
 <li>data source from which the codes are pulled, e.g., the Danish National Patient Registry (DNPR),</li>
 <li>the actual codes to be used, e.g., DN18,</li>
 <li>patient- and diagnosis type (applicable to Danish National Patient Registry); in-, out-, ER-patients, primary or secondary diagnoses,</li>
@@ -842,23 +852,23 @@ Table&nbsp;2: Suggested structure for a coding table
 </figcaption>
 <div aria-describedby="tbl-codingtable-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="qpxnlyfapj" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#qpxnlyfapj table {
+<div id="xgaojblxmj" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#xgaojblxmj table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#qpxnlyfapj thead, #qpxnlyfapj tbody, #qpxnlyfapj tfoot, #qpxnlyfapj tr, #qpxnlyfapj td, #qpxnlyfapj th {
+#xgaojblxmj thead, #xgaojblxmj tbody, #xgaojblxmj tfoot, #xgaojblxmj tr, #xgaojblxmj td, #xgaojblxmj th {
   border-style: none;
 }
 
-#qpxnlyfapj p {
+#xgaojblxmj p {
   margin: 0;
   padding: 0;
 }
 
-#qpxnlyfapj .gt_table {
+#xgaojblxmj .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -884,12 +894,12 @@ Table&nbsp;2: Suggested structure for a coding table
   border-left-color: #D3D3D3;
 }
 
-#qpxnlyfapj .gt_caption {
+#xgaojblxmj .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#qpxnlyfapj .gt_title {
+#xgaojblxmj .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -901,7 +911,7 @@ Table&nbsp;2: Suggested structure for a coding table
   border-bottom-width: 0;
 }
 
-#qpxnlyfapj .gt_subtitle {
+#xgaojblxmj .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -913,7 +923,7 @@ Table&nbsp;2: Suggested structure for a coding table
   border-top-width: 0;
 }
 
-#qpxnlyfapj .gt_heading {
+#xgaojblxmj .gt_heading {
   background-color: #FFFFFF;
   text-align: left;
   border-bottom-color: #FFFFFF;
@@ -925,13 +935,13 @@ Table&nbsp;2: Suggested structure for a coding table
   border-right-color: #D3D3D3;
 }
 
-#qpxnlyfapj .gt_bottom_border {
+#xgaojblxmj .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#qpxnlyfapj .gt_col_headings {
+#xgaojblxmj .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -946,7 +956,7 @@ Table&nbsp;2: Suggested structure for a coding table
   border-right-color: #D3D3D3;
 }
 
-#qpxnlyfapj .gt_col_heading {
+#xgaojblxmj .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -966,7 +976,7 @@ Table&nbsp;2: Suggested structure for a coding table
   overflow-x: hidden;
 }
 
-#qpxnlyfapj .gt_column_spanner_outer {
+#xgaojblxmj .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -978,15 +988,15 @@ Table&nbsp;2: Suggested structure for a coding table
   padding-right: 4px;
 }
 
-#qpxnlyfapj .gt_column_spanner_outer:first-child {
+#xgaojblxmj .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#qpxnlyfapj .gt_column_spanner_outer:last-child {
+#xgaojblxmj .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#qpxnlyfapj .gt_column_spanner {
+#xgaojblxmj .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -998,11 +1008,11 @@ Table&nbsp;2: Suggested structure for a coding table
   width: 100%;
 }
 
-#qpxnlyfapj .gt_spanner_row {
+#xgaojblxmj .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#qpxnlyfapj .gt_group_heading {
+#xgaojblxmj .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1028,7 +1038,7 @@ Table&nbsp;2: Suggested structure for a coding table
   text-align: left;
 }
 
-#qpxnlyfapj .gt_empty_group_heading {
+#xgaojblxmj .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1043,15 +1053,15 @@ Table&nbsp;2: Suggested structure for a coding table
   vertical-align: middle;
 }
 
-#qpxnlyfapj .gt_from_md > :first-child {
+#xgaojblxmj .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#qpxnlyfapj .gt_from_md > :last-child {
+#xgaojblxmj .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#qpxnlyfapj .gt_row {
+#xgaojblxmj .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1070,7 +1080,7 @@ Table&nbsp;2: Suggested structure for a coding table
   overflow-x: hidden;
 }
 
-#qpxnlyfapj .gt_stub {
+#xgaojblxmj .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1083,7 +1093,7 @@ Table&nbsp;2: Suggested structure for a coding table
   padding-right: 5px;
 }
 
-#qpxnlyfapj .gt_stub_row_group {
+#xgaojblxmj .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1097,15 +1107,15 @@ Table&nbsp;2: Suggested structure for a coding table
   vertical-align: top;
 }
 
-#qpxnlyfapj .gt_row_group_first td {
+#xgaojblxmj .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#qpxnlyfapj .gt_row_group_first th {
+#xgaojblxmj .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#qpxnlyfapj .gt_summary_row {
+#xgaojblxmj .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1115,16 +1125,16 @@ Table&nbsp;2: Suggested structure for a coding table
   padding-right: 5px;
 }
 
-#qpxnlyfapj .gt_first_summary_row {
+#xgaojblxmj .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#qpxnlyfapj .gt_first_summary_row.thick {
+#xgaojblxmj .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#qpxnlyfapj .gt_last_summary_row {
+#xgaojblxmj .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1134,7 +1144,7 @@ Table&nbsp;2: Suggested structure for a coding table
   border-bottom-color: #D3D3D3;
 }
 
-#qpxnlyfapj .gt_grand_summary_row {
+#xgaojblxmj .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1144,7 +1154,7 @@ Table&nbsp;2: Suggested structure for a coding table
   padding-right: 5px;
 }
 
-#qpxnlyfapj .gt_first_grand_summary_row {
+#xgaojblxmj .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1154,7 +1164,7 @@ Table&nbsp;2: Suggested structure for a coding table
   border-top-color: #D3D3D3;
 }
 
-#qpxnlyfapj .gt_last_grand_summary_row_top {
+#xgaojblxmj .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1164,11 +1174,11 @@ Table&nbsp;2: Suggested structure for a coding table
   border-bottom-color: #D3D3D3;
 }
 
-#qpxnlyfapj .gt_striped {
+#xgaojblxmj .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#qpxnlyfapj .gt_table_body {
+#xgaojblxmj .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1177,7 +1187,7 @@ Table&nbsp;2: Suggested structure for a coding table
   border-bottom-color: #D3D3D3;
 }
 
-#qpxnlyfapj .gt_footnotes {
+#xgaojblxmj .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1191,7 +1201,7 @@ Table&nbsp;2: Suggested structure for a coding table
   border-right-color: #D3D3D3;
 }
 
-#qpxnlyfapj .gt_footnote {
+#xgaojblxmj .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1200,7 +1210,7 @@ Table&nbsp;2: Suggested structure for a coding table
   padding-right: 5px;
 }
 
-#qpxnlyfapj .gt_sourcenotes {
+#xgaojblxmj .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1214,7 +1224,7 @@ Table&nbsp;2: Suggested structure for a coding table
   border-right-color: #D3D3D3;
 }
 
-#qpxnlyfapj .gt_sourcenote {
+#xgaojblxmj .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1222,72 +1232,72 @@ Table&nbsp;2: Suggested structure for a coding table
   padding-right: 5px;
 }
 
-#qpxnlyfapj .gt_left {
+#xgaojblxmj .gt_left {
   text-align: left;
 }
 
-#qpxnlyfapj .gt_center {
+#xgaojblxmj .gt_center {
   text-align: center;
 }
 
-#qpxnlyfapj .gt_right {
+#xgaojblxmj .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#qpxnlyfapj .gt_font_normal {
+#xgaojblxmj .gt_font_normal {
   font-weight: normal;
 }
 
-#qpxnlyfapj .gt_font_bold {
+#xgaojblxmj .gt_font_bold {
   font-weight: bold;
 }
 
-#qpxnlyfapj .gt_font_italic {
+#xgaojblxmj .gt_font_italic {
   font-style: italic;
 }
 
-#qpxnlyfapj .gt_super {
+#xgaojblxmj .gt_super {
   font-size: 65%;
 }
 
-#qpxnlyfapj .gt_footnote_marks {
+#xgaojblxmj .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#qpxnlyfapj .gt_asterisk {
+#xgaojblxmj .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#qpxnlyfapj .gt_indent_1 {
+#xgaojblxmj .gt_indent_1 {
   text-indent: 5px;
 }
 
-#qpxnlyfapj .gt_indent_2 {
+#xgaojblxmj .gt_indent_2 {
   text-indent: 10px;
 }
 
-#qpxnlyfapj .gt_indent_3 {
+#xgaojblxmj .gt_indent_3 {
   text-indent: 15px;
 }
 
-#qpxnlyfapj .gt_indent_4 {
+#xgaojblxmj .gt_indent_4 {
   text-indent: 20px;
 }
 
-#qpxnlyfapj .gt_indent_5 {
+#xgaojblxmj .gt_indent_5 {
   text-indent: 25px;
 }
 
-#qpxnlyfapj .katex-display {
+#xgaojblxmj .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#qpxnlyfapj div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#xgaojblxmj div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -1484,7 +1494,7 @@ Table&nbsp;2: Suggested structure for a coding table
 <li>first observation per patient.</li>
 </ul>
 <p>These criteria can be ordered in 6 different ways, and the above ordering is based on the ordering they are mentioned in the text, but that might not be optimal.</p>
-<p>To get a feeling of who you want to include and how you achieve that you might consider different hypothetical patients with a diagnosis code for herpes zoster as in <a href="#fig-timelines" class="quarto-xref">Figure&nbsp;1</a>.</p>
+<p>To get a feeling of who you want to include and how you achieve that you might consider different hypothetical patients with a diagnosis code for herpes zoster as in <a href="#fig-timelines" class="quarto-xref">Figure&nbsp;2</a>.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div id="fig-timelines" class="quarto-float quarto-figure quarto-figure-center anchored">
@@ -1493,7 +1503,7 @@ Table&nbsp;2: Suggested structure for a coding table
 <img src="basics_files/figure-html/fig-timelines-1.png" class="img-fluid figure-img" width="672">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-timelines-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1: Hypothetical herpes zoster diagnosis patterns
+Figure&nbsp;2: Hypothetical herpes zoster diagnosis patterns
 </figcaption>
 </figure>
 </div>
@@ -1514,7 +1524,7 @@ Figure&nbsp;1: Hypothetical herpes zoster diagnosis patterns
 <li>What is the prognosis after incident herpes zoster?</li>
 </ul>
 <p>where you only want to include incident cases, so at least patient 4 should also be excluded. Depending on the positive predictive value of diagnoses codes for herpes zoster at non-dermatology departments, patients 1 and 3 can be in- or excluded.</p>
-<p>If specificity is prioritized, i.e., you want to increase certainty of the condition being incident, then you probably want to exclude patients with a prevalent diagnosis at a non-dermatology department at the cost of population size, including only patient 2 from <a href="#fig-timelines" class="quarto-xref">Figure&nbsp;1</a>. To do this, you can use the ordering:</p>
+<p>If specificity is prioritized, i.e., you want to increase certainty of the condition being incident, then you probably want to exclude patients with a prevalent diagnosis at a non-dermatology department at the cost of population size, including only patient 2 from <a href="#fig-timelines" class="quarto-xref">Figure&nbsp;2</a>. To do this, you can use the ordering:</p>
 <ol type="1">
 <li>restrict to the first observation per patient (this excludes no patient), the time of the diagnosis marks the index date,</li>
 <li>exclude patients with index dates outside of the study period (this excludes patients 1, 4 and 6),</li>
@@ -1541,15 +1551,16 @@ Figure&nbsp;1: Hypothetical herpes zoster diagnosis patterns
 
 <ol>
 <li id="fn1"><p>There are possibly several estimands.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn2"><p><a href="https://en.wikipedia.org/wiki/HARKing">Wikipedia on HARKing</a>.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn3"><p>Examples from Danish registries include laboratory data which hold dates and time stamps (hours and minutes), whereas the National Health Insurance Service Registry only includes week number.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn4"><p>In <a href="#tbl-changelog" class="quarto-xref">Table&nbsp;1</a> an entry is made for the completion of the first version of the SAP for timeline purposes. This is not necessary and can be omitted.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn5"><p>Sometimes there will be more than one day that is important. E.g., for a population with post-surgical infection, it might be necessary to apply some criteria on the date of the surgery and others on the date of the infection.<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn6"><p>Note the difference between a subgroup analysis and a stratified analysis.<a href="#fnref6" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn7"><p>Depending on the strength of the confounder it could be considered if the primary analysis should be within the restricted population, coming at the cost of generalizability This consideration should be made before running the analyses.<a href="#fnref7" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn8"><p>It will often be quick to change these parameters, but if you know in advance what they should be you might as well spell it out explicitly.<a href="#fnref8" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn9"><p>I.e., the name the variable should have in the analytic script, e.g., <code>gld_180d</code>. If formal variable names are used, they have to conform to the statistical software package used.<a href="#fnref9" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn10"><p>I.e., the name as you would refer to it in text, e.g., ‘glucose lowering drugs within 180 days’.<a href="#fnref10" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p><a href="xkcd.com/882">xkcd on p-hacking</a><a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p><a href="https://en.wikipedia.org/wiki/HARKing">Wikipedia on HARKing</a>.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>Examples from Danish registries include laboratory data which hold dates and time stamps (hours and minutes), whereas the National Health Insurance Service Registry only includes week number.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn5"><p>In <a href="#tbl-changelog" class="quarto-xref">Table&nbsp;1</a> an entry is made for the completion of the first version of the SAP for timeline purposes. This is not necessary and can be omitted.<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn6"><p>Sometimes there will be more than one day that is important. E.g., for a population with post-surgical infection, it might be necessary to apply some criteria on the date of the surgery and others on the date of the infection.<a href="#fnref6" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn7"><p>Note the difference between a subgroup analysis and a stratified analysis.<a href="#fnref7" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn8"><p>Depending on the strength of the confounder it could be considered if the primary analysis should be within the restricted population, coming at the cost of generalizability This consideration should be made before running the analyses.<a href="#fnref8" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn9"><p>It will often be quick to change these parameters, but if you know in advance what they should be you might as well spell it out explicitly.<a href="#fnref9" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn10"><p>I.e., the name the variable should have in the analytic script, e.g., <code>gld_180d</code>. If formal variable names are used, they have to conform to the statistical software package used.<a href="#fnref10" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn11"><p>I.e., the name as you would refer to it in text, e.g., ‘glucose lowering drugs within 180 days’.<a href="#fnref11" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
