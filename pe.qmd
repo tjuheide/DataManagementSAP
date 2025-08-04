@@ -2,6 +2,8 @@
 title: "Pharmacoepidemiology"
 ---
 
+### What?
+
 The term "pharmacoepidemiology" covers a range of study types, with various aims, some are causal while others are descriptive:
 
 * Does treatment A affects the risk of some outcome compared to either no treatment or an alternative intervention? (Causal aim.)
