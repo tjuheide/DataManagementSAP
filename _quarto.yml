@@ -8,6 +8,7 @@ website:
     style: docked
     search: true
     repo-url: https://github.com/tjuheide/DataManagementSAP
+    repo-actions: [source]
     contents:
       - href: index.qmd
         text: Home
