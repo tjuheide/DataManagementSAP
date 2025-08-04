@@ -5,7 +5,7 @@ project:
 website:
   title: "Data management and statistical analysis plans"
   sidebar:
-    style: "docked"
+    style: docked
     search: true
     repo-url: https://github.com/tjuheide/DataManagementSAP
     contents:
