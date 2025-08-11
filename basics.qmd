@@ -54,6 +54,8 @@ In the following, it will be assumed that the data management plan is incorporat
 
 ## Elements of the SAP
 
+This section lists elements you might include in a SAP. Not everything will be relevant for all projects, so do not feel obliged to include something about each of these topics.
+
 ### Sanity checks {#sec-sanity}
 
 At various places in the SAP, you might want to specify milestones at which to pause the analyses and look at the results so far. E.g., once the population is constructed, it might be sensible to check its size before moving on to defining variables. Once the (baseline) variables are defined, you might want to see the descriptive table(s) before moving on to the outcome analyses. Looking at the overall risk (across exposure groups) before making a comparison between exposure groups can also be considered.
@@ -133,10 +135,10 @@ In observational (registry-based) studies, sample size/power calculations are ir
 Likely, there are several relevant pieces of information which are rather matter-of-fact in nature and need no further explanation:
 
 -   A list of registries to be used.
--   Study-, recruitment-, washout-, ... periods: if these are specified exactly once, they only need to be changed once in the document if they are revised while running the study.
+-   Study-, recruitment-, washout-, ... periods: if these are specified exactly once in the document, they only need to be changed once if they are revised while conducting the study.
 -   Time: how long is a month (e.g., 28, 30 or 30.5 days) and/or a year (e.g., 360, 365 or 365.25 days), if these are relevant units of time. Consider if a year should be the same as 12 months if both units are used in the project. Consider avoiding having both months and years as time units in the same project.
 -   Exposure groups: If there is an exposure/intervention/... and a control/comparison/reference... group, consider specifying these. E.g., the exposure group is SGLT2i-users and the control group is GLP-1RA-users.
--   If the independent ("exposure") variable of primary interest is continuous, consider specifying the reference value. E.g., when comparing risk of dementia for different eGFR-values, a value of 75 mL/min/1.73m^2^ could be used as the reference.
+-   If the independent variable of primary interest (the "exposure") is continuous, consider specifying the reference value. E.g., when comparing risk of dementia for different eGFR-values, a value of 75 mL/min/1.73m^2^ could be used as the reference.
 
 ### Study population and index date
 
@@ -144,7 +146,9 @@ Specify step-by-step how the study population should be derived from the raw reg
 
 [^10]: Sometimes there will be more than one day that is important. E.g., for a population with post-surgical infection, it might be necessary to apply some criteria on the date of the surgery and others on the date of the infection.
 
-Prepare a figure shell for a flowchart, and make sure the order of the criteria in the figure aligns with the order the criteria are listed in the text. Sometimes, it can be relevant to leave out some steps used to go from raw data to an index date from the flowchart. However, all exclusion criteria that are applied subsequent to defining the index date should be included in the flowchart.
+Prepare a figure shell for a flowchart, and make sure the order of the criteria in the figure aligns with the order the criteria are listed in the text. Sometimes,[^11] it can be relevant to leave out some steps used to go from raw data to an index date from the flowchart. However, all exclusion criteria that are applied subsequent to defining the index date should be included in the flowchart.
+
+[^11]: Consider a project where you want to include all infections of a certain type, e.g., pneumonia. A person might be admitted to a hospital and transferred between departments, and so several records of the same pneumonia can be created. Another person might have pneumonia several times, and each distinct infection should be included. How you get from raw data to a data set where each case of pneumonia is included once, is essential to specify in the data management plan but it might not be helpful to the target audience.
 
 ### Variables
 
@@ -171,12 +175,12 @@ The analyses need to be done should be specified. Things to consider:
 -   how should variables be included into the models (e.g., continuous variables can be included linearly, as splines, or using some other transformation),
 -   how should assumptions be assessed, and what should be done if they do not hold,
 -   which non-parametric methods (Kaplan-Meier, Aalen-Johansen, ...) should be used,
--   how should missing data be handled (this should be a section on its own),
+-   how should missing data be handled (this can be a section on its own),
 -   how will uncertainty be estimated if it cannot simply be extracted from standard output (e.g., bootstrapping),
 -   sensitivity- and subgroup analyses should have their own sections, but questionable assumptions in the main analyses which will be challenged in sensitivity analyses could be mentioned here,
--   which software packages to use (R, SAS, STATA, ...)
+-   which software packages to use (R, SAS, STATA, ...).
 
-To reduce the risk of p-hacking, it is a good idea to pre-specify interim results to evaluate before moving on. See @sec-sanity.
+To reduce the risk of p-hacking, it can be a good idea to pre-specify interim results to evaluate before moving on. See @sec-sanity.
 
 #### Missing data
 
@@ -197,11 +201,11 @@ It might be necessary to run bias analyses to handle, e.g., unmeasured confoundi
 -   lookback period for variables,
 -   in- or exclusion of specific patient groups.
 
-If residual confounding is a concern, restriction to specific subgroups can be used.[^11] E.g., if obesity, alcohol consumption, smoking or other variables that are hard to measure are important confounders, an analysis restricted to individuals who are known or presumed to be similar with respect to these variables (have a record compatible with obesity, alcoholism, COPD, etc.) may be important to run.[^12]
+If residual confounding is a concern, restriction to specific subgroups can be used.[^12] E.g., if obesity, alcohol consumption, smoking or other variables that are hard to measure are important confounders, an analysis restricted to individuals who are known or presumed to be similar with respect to these variables (have a record compatible with obesity, alcoholism, COPD, etc.) may be important to run.[^13]
 
-[^11]: Note the difference between a subgroup analysis and a stratified analysis.
+[^12]: Note the difference between a subgroup analysis and a stratified analysis.
 
-[^12]: Depending on the strength of the confounder it could be considered if the primary analysis should be within the restricted population, coming at the cost of generalizability and a reduced population size which may affect precision. This consideration should be made before running the analyses.
+[^13]: Depending on the strength of the confounder it could be considered if the primary analysis should be within the restricted population, coming at the cost of generalizability and a reduced population size which may affect precision. This consideration should be made before running the analyses.
 
 Splitting and reanalyzing the population on calendar time can be relevant. Perhaps the demographics of the population, or the indication of a treatment changes over time, introducing a shift in the confounding pattern. However, calendar time in itself is generally hard to interpret as an effect modifier. At best it is a proxy for some other variable. Therefore calendar time stratification arguably belongs under subgroup (sensitivity) analyses rather than stratified analyses.
 
@@ -213,9 +217,9 @@ Make a set of tables that are empty but otherwise ready to be published. There s
 
 As for table shells, there should be a specification of each figure to be included in the publication. Remember to make a figure shell for the flow chart!
 
-It is generally harder to make shells for figures than for tables, so consider copying/linking to figures from other publications that can be used as templates. Specify axis-labels, colors etc. if they need to be specific.[^13]
+It is generally harder to make shells for figures than for tables, so consider copying/linking to figures from other publications that can be used as templates. Specify axis-labels, colors etc. if they need to be specific.[^14]
 
-[^13]: It will often be quick to change these parameters, but if you know in advance what they should be you might as well spell it out explicitly.
+[^14]: It will often be quick to change these parameters, but if you know in advance what they should be you might as well spell it out explicitly.
 
 ### Coding table {#sec-codingTable}
 
@@ -223,32 +227,32 @@ Provide all (diagnosis/procedure/ATC/SNOMED/NPU/...) codes needed to define the 
 
 Columns to include in the coding table could be:
 
--   explicit variable names[^14] (typically, these are irrelevant unless you want to annoy your statistical programmer, however, when using a common data model across sites they are essential),
--   informal variable names,[^15]
+-   explicit variable names[^15] (typically, these are irrelevant unless you want to annoy your statistical programmer, however, when using a common data model across sites they are essential),
+-   informal variable names,[^16]
 -   data source from which the codes are pulled, e.g., the Danish National Patient Registry (DNPR),
 -   the actual codes to be used, e.g., DN18,
 -   patient- and diagnosis type (applicable to Danish National Patient Registry); in-, out-, ER-patients, primary or secondary diagnoses,
 -   lookback from index date,
--   notes on issues that are relevant for a specific variable that does not warrant a column in it self. E.g., thresholds for biomarkers defining conditions like CKD (eGFR) or type 2 diabetes mellitus (HbA1c); that a diagnosis code mycosis fungoides must be made a department of dermatology to be included.
+-   notes on issues that are relevant for a specific variable that does not warrant a column in it self. E.g., thresholds for biomarkers defining conditions like CKD (eGFR) or type 2 diabetes mellitus (HbA1c); or that a diagnosis code for mycosis fungoides must be made a department of dermatology to be included.
 
-[^14]: I.e., the name the variable should have in the analytic script, e.g., `gld_180d`. If explicit variable names are used, they have to conform to the statistical software package used.
+[^15]: I.e., the name the variable should have in the analytic script, e.g., `gld_180d`. If explicit variable names are used, they have to conform to the statistical software package used.
 
-[^15]: I.e., the name as you would refer to it in text, e.g., 'glucose lowering drugs within 180 days'.
+[^16]: I.e., the name as you would refer to it in text, e.g., 'glucose lowering drugs within 180 days'.
 
-Further structure can be added as in @tbl-codingtable where variables are sorted by their role (exposure, in-/exclusion, outcomes, etc.).
+Further structure can be added as in @tbl-codingtable where variables are sorted by their role (exposure, in-/exclusion, outcomes, etc.). Note that seemingly similar variables can be defined differently depending on their purpose at different stages in the study. In @tbl-codingtable, specific algorithms are used to define plague and cholera as outcomes, whereas sensitive algorithms are used for exclusion criteria.
 
 ```{r, echo = FALSE}
 #| label: tbl-codingtable
 #| tbl-cap: |
-#|   Suggested structure for a coding table
+#|   Suggested structure for a coding table. Code column intentionally left blank. Make codes easy to transfer to statistical software.
 
 library(gt)
 
 tbl <- tibble::tribble(
                  ~Variable,            ~`Data source`, ~Codes, ~`Patient type`,     ~`Diagnosis types`,  ~Lookback,                                        ~Notes,
-                "Exposure",                      "",     "",          "NA",                  "NA",       "NA",                                           "",
-                  "SGLT2i", "Prescription registry",     "",            "",                   "",         "",                                            "",
-                 "GLP-1RA", "Prescription registry",     "",            "",                   "",         "",      "Exclude brand names Saxenda and Wegovy",
+                "Exposure",                      "Prescription registry",     "",          "NA",                  "NA",       "NA",                                           "",
+                  "SGLT2i", "",     "",            "",                   "",         "",                                            "",
+                 "GLP-1RA", "",     "",            "",                   "",         "",      "Exclude brand names Saxenda and Wegovy",
            "In-/exclusion",                      "",     "",            "",                   "",         "",                                            "",
                    "T2DM/Glucose lowering drugs", "Prescription registry",     "",          "NA",                 "NA",   "1 year",                                            "",
               "T2DM/HbA1c",   "Laboratory registry",     "",          "NA",                 "NA",  "3 years",                "Any HbA1c > \u2026 indicates T2DM",
@@ -256,9 +260,9 @@ tbl <- tibble::tribble(
           "Recent plague or Cholera", "Patient registry",     "",          "All",                 "Primary, secondary",   "90 days",                                            "",
               
                        "\u2026",                      "",     "",            "",                   "",         "",                                            "",
-                "Outcomes",                      "",     "",   "Inpatient",            "Primary",         "", "Only at a department of infectious diseases",
-                  "Plague",      "Patient registry",     "",            "",                   "",         "",                                            "",
-                 "Cholera",      "Patient registry",     "",            "",                   "",         "",                                            "",
+                "Outcomes",                      "Patient registry",     "",   "Inpatient",            "Primary",         "", "Only at a department of infectious diseases",
+                  "Plague",      "",     "",            "",                   "",         "",                                            "",
+                 "Cholera",      "",     "",            "",                   "",         "",                                            "",
            "Comorbidities",                      "",     "",            "",                   "",         "",                                            "",
                        "\u2026",                      "",     "",            "",                   "",         "",                                            "",
             "Comedication",                      "",     "",            "",                   "",         "",                                            "",
@@ -310,8 +314,8 @@ List of literature referenced in the SAP
 
 1.  Avoid repetitions.
     -   Whenever possible specify things exactly once, then there is exactly one place to change this when revising. This means that the statistician/statistical programmer does not accidentally read the recruitment period the one place you overlooked when revising.
-2.  Do not write codes from the coding table in the text, it serves no purpose when it is also specified in a coding table (see also the point above).
-3.  Avoid circular reasoning/definitions. It can be necessary to refer to a later section of the SAP, but beware that this later section does not point back, so that in effect, the index date is defined as the date of the index date, or similar.
+2.  Do not write codes from the coding table in the text, it serves no purpose when it is also specified in a coding table (see previous point about repetitions).
+3.  Avoid circular reasoning/definitions. It can be necessary to refer to a later section of the SAP, but make sure that this later section does not point back, so that in effect, the index date is defined as the date of the index date, or similar.
 
 ## Simple tip for specifying the order of inclusion-/exclusion criteria
 
