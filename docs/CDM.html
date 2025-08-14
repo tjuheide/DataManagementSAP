@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Pharmacoepidemiology – Data management and statistical analysis plans</title>
+<title>Multicenter studies - an aside on common data models – Data management and statistical analysis plans</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -79,7 +79,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./pe.html">Pharmacoepidemiology</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Home</a></li><li class="breadcrumb-item"><a href="./CDM.html">Multicenter studies - an aside on common data models</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -124,7 +124,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./CDM.html" class="sidebar-item-text sidebar-link">
+  <a href="./CDM.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Multicenter studies - an aside on common data models</span></a>
   </div>
 </li>
@@ -132,7 +132,7 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./pe.html" class="sidebar-item-text sidebar-link active">
+            <a href="./pe.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Pharmacoepidemiology</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -157,16 +157,21 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#what" id="toc-what" class="nav-link active" data-scroll-target="#what">What?</a></li>
+  <li><a href="#collaborating-with-other-groups" id="toc-collaborating-with-other-groups" class="nav-link active" data-scroll-target="#collaborating-with-other-groups"><span class="header-section-number">1</span> Collaborating with other groups</a>
+  <ul class="collapse">
+  <li><a href="#statistical-software." id="toc-statistical-software." class="nav-link" data-scroll-target="#statistical-software."><span class="header-section-number">1.1</span> Statistical software.</a></li>
+  <li><a href="#site-specific-regulations-and-research-environments" id="toc-site-specific-regulations-and-research-environments" class="nav-link" data-scroll-target="#site-specific-regulations-and-research-environments"><span class="header-section-number">1.2</span> Site specific regulations and research environments</a></li>
+  <li><a href="#instructions-on-how-others-should-run-your-scripts" id="toc-instructions-on-how-others-should-run-your-scripts" class="nav-link" data-scroll-target="#instructions-on-how-others-should-run-your-scripts"><span class="header-section-number">1.3</span> Instructions on how others should run your scripts</a></li>
+  </ul></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/tjuheide/DataManagementSAP/blob/main/pe.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/tjuheide/DataManagementSAP/blob/main/CDM.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Home</a></li><li class="breadcrumb-item"><a href="./CDM.html">Multicenter studies - an aside on common data models</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Pharmacoepidemiology</h1>
+<h1 class="title">Multicenter studies - an aside on common data models</h1>
 </div>
 
 
@@ -183,20 +188,49 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="what" class="level3">
-<h3 class="anchored" data-anchor-id="what">What?</h3>
-<p>The term “pharmacoepidemiology” covers a range of study types, with various aims, some are causal while others are descriptive:</p>
+<section id="collaborating-with-other-groups" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="collaborating-with-other-groups"><span class="header-section-number">1</span> Collaborating with other groups</h2>
+<p>If you plan to coordinate a study across several centers, a common data model is essential to ensure consistent methods across sites. As the coordinating investigator you have a particular responsibility to ensure that all centers are able to align to the common data model. Below are some aspects that would be relevant to consider for smooth collaboration.</p>
+<section id="statistical-software." class="level3" data-number="1.1">
+<h3 data-number="1.1" class="anchored" data-anchor-id="statistical-software."><span class="header-section-number">1.1</span> Statistical software.</h3>
+<p>If you plan to write code in R/SAS/STATA, make sure that your collaborators have access to the same software at a sufficiently high (or low) version number.</p>
+<p>It will be an advantage if they are regular users of the same software so they will be able to understand what is done, but this is not essential. Possibly, they will do data management using some other package, save data in a specified file format, that can be loaded and analysed using your scripts. E.g., if you write analytic scripts in R, collaborating center 1 do data management in SAS, while center 2 use Python, and center 3 use STATA,<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> it might be a bother for the centers to provide data in .rds-format. Instead, it can be practical for all to save their data in .csv-format, in which case the analytic script should rely on reading .csv-files rather than some other format. <strong>It should not be the responsibility of the individual center, to go through the analytic scripts to change the way data is loaded each time data is loaded.</strong> That is your responsibility as the coordinating investigator.</p>
+<p>If you use R or similar software, where you regularly load packages not part of the base program, you need to be sure that all packages you use are available to you collaborators. Using packages installed from GitHub can be problematic if collaborators are only able to get packages from, e.g., CRAN. What is a standard package to you, might not be to your collaborators.</p>
+</section>
+<section id="site-specific-regulations-and-research-environments" class="level3" data-number="1.2">
+<h3 data-number="1.2" class="anchored" data-anchor-id="site-specific-regulations-and-research-environments"><span class="header-section-number">1.2</span> Site specific regulations and research environments</h3>
+<p>Assuming centers work at remote servers, similar to SDS or DST, they will be subject to regulations beyond their control. These regulations can vary from site to site, and are relevant to consider when programming.</p>
 <ul>
-<li><p>Does treatment A affects the risk of some outcome compared to either no treatment or an alternative intervention? (Causal aim.)</p></li>
-<li><p>How many start treatment A and how long do they adhere? (Descriptive aim.)</p></li>
-<li><p>What is the population risk of (known) side effects of treatment A? (Descriptive aim.)</p></li>
-<li><p>What is the individual risk of (known) side effects of treatment A? (Predictive aim.)</p></li>
+<li><p>File extensions; make sure you save the output using a file extension that you collaborators are allowed to return to you. Common extensions like, .pdf, .png, .docx, .rtf etc. should generally not be problematic, but extensions that are also regularly used for micro data, like .csv, .rds, .sas7bdat or (yikes!) .xlsx<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> may pose a problem.</p></li>
+<li><p>File size; while you will generally be unable to know how large an output file will be when collaborators run your scripts, it will be a good idea to know what their limitations are for file sizes. At the time of writing, SDS allows .pdf-files up to 1 MB and .png-files up to 5 MB, your collaborators might have to adhere to a uniform limit of 2 MB regardless of file extension. If your version of figure 1 is at 4 MB you might have to reconsider the resolution, size or format.</p></li>
+<li><p>Sensitive data; the minimum count allowed in a cell can vary between sites. If your script handles <code>N &lt; n0</code> in an automated fashion, <code>n0</code> should either be the maximum limit across sites (for consistency), or easy for collaborators to change in the scripts. Likewise, percentiles (in particular minimum and maximum), figures with outliers (scatter plots, skewed distributions), risk curves with large jumps, etc. may or may not be an issue at various sites. It will be the responsibility of your collaborators to make sure they adhere to local regulations, but do what you can to help.</p></li>
 </ul>
+<p>Still assuming your collaborators work at a remote server, they will need to forward your scripts to their data provider. This process may not be trivial. <strong>Take the time you need to write and validate and double check your scripts before sharing them!</strong> You will probably have to make a revision at some point, but it should not be 2 days after sending the first batch of analytic scripts. Possibly, one of the centers is a regular collaborator which you can use for feedback and sparring, or they might have less administrative delay. Consider sharing your code with them first to sort out bugs before sharing with all.</p>
+</section>
+<section id="instructions-on-how-others-should-run-your-scripts" class="level3" data-number="1.3">
+<h3 data-number="1.3" class="anchored" data-anchor-id="instructions-on-how-others-should-run-your-scripts"><span class="header-section-number">1.3</span> Instructions on how others should run your scripts</h3>
+<p>Make sure your instructions for running the scripts come across clearly. Possibly, there are situations where it will be fine to write instructions as comments in the top of an analytic script, but generally people prefer to read a document in a format that was meant for reading (.docx or .pdf). Do not ask your collaborators to read through several hundred lines of code (in a programming language they might not know) to see which output files they should return to you, and which are for local use (e.g., plots to check assumptions). Instead hand them a document in a format that is pleasant to read with</p>
+<ul>
+<li>instructions on required folder structure and possibly paths to specify in a master script,</li>
+<li>which programs to run in which order,</li>
+<li>which output files are for their eyes only, and which are necessary for you,</li>
+<li>etc.</li>
+</ul>
+<p>In short, you should not rely on your collaborators picking up a handful of comments you have written across several scripts, where the bulk of the text is code that they should not be concerned with.</p>
+<p>Whatever you can do to ease the burden on other centers will improve collaboration. They might not be ready to run your scripts when you get in touch. If they furthermore have to (get data providers to) install packages and check all your code to make local adaptations due to incompatible input or output formats, you will delay the time it takes until they return the results to you. Speaking from experience as a non-coordinating collaborator, receiving scripts that return errors, which could have been avoided had the coordinating investigator specified and adhered to a common data model, severely dampens motivation. If this becomes modus operandi, all collaborators might postpone spending time on the project, hoping someone else will go through and debug the scripts.</p>
 
 
 </section>
+</section>
 
-</main> <!-- /main -->
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>If they use SPSS you should reconsider if they are up to the task. If they use Excel you need to report them to the proper authorities.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>You should not save data in spreadsheet formats! Excel loves converting things into dates. Ask the geneticists what happens.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -619,4 +653,4 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/tjuheide/DataManagementSAP/blob/main/pe.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/tjuheide/DataManagementSAP/blob/main/CDM.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li></ul></div></div></div></footer></body></html>

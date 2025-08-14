@@ -14,6 +14,7 @@ website:
         text: Home
         contents: 
         - basics.qmd
+        - CDM.qmd
       - section: "Pharmacoepidemiology"
         href: pe.qmd
         contents: 

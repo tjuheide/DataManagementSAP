@@ -428,39 +428,6 @@ If a more sensitive approach is used, e.g., because you don't trust diagnosis co
 2.  restrict to the first diagnosis per patient, this marks the index date,
 3.  restrict to index dates within the study period (patients 4 and 6 are excluded).
 
-## An aside on multicenter studies
-
-If you plan to coordinate a study across several centers, a common data model is essential to ensure consistent methods across sites. As the coordinating investigator you have a particular responsibility to ensure that all centers are able to align to the common data model. Some aspects that would be relevant to consider for smooth collaboration could be:
-
--   Statistical software.
-
-    -   If you plan to write code in R/SAS/STATA, make sure that your collaborators have access to the same software at a sufficiently high (or low) version number.
-    -   It will be an advantage if they are regular users of the same software so they will be able to understand what is done, but this is not essential. Possibly, they will do data management using some other package, save data in a specified file format, that can be loaded and analysed using your scripts. E.g., if you write analytic scripts in R, collaborating center 1 do data management in SAS, while center 2 use Python, and center 3 use STATA,[^17] it might be a bother for the centers to provide data in .rds-format. Instead, it can be practical for all to save their data in .csv-format, in which case the analytic script should rely on reading .csv-files rather than some other format. **It should not be the responsibility of the individual center, to go through the analytic scripts to change the way data is loaded each time data is loaded.** That is your responsibility as the coordinating investigator.
-    -   If you use R or similar software, where you regularly load packages not part of the base program, you need to be sure that all packages you use are available to you collaborators. Using packages installed from GitHub can be problematic if collaborators are only able to get packages from, e.g., CRAN. What is a standard package to you, might not be to your collaborators.
-
--   Assuming centers work at remote servers, similar to SDS or DST, they will be subject to regulations beyond their control. These regulations can vary from site to site, and are relevant to consider when programming.
-
-    -   File extensions; make sure you save the output using a file extension that you collaborators are allowed to return to you. Common extensions like, .pdf, .png, .docx, .rtf etc. should generally not be problematic, but extensions that are also regularly used for micro data, like .csv, .rds, .sas7bdat or (yikes!) .xlsx[^18] may pose a problem.
-    -   File size; while you will generally be unable to know how large an output file will be when collaborators run your scripts, it will be a good idea to know what their limitations are for file sizes. At the time of writing, SDS allows .pdf-files up to 1 MB and .png-files up to 5 MB, your collaborators might have to adhere to a uniform limit of 2 MB regardless of file extension. If your version of figure 1 is at 4 MB you might have to reconsider the resolution, size or format.
-    -   Sensitive data; the minimum count allowed in a cell can vary between sites. If your script handles `N < n0` in an automated fashion, `n0` should either be the maximum limit across sites (for consistency), or easy for collaborators to change in the scripts. Likewise, percentiles (in particular minimum and maximum), figures with outliers (scatter plots, skewed distributions), risk curves with large jumps, etc. may or may not be an issue at various sites. It will be the responsibility of your collaborators to make sure they adhere to local regulations, but do what you can to help.
-
--   Still assuming your collaborators work at a remote server, they will need to forward your scripts to their data provider. This process may not be trivial. **Take the time you need to write and validate and double check your scripts before sharing them!** You will probably have to make a revision at some point, but it should not be 2 days after sending the first batch of analytic scripts. Possibly, one of the centers is a regular collaborator which you can use for feedback and sparring, or they might have less administrative delay. Consider sharing your code with them first to sort out bugs before sharing with all.
-
--   Make sure your instructions for running the scripts come across clearly. Possibly, there are situations where it will be fine to write instructions as comments in the top of an analytic script, but generally people prefer to read a document in a format that was meant for reading. Do not ask your collaborators to read through several hundred lines of code (in a programming language they might not know) to see which output files they should return to you, and which are for local use (e.g., plots to check assumptions). Instead hand them a document in a format that is pleasant to read with
-
-    -   instructions on required folder structure and possibly paths to specify in a master script,
-    -   which programs to run in which order,
-    -   which output files are for their eyes only, and which are necessary for you,
-    -   etc.
-
-    In short, you should not rely on your collaborators picking up a handful of comments you have written across several scripts, where the bulk of the text is code that they should not be concerned with.
-
-[^17]: If they use SPSS you should reconsider if they are up to the task. If they use Excel you need to report them to the proper authorities.
-
-[^18]: You should not save data in spreadsheet formats! Excel loves converting things into dates. Ask the geneticists what happens.
-
-Whatever you can do to ease the burden on other centers will improve collaboration. They might not be ready to run your scripts when you get in touch. If they furthermore have to (get data providers to) install packages and check all your code to make local adaptations due to incompatible input or output formats, you will delay the time it takes until they return the results to you. Speaking from experience as a non-coordinating collaborator, receiving scripts that return errors, which could have been avoided had the coordinating investigator specified and adhered to a common data model, severely dampens motivation. If this becomes modus operandi, all collaborators might postpone spending time on the project, hoping someone else will go through and debug the scripts.
-
 ## External links
 
 [Graphical Depiction of Longitudinal Study Designs in Health Care Databases](https://doi.org/10.7326/M18-3079)
