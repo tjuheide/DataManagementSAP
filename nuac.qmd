@@ -35,7 +35,7 @@ gt(df) |>
 ```
 
 ## Background
-SGLT2-inhibitors have been linked with various infections.[^1] Whether it affects the risk of plague or Cholera remains unknown.
+SGLT2-inhibitors have been linked with various infections.[^1] Whether it affects the risk of plague or cholera remains unknown.
 
 [^1]: In an actual SAP you should provide references throughout the document as is relevant. In this example no references will be provided.
 
@@ -60,7 +60,7 @@ We will use data from:
 
 all of which are well known to the statistical programmer and will not be described or documented further here.[^3]
 
-[^3]: A data dictionary or other forms of documentation can be essential if the data sources are unknown to the statistical programmer.
+[^3]: A data dictionary or other forms of documentation can be essential if the data sources are unknown to the statistical programmer, or if data can be made publicly available so that others can reproduce your results.
 
 ### Study and recruitment period {#sec-period}
 The study period will be 1 January 2016 through 31 December 2024.
@@ -90,7 +90,7 @@ We will include individuals initiating SGLT2i or GLP-1RA during the study period
     g.	do not live in Denmark.
 4.	Include individuals whose index date lies in the recruitment period.[^5]
 
-[^5]: Note how the dates are not written here - they are defined in @sec-period
+[^5]: Note how the dates are not written here - they are defined in @sec-period and we seek to avoid repetitions.
 
 Individuals will be assigned to exposure groups based on the prescription they received on the index date. At this point, check that there are at least 10,000 individuals in each exposure group. If this is not the case, we need to make sure that the correct codes have been used.
 
@@ -126,7 +126,7 @@ For added robustness, sIPT weighting will be combined with multivariable adjustm
 
 The proportionality assumption will be assessed using Schoenfeld residuals. If proportionality cannot be achieved, the 5-year risk estimates from the Aalen-Johansen estimator for each exposure group will be compared to obtain a 5-year risk ratio.[^9]
 
-[^9]: Often this is what you would do anyway when using PS-methods. Cox-regression is simply mentioned to point out that PS-methods and multivariable modelling can be combined.
+[^9]: Often this is what you would do anyway when using PS-weighting or -matching. Cox-regression is primarily mentioned to point out that PS-methods can be combined with a multivariable outcome-model.
 
 For stratified analyses and sensitivity analyses restricted to subgroups, we will re-estimate the sIPT weights. We will assess the balance of baseline variables in these subgroup analyses using ASMDs. However, we will not re-evaluate the methods if sufficient balance cannot be achieved. Instead, any imbalance will be reported in the manuscript or supplementary material. Outcome analyses will be conducted regardless of the ASMD-values.
 
@@ -169,7 +169,7 @@ Finally, we will conduct an on-treatment analysis. For this analysis an individu
 ```{r, echo = FALSE}
 #| label: tbl-tblshell1
 #| tbl-cap: |
-#|   Naturally, all variables should be listed in a proper SAP.
+#|   (Naturally, all variables should be listed in a proper SAP.)
 
 library(gt)
 
