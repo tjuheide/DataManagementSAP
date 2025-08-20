@@ -138,7 +138,7 @@ Likely, there are several relevant pieces of information which are rather matter
 -   Study-, recruitment-, washout-, ... periods: if these are specified exactly once in the document, they only need to be changed once if they are revised while conducting the study.
 -   Time: how long is a month (e.g., 28, 30 or 30.5 days) and/or a year (e.g., 360, 365 or 365.25 days), if these are relevant units of time. Consider if a year should be the same as 12 months if both units are used in the project. Consider avoiding having both months and years as time units in the same project.
 -   Exposure groups: If there is an exposure/intervention/... and a control/comparison/reference... group, consider specifying these. E.g., the exposure group is SGLT2i-users and the control group is GLP-1RA-users.
--   If the independent variable of primary interest (the "exposure") is continuous, consider specifying the reference value. E.g., when comparing risk of dementia for different eGFR-values, a value of 75 mL/min/1.73m^2^ could be used as the reference.
+-   If the exposure is continuous, consider specifying the reference value. E.g., when comparing risk of dementia for different eGFR-values, a value of 75 mL/min/1.73m^2^ could be used as the reference.
 
 ### Study population and index date
 
@@ -146,13 +146,13 @@ Specify step-by-step how the study population should be derived from the raw reg
 
 [^10]: Sometimes there will be more than one day that is important. E.g., for a population with post-surgical infection, it might be necessary to apply some criteria on the date of the surgery and others on the date of the infection.
 
-Prepare a figure shell for a flowchart, and make sure the order of the criteria in the figure aligns with the order the criteria are listed in the text. Sometimes,[^11] it can be relevant to leave out some steps used to go from raw data to an index date from the flowchart. However, all exclusion criteria that are applied subsequent to defining the index date should be included in the flowchart.
+Prepare a figure shell for a flowchart, and make sure the order of the criteria in the figure aligns with the order the criteria are listed in the text. Sometimes, it can be relevant to leave out some steps used to go from raw data to an index date from the flowchart.[^11] However, all exclusion criteria that are applied subsequent to defining the index date should be included in the flowchart.
 
-[^11]: Consider a project where you want to include all infections of a certain type, e.g., pneumonia. A person might be admitted to a hospital and transferred between departments, and so several records of the same pneumonia can be created. Another person might have pneumonia several times, and each distinct infection should be included. How you get from raw data to a data set where each case of pneumonia is included once, is essential to specify in the data management plan but it might not be helpful to the target audience.
+[^11]: Consider a project where you want to include all infections of a certain type, e.g., pneumonia. A person might be admitted to a hospital and transferred between departments, and so several records of the same pneumonia may be created in the registries. Another person might have pneumonia several times, and each distinct infection should be included. How you get from raw data, to a data set where each case of pneumonia is included once is essential in the data management plan but it might not be helpful to the target audience.
 
 ### Variables
 
-Depending on the study design, different types of variables are necessary to define. A table of codes to be used for the individual variable should always be provided. This table can be a separate file or an appendix within the same document. (See also @sec-codingTable below.)
+Depending on the study design, different types of variables are necessary to define. A table of codes to be used for the individual variable should always be provided. This table can be a separate file or an appendix within the SAP. (See also @sec-codingTable below.)
 
 Some variables will likely have different roles, and it might be relevant to have separate paragraphs outlining (as relevant):
 
@@ -203,7 +203,7 @@ It might be necessary to run bias analyses to handle, e.g., unmeasured confoundi
 
 If residual confounding is a concern, restriction to specific subgroups can be used.[^12] E.g., if obesity, alcohol consumption, smoking or other variables that are hard to measure are important confounders, an analysis restricted to individuals who are known or presumed to be similar with respect to these variables (have a record compatible with obesity, alcoholism, COPD, etc.) may be important to run.[^13]
 
-[^12]: Note the difference between a subgroup analysis and a stratified analysis.
+[^12]: Note the difference between a subgroup analysis and a stratified analysis. The implicit aim of a stratified analysis is to assess effect modification, and all individuals are included, being in exactly one of the strata (assuming no missing data). Subgroup analyses on the other hand, might include only those with a certain characteristic, e.g., presence of a confounding factor which can be found with high positive predictive value but low sensitivity. Such a factor will likely result in residual confounding in the main analysis, but not within the subgroup having the factor. Note that residual confounding would be expected among those without the factor making to other subgroup less relevant to analyse.
 
 [^13]: Depending on the strength of the confounder it could be considered if the primary analysis should be within the restricted population, coming at the cost of generalizability and a reduced population size which may affect precision. This consideration should be made before running the analyses.
 
@@ -227,7 +227,7 @@ Provide all (diagnosis/procedure/ATC/SNOMED/NPU/...) codes needed to define the 
 
 Columns to include in the coding table could be:
 
--   explicit variable names[^15] (typically, these are irrelevant unless you want to annoy your statistical programmer, however, when using a common data model across sites they are essential),
+-   explicit variable names[^15] (typically, these are irrelevant unless you want to annoy your statistical programmer, however, when using a common data model across sites they are essential for the input data),
 -   informal variable names,[^16]
 -   data source from which the codes are pulled, e.g., the Danish National Patient Registry (DNPR),
 -   the actual codes to be used, e.g., DN18,
