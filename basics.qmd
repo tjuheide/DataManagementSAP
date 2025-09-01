@@ -148,7 +148,7 @@ Specify step-by-step how the study population should be derived from the raw reg
 
 Prepare a figure shell for a flowchart, and make sure the order of the criteria in the figure aligns with the order the criteria are listed in the text. Sometimes, it can be relevant to leave out some steps used to go from raw data to an index date from the flowchart.[^11] However, all exclusion criteria that are applied subsequent to defining the index date should be included in the flowchart.
 
-[^11]: Consider a project where you want to include all infections of a certain type, e.g., pneumonia. A person might be admitted to a hospital and transferred between departments, and so several records of the same pneumonia may be created in the registries. Another person might have pneumonia several times, and each distinct infection should be included. How you get from raw data, to a data set where each case of pneumonia is included once is essential in the data management plan but it might not be helpful to the target audience.
+[^11]: Consider a project where you want to include all infections of a certain type, e.g., pneumonia. A person might be admitted to a hospital and transferred between departments, and so several records of the same pneumonia may be created in the registries. Another person might have pneumonia several times, and each distinct infection should be included. How you get from raw data, to a data set where each case of pneumonia is included once is essential in the data management plan but it might not be helpful to the audience for the finished paper.
 
 ### Variables
 
@@ -169,7 +169,7 @@ This is the key element of the statistical part of the SAP.
 
 Some aspects need little explanation. E.g., populating the table shell for Table 1 with baseline characteristics (in generic studies), does not generally require any particular explanation. It might be relevant to explicitly state that continuous variables (except calendar time) will be reported by their median and interquartile interval (Q1-Q3); that for dichotomous variables only one level (e.g., only the number of individuals *with* heart failure, not those without) will be reported, while for multilevel categorical variables, all levels will be reported.
 
-The analyses need to be done should be specified. Things to consider:
+The relevant analyses should be specified. Things to consider:
 
 -   which type of (regression) model, if any, should be used,
 -   how should variables be included into the models (e.g., continuous variables can be included linearly, as splines, or using some other transformation),
@@ -203,7 +203,7 @@ It might be necessary to run bias analyses to handle, e.g., unmeasured confoundi
 
 If residual confounding is a concern, restriction to specific subgroups can be used.[^12] E.g., if obesity, alcohol consumption, smoking or other variables that are hard to measure are important confounders, an analysis restricted to individuals who are known or presumed to be similar with respect to these variables (have a record compatible with obesity, alcoholism, COPD, etc.) may be important to run.[^13]
 
-[^12]: Note the difference between a subgroup analysis and a stratified analysis. The implicit aim of a stratified analysis is to assess effect modification, and all individuals are included, being in exactly one of the strata (assuming no missing data). Subgroup analyses on the other hand, might include only those with a certain characteristic, e.g., presence of a confounding factor which can be found with high positive predictive value but low sensitivity. Such a factor will likely result in residual confounding in the main analysis, but not within the subgroup having the factor. Note that residual confounding would be expected among those without the factor making to other subgroup less relevant to analyse.
+[^12]: Note the difference between a subgroup analysis and a stratified analysis. The implicit aim of a stratified analysis is to assess effect modification, and all individuals are included, being in exactly one of the strata (assuming no missing data). Subgroup analyses on the other hand, might include only those with a certain characteristic, e.g., presence of a confounding factor which can be found with high positive predictive value but low sensitivity. Such a factor will likely result in residual confounding in the main analysis, but not within the subgroup having the factor. Note that residual confounding would be expected among those without the factor making that subgroup less relevant to analyse.
 
 [^13]: Depending on the strength of the confounder it could be considered if the primary analysis should be within the restricted population, coming at the cost of generalizability and a reduced population size which may affect precision. This consideration should be made before running the analyses.
 
@@ -232,14 +232,14 @@ Columns to include in the coding table could be:
 -   data source from which the codes are pulled, e.g., the Danish National Patient Registry (DNPR),
 -   the actual codes to be used, e.g., DN18,
 -   patient- and diagnosis type (applicable to Danish National Patient Registry); in-, out-, ER-patients, primary or secondary diagnoses,
--   lookback from index date,
+-   lookback from index date for baseline variables,
 -   notes on issues that are relevant for a specific variable that does not warrant a column in it self. E.g., thresholds for biomarkers defining conditions like CKD (eGFR) or type 2 diabetes mellitus (HbA1c); or that a diagnosis code for mycosis fungoides must be made a department of dermatology to be included.
 
 [^15]: I.e., the name the variable should have in the analytic script, e.g., `gld_180d`. If explicit variable names are used, they have to conform to the statistical software package used.
 
 [^16]: I.e., the name as you would refer to it in text, e.g., 'glucose lowering drugs within 180 days'.
 
-Further structure can be added as in @tbl-codingtable where variables are sorted by their role (exposure, in-/exclusion, outcomes, etc.). Note that seemingly similar variables can be defined differently depending on their purpose at different stages in the study. In @tbl-codingtable, specific algorithms are used to define plague and cholera as outcomes, whereas sensitive algorithms are used for exclusion criteria.
+Further structure can be added as in @tbl-codingtable where variables are sorted by their role (exposure, in-/exclusion, outcomes, etc.). Note that seemingly similar variables can be defined differently depending on their purpose at different stages in the study. In @tbl-codingtable, sensitive algorithms are used to define plague and cholera as exclusion criteria, whereas more specific algorithms are used for outcomes.
 
 ```{r, echo = FALSE}
 #| label: tbl-codingtable
@@ -319,13 +319,13 @@ List of literature referenced in the SAP
 
 ## Simple tip for specifying the order of inclusion-/exclusion criteria
 
-Draw timelines of hypothetical patients' records in registries. How might records of various conditions, relative to each other and the recruitment period, affect who gets in- and excluded? Who would you want to include and who not? How can you set up the order of in- and exclusion criteria to obtain the desired study population? Of particular importance is the point in your inclusion-/exclusion criteria ordering, where you define the index date. Once the index date is set, it is generally of minor importance how subsequent criteria are ordered from the point of view of the data manager.
+Draw timelines of hypothetical patients' records in registries. How might records of various conditions, relative to each other and the recruitment period, affect who gets in- and excluded? Who would you want to include and who not? How can you set up the order of in- and exclusion criteria to obtain the desired study population? Of particular importance, is the point in your inclusion-/exclusion criteria ordering where you define the index date. Once the index date is set, it is generally of minor importance how subsequent criteria are ordered from the point of view of the data manager.
 
 Consider this description of a study population from a hypothetical protocol:
 
 > We will include individuals diagnosed with herpes zoster between 2000 and 2020 using the Danish National Patient Registry. All patients are required to have been diagnosed at a department of dematology to be included. Patient will be included at the time of their first diagnosis.
 
-Beyond having a diagnosis of herpes zoster, the protocol outlines three key elements to consider, when settling on the order of the inclusion-/exclusion criteria:
+Beyond having a diagnosis of herpes zoster, the protocol outlines three key elements to consider when settling on the order of the inclusion-/exclusion criteria:
 
 -   calendar time of diagnosis,
 -   department of dermatology, and
@@ -333,7 +333,7 @@ Beyond having a diagnosis of herpes zoster, the protocol outlines three key elem
 
 These criteria can be ordered in 6 different ways, and the above ordering is based on the ordering they are mentioned in the text, but that might not be optimal.
 
-To get a feeling of who you want to include, and how you achieve that, you might consider different hypothetical patients diagnoses of herpes zoster as in @fig-timelines.
+To get a feeling of who you want to include, and how you achieve that, you might consider different hypothetical diagnosis patterns for herpes zoster as in @fig-timelines. Each line represents a hypothetical patient.
 
 ```{r, echo = FALSE, eval = TRUE}
 #| label: fig-timelines
@@ -402,7 +402,7 @@ If we had started by extracting all diagnosis codes from the Danish National Pat
 
 1.  ignore the first diagnosis of patients 1, 4 and 6 (they are before the study period - patient 6 is excluded),
 2.  ignore the diagnoses given at non-dermatology departments (this removes patient 5), and
-3.  include all remaining patients at their first (remaining) diagnosis at a department of dermatology.
+3.  include all remaining patients at their first remaining diagnosis at a department of dermatology.
 
 So, for this ordering of inclusion-/exclusion criteria, all patients, who had a diagnosis at a department of dermatology at some point during the study period, would be included regardless of their other diagnoses. That might be reasonable for a descriptive study, e.g.,
 
