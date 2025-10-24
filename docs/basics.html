@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.42">
+<meta name="generator" content="quarto-1.7.32">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -30,15 +30,16 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-f4b1d36c07c6c2edd9cf407a0ee283bc.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-06b0454889fd4b3647c07fcef30053e3.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -67,10 +68,39 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
-<body class="nav-sidebar docked">
+<body class="nav-sidebar docked quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -165,18 +195,21 @@ ul.task-list li input[type="checkbox"] {
   </ul></li>
   <li><a href="#elements-of-the-sap" id="toc-elements-of-the-sap" class="nav-link" data-scroll-target="#elements-of-the-sap"><span class="header-section-number">2</span> Elements of the SAP</a>
   <ul class="collapse">
-  <li><a href="#sec-sanity" id="toc-sec-sanity" class="nav-link" data-scroll-target="#sec-sanity"><span class="header-section-number">2.1</span> Sanity checks</a></li>
-  <li><a href="#log-of-changes" id="toc-log-of-changes" class="nav-link" data-scroll-target="#log-of-changes"><span class="header-section-number">2.2</span> Log of changes</a></li>
-  <li><a href="#background-and-aims-objectives" id="toc-background-and-aims-objectives" class="nav-link" data-scroll-target="#background-and-aims-objectives"><span class="header-section-number">2.3</span> Background and aims / objectives</a></li>
-  <li><a href="#sample-size" id="toc-sample-size" class="nav-link" data-scroll-target="#sample-size"><span class="header-section-number">2.4</span> Sample size</a></li>
-  <li><a href="#miscellaneous-methods" id="toc-miscellaneous-methods" class="nav-link" data-scroll-target="#miscellaneous-methods"><span class="header-section-number">2.5</span> Miscellaneous methods</a></li>
+  <li><a href="#log-of-changes" id="toc-log-of-changes" class="nav-link" data-scroll-target="#log-of-changes"><span class="header-section-number">2.1</span> Log of changes</a></li>
+  <li><a href="#background-and-aims-objectives" id="toc-background-and-aims-objectives" class="nav-link" data-scroll-target="#background-and-aims-objectives"><span class="header-section-number">2.2</span> Background and aims / objectives</a></li>
+  <li><a href="#expected-sample-size-exposure--and-outcome-occurrence" id="toc-expected-sample-size-exposure--and-outcome-occurrence" class="nav-link" data-scroll-target="#expected-sample-size-exposure--and-outcome-occurrence"><span class="header-section-number">2.3</span> Expected sample size, exposure- and outcome occurrence</a></li>
+  <li><a href="#data-sources" id="toc-data-sources" class="nav-link" data-scroll-target="#data-sources"><span class="header-section-number">2.4</span> Data sources</a></li>
+  <li><a href="#source-population" id="toc-source-population" class="nav-link" data-scroll-target="#source-population"><span class="header-section-number">2.5</span> Source population</a></li>
   <li><a href="#study-population-and-index-date" id="toc-study-population-and-index-date" class="nav-link" data-scroll-target="#study-population-and-index-date"><span class="header-section-number">2.6</span> Study population and index date</a></li>
   <li><a href="#variables" id="toc-variables" class="nav-link" data-scroll-target="#variables"><span class="header-section-number">2.7</span> Variables</a></li>
   <li><a href="#statistical-analyses" id="toc-statistical-analyses" class="nav-link" data-scroll-target="#statistical-analyses"><span class="header-section-number">2.8</span> Statistical analyses</a></li>
-  <li><a href="#table-shells" id="toc-table-shells" class="nav-link" data-scroll-target="#table-shells"><span class="header-section-number">2.9</span> Table shells</a></li>
-  <li><a href="#figure-shells" id="toc-figure-shells" class="nav-link" data-scroll-target="#figure-shells"><span class="header-section-number">2.10</span> Figure shells</a></li>
-  <li><a href="#sec-codingTable" id="toc-sec-codingTable" class="nav-link" data-scroll-target="#sec-codingTable"><span class="header-section-number">2.11</span> Coding table</a></li>
-  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><span class="header-section-number">2.12</span> References</a></li>
+  <li><a href="#sec-sanity" id="toc-sec-sanity" class="nav-link" data-scroll-target="#sec-sanity"><span class="header-section-number">2.9</span> Intermediate reporting of results within the study group</a></li>
+  <li><a href="#compliance-with-rules-from-data-providers" id="toc-compliance-with-rules-from-data-providers" class="nav-link" data-scroll-target="#compliance-with-rules-from-data-providers"><span class="header-section-number">2.10</span> Compliance with rules from data providers</a></li>
+  <li><a href="#quality-control" id="toc-quality-control" class="nav-link" data-scroll-target="#quality-control"><span class="header-section-number">2.11</span> Quality control</a></li>
+  <li><a href="#table-shells" id="toc-table-shells" class="nav-link" data-scroll-target="#table-shells"><span class="header-section-number">2.12</span> Table shells</a></li>
+  <li><a href="#figure-shells" id="toc-figure-shells" class="nav-link" data-scroll-target="#figure-shells"><span class="header-section-number">2.13</span> Figure shells</a></li>
+  <li><a href="#sec-codingTable" id="toc-sec-codingTable" class="nav-link" data-scroll-target="#sec-codingTable"><span class="header-section-number">2.14</span> Coding table</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><span class="header-section-number">2.15</span> References</a></li>
   </ul></li>
   <li><a href="#pitfalls-to-avoid" id="toc-pitfalls-to-avoid" class="nav-link" data-scroll-target="#pitfalls-to-avoid"><span class="header-section-number">3</span> Pitfalls to avoid</a></li>
   <li><a href="#simple-tip-for-specifying-the-order-of-inclusion-exclusion-criteria" id="toc-simple-tip-for-specifying-the-order-of-inclusion-exclusion-criteria" class="nav-link" data-scroll-target="#simple-tip-for-specifying-the-order-of-inclusion-exclusion-criteria"><span class="header-section-number">4</span> Simple tip for specifying the order of inclusion-/exclusion criteria</a></li>
@@ -211,7 +244,7 @@ ul.task-list li input[type="checkbox"] {
 <p>The purpose of a statistical analysis plan (SAP) - which will often also contain a (partial) data management plan - is to improve the quality of studies. The SAP will often be based on (or an appendix to) a protocol where the overall outline of a study is presented with fewer technical details.</p>
 <section id="the-research-question---what-is-the-estimand" class="level3" data-number="1.1">
 <h3 data-number="1.1" class="anchored" data-anchor-id="the-research-question---what-is-the-estimand"><span class="header-section-number">1.1</span> The research question - what is the estimand?</h3>
-<p>Writing a detailed SAP forces the researcher/study group to think clearly about what the aim of the study is (which estimand<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> needs to be estimated?), and how to achieve this aim (which estimator can provide the best estimate?). Possibly, the group will come to the conclusion that a reliable estimate cannot be made with the data at hand, in which case they can abandon the study and save themselves (along with reviewers, editors, taxpayers, and other innocent bystanders) a lot of time and resources which can then be spent on something fruitful.</p>
+<p>Writing a detailed SAP forces the researcher/study group to think clearly about what the aim of the study is (which estimand<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> needs to be estimated?), and how to achieve this aim (which estimator can provide the best estimate?). Possibly, the group will come to the conclusion that a reliable estimate cannot be made with the data at hand, in which case they can abandon the study and save themselves (along with reviewers, editors, taxpayers, and other innocent bystanders) a lot of time and resources which can then be spent on something fruitful (possibly collecting the data needed).</p>
 <div id="fig-ml" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-ml-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -249,29 +282,19 @@ Figure&nbsp;1: <a href="https://xkcd.com/1838/">xkcd.com/1838</a>
 </section>
 <section id="two-documents-or-one" class="level3" data-number="1.3">
 <h3 data-number="1.3" class="anchored" data-anchor-id="two-documents-or-one"><span class="header-section-number">1.3</span> Two documents or one?</h3>
-<p>The data management plan and the SAP can often be written as one coherent document with no explicit distinction between the two parts. However, it can still be relevant to keep in mind that data management and statistical analyses are in principle separate parts/phases of a study. In international/multicenter studies, it is generally advisable to use a common data model, so that analytic scripts (scripts needed to carry out statistical analyses as specified in the SAP) can be shared, ensuring the same methods are applied at all centers. To facilitate this, each center must provide a data set that complies with certain rules, i.e., variables must have specific names, types, formats, etc. as specified by the coordinating center.</p>
-<p>However, data management will generally have to differ between centers at some initial level. At the most low-practical level, registries and their variables will have different names and structures. There can also be qualitative differences, e.g., primary vs.&nbsp;secondary care data, granularity of diagnosis/procedure/… codes, or precision of time variables,<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a> all of which may require different approaches between centers. The point being that in multicenter studies each site probably needs to have its own data management plan, whereas statistical analyses should follow common scripts aligning to a shared SAP.</p>
+<p>The data management plan and the SAP can often be written as one coherent document with no explicit distinction between the two parts. However, it can still be relevant to keep in mind that data management and statistical analyses are in principle separate parts/phases of a study. In international/multicenter studies, it is generally advisable to use a common data model, so that analytic scripts (scripts needed to carry out statistical analyses as specified in the SAP) can be shared, ensuring the same methods are applied at all centers. To facilitate this, each center must provide a dataset that complies with certain rules, i.e., variables must have specific names, types, formats, etc. as specified by the coordinating center.</p>
+<p>However, data management will generally have to differ between centers at some initial stage. At the most low-practical level, registries and their variables will have different names and structures. There can also be qualitative differences, e.g., primary vs.&nbsp;secondary care data, granularity of diagnosis/procedure/… codes, or precision of time variables,<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a> all of which may require different approaches between centers. The point being, that in multicenter studies each site probably needs to have its own data management plan, whereas statistical analyses should follow common scripts aligning to a shared SAP.</p>
 <p>In the following, it will be assumed that the data management plan is incorporated into the SAP.</p>
 </section>
 </section>
 <section id="elements-of-the-sap" class="level2" data-number="2">
 <h2 data-number="2" class="anchored" data-anchor-id="elements-of-the-sap"><span class="header-section-number">2</span> Elements of the SAP</h2>
 <p>This section lists elements you might include in a SAP. Not everything will be relevant for all projects, so do not feel obliged to include something about each of these topics.</p>
-<section id="sec-sanity" class="level3" data-number="2.1">
-<h3 data-number="2.1" class="anchored" data-anchor-id="sec-sanity"><span class="header-section-number">2.1</span> Sanity checks</h3>
-<p>At various places in the SAP, you might want to specify milestones at which to pause the analyses and look at the results so far. E.g., once the population is constructed, it might be sensible to check its size before moving on to defining variables. Once the (baseline) variables are defined, you might want to see the descriptive table(s) before moving on to the outcome analyses. Looking at the overall risk (across exposure groups) before making a comparison between exposure groups can also be considered.</p>
-<p>These sanity check may enable you to correct mistakes before they are consequential, by reducing the risk of rerunning the analyses <em>after</em> (the first version of) the results of primary interest are known. Rerunning the analyses after the results are known, always comes with the uncertainty as to whether you rerun because the results are not to your satisfaction, or because you could genuinely come with a less biased estimate with the available data. Whenever you rerun analyses you lose credibility. If the results in themselves lead you to rerun the analyses until you get what you want, you are on shaky ground.<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a> Therefore,</p>
-<ul>
-<li>if the population is much smaller or larger than expected,</li>
-<li>if the exposure groups are too dissimilar for sensible comparisons, or</li>
-<li>if the overall risk looks completely off,</li>
-</ul>
-<p>you can (try to) find ways to correct these aspects<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a> before knowing the primary result, and thus you prevent yourself from p-hacking.<a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a></p>
-<p>The sanity checks should not necessarily have a section of their own in the SAP. Instead, they might be included at the places in the document where they occur naturally. E.g., a sanity check for population size may be put in the section defining the study population, and a sanity check for population characteristics might be placed where the descriptive analyses are specified.</p>
-</section>
-<section id="log-of-changes" class="level3" data-number="2.2">
-<h3 data-number="2.2" class="anchored" data-anchor-id="log-of-changes"><span class="header-section-number">2.2</span> Log of changes</h3>
-<p>Near the start of the SAP there should be a log of changes, documenting any changes made after the data management or analyses are started. The log should contain dates where changes are made, what the changes are, and reasons for the changes. This will both serve as a reminder within the group of why decisions were made, and if the statistician is replaced the new statistician will be able to get a quick overview of the history of the project (and find reasons for deviations between what is actually done, and what was specified in the protocol).<a href="#fn8" class="footnote-ref" id="fnref8" role="doc-noteref"><sup>8</sup></a></p>
+<p>Writing a SAP should be a collaborative effort involving all those who are expected to have their name on the final paper. That does not mean everyone should contribute equally, people should chip in where their skills and competencies are relevant.</p>
+<p>While reporting guidelines such as STROBE, TRIPOD or TARGET do not provide guidance as to how studies should be conducted, it will still be a good idea to have these reporting guidelines in mind when writing the SAP.</p>
+<section id="log-of-changes" class="level3" data-number="2.1">
+<h3 data-number="2.1" class="anchored" data-anchor-id="log-of-changes"><span class="header-section-number">2.1</span> Log of changes</h3>
+<p>Near the start of the SAP there should be a log of changes, documenting any changes made after the data management or analyses are started. The log should contain dates where changes are made, what the changes are, and reasons for the changes. This will both serve as a reminder within the group of why decisions were made, and if the statistician is replaced the new statistician will be able to get a quick overview of the history of the project (and find reasons for deviations between what is actually done, and what was specified in the protocol).<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a> Whenever a SAP is revised/updated it should be saved as a new document with a version number (e.g., SAPv1, SAPv2, …).</p>
 <div class="cell">
 <div id="tbl-changelog" class="cell quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
@@ -280,23 +303,23 @@ Table&nbsp;1
 </figcaption>
 <div aria-describedby="tbl-changelog-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="cquygtgztm" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#cquygtgztm table {
+<div id="pdcqlehuia" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#pdcqlehuia table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#cquygtgztm thead, #cquygtgztm tbody, #cquygtgztm tfoot, #cquygtgztm tr, #cquygtgztm td, #cquygtgztm th {
+#pdcqlehuia thead, #pdcqlehuia tbody, #pdcqlehuia tfoot, #pdcqlehuia tr, #pdcqlehuia td, #pdcqlehuia th {
   border-style: none;
 }
 
-#cquygtgztm p {
+#pdcqlehuia p {
   margin: 0;
   padding: 0;
 }
 
-#cquygtgztm .gt_table {
+#pdcqlehuia .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -322,12 +345,12 @@ Table&nbsp;1
   border-left-color: #D3D3D3;
 }
 
-#cquygtgztm .gt_caption {
+#pdcqlehuia .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#cquygtgztm .gt_title {
+#pdcqlehuia .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -339,7 +362,7 @@ Table&nbsp;1
   border-bottom-width: 0;
 }
 
-#cquygtgztm .gt_subtitle {
+#pdcqlehuia .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -351,7 +374,7 @@ Table&nbsp;1
   border-top-width: 0;
 }
 
-#cquygtgztm .gt_heading {
+#pdcqlehuia .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -363,13 +386,13 @@ Table&nbsp;1
   border-right-color: #D3D3D3;
 }
 
-#cquygtgztm .gt_bottom_border {
+#pdcqlehuia .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#cquygtgztm .gt_col_headings {
+#pdcqlehuia .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -384,7 +407,7 @@ Table&nbsp;1
   border-right-color: #D3D3D3;
 }
 
-#cquygtgztm .gt_col_heading {
+#pdcqlehuia .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -404,7 +427,7 @@ Table&nbsp;1
   overflow-x: hidden;
 }
 
-#cquygtgztm .gt_column_spanner_outer {
+#pdcqlehuia .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -416,15 +439,15 @@ Table&nbsp;1
   padding-right: 4px;
 }
 
-#cquygtgztm .gt_column_spanner_outer:first-child {
+#pdcqlehuia .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#cquygtgztm .gt_column_spanner_outer:last-child {
+#pdcqlehuia .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#cquygtgztm .gt_column_spanner {
+#pdcqlehuia .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -436,11 +459,11 @@ Table&nbsp;1
   width: 100%;
 }
 
-#cquygtgztm .gt_spanner_row {
+#pdcqlehuia .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#cquygtgztm .gt_group_heading {
+#pdcqlehuia .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -466,7 +489,7 @@ Table&nbsp;1
   text-align: left;
 }
 
-#cquygtgztm .gt_empty_group_heading {
+#pdcqlehuia .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -481,15 +504,15 @@ Table&nbsp;1
   vertical-align: middle;
 }
 
-#cquygtgztm .gt_from_md > :first-child {
+#pdcqlehuia .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#cquygtgztm .gt_from_md > :last-child {
+#pdcqlehuia .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#cquygtgztm .gt_row {
+#pdcqlehuia .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -508,7 +531,7 @@ Table&nbsp;1
   overflow-x: hidden;
 }
 
-#cquygtgztm .gt_stub {
+#pdcqlehuia .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -521,7 +544,7 @@ Table&nbsp;1
   padding-right: 5px;
 }
 
-#cquygtgztm .gt_stub_row_group {
+#pdcqlehuia .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -535,15 +558,15 @@ Table&nbsp;1
   vertical-align: top;
 }
 
-#cquygtgztm .gt_row_group_first td {
+#pdcqlehuia .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#cquygtgztm .gt_row_group_first th {
+#pdcqlehuia .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#cquygtgztm .gt_summary_row {
+#pdcqlehuia .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -553,16 +576,16 @@ Table&nbsp;1
   padding-right: 5px;
 }
 
-#cquygtgztm .gt_first_summary_row {
+#pdcqlehuia .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#cquygtgztm .gt_first_summary_row.thick {
+#pdcqlehuia .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#cquygtgztm .gt_last_summary_row {
+#pdcqlehuia .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -572,7 +595,7 @@ Table&nbsp;1
   border-bottom-color: #D3D3D3;
 }
 
-#cquygtgztm .gt_grand_summary_row {
+#pdcqlehuia .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -582,7 +605,7 @@ Table&nbsp;1
   padding-right: 5px;
 }
 
-#cquygtgztm .gt_first_grand_summary_row {
+#pdcqlehuia .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -592,7 +615,7 @@ Table&nbsp;1
   border-top-color: #D3D3D3;
 }
 
-#cquygtgztm .gt_last_grand_summary_row_top {
+#pdcqlehuia .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -602,11 +625,11 @@ Table&nbsp;1
   border-bottom-color: #D3D3D3;
 }
 
-#cquygtgztm .gt_striped {
+#pdcqlehuia .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#cquygtgztm .gt_table_body {
+#pdcqlehuia .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -615,7 +638,7 @@ Table&nbsp;1
   border-bottom-color: #D3D3D3;
 }
 
-#cquygtgztm .gt_footnotes {
+#pdcqlehuia .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -629,7 +652,7 @@ Table&nbsp;1
   border-right-color: #D3D3D3;
 }
 
-#cquygtgztm .gt_footnote {
+#pdcqlehuia .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -638,7 +661,7 @@ Table&nbsp;1
   padding-right: 5px;
 }
 
-#cquygtgztm .gt_sourcenotes {
+#pdcqlehuia .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -652,7 +675,7 @@ Table&nbsp;1
   border-right-color: #D3D3D3;
 }
 
-#cquygtgztm .gt_sourcenote {
+#pdcqlehuia .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -660,72 +683,72 @@ Table&nbsp;1
   padding-right: 5px;
 }
 
-#cquygtgztm .gt_left {
+#pdcqlehuia .gt_left {
   text-align: left;
 }
 
-#cquygtgztm .gt_center {
+#pdcqlehuia .gt_center {
   text-align: center;
 }
 
-#cquygtgztm .gt_right {
+#pdcqlehuia .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#cquygtgztm .gt_font_normal {
+#pdcqlehuia .gt_font_normal {
   font-weight: normal;
 }
 
-#cquygtgztm .gt_font_bold {
+#pdcqlehuia .gt_font_bold {
   font-weight: bold;
 }
 
-#cquygtgztm .gt_font_italic {
+#pdcqlehuia .gt_font_italic {
   font-style: italic;
 }
 
-#cquygtgztm .gt_super {
+#pdcqlehuia .gt_super {
   font-size: 65%;
 }
 
-#cquygtgztm .gt_footnote_marks {
+#pdcqlehuia .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#cquygtgztm .gt_asterisk {
+#pdcqlehuia .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#cquygtgztm .gt_indent_1 {
+#pdcqlehuia .gt_indent_1 {
   text-indent: 5px;
 }
 
-#cquygtgztm .gt_indent_2 {
+#pdcqlehuia .gt_indent_2 {
   text-indent: 10px;
 }
 
-#cquygtgztm .gt_indent_3 {
+#pdcqlehuia .gt_indent_3 {
   text-indent: 15px;
 }
 
-#cquygtgztm .gt_indent_4 {
+#pdcqlehuia .gt_indent_4 {
   text-indent: 20px;
 }
 
-#cquygtgztm .gt_indent_5 {
+#pdcqlehuia .gt_indent_5 {
   text-indent: 25px;
 }
 
-#cquygtgztm .katex-display {
+#pdcqlehuia .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#cquygtgztm div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#pdcqlehuia div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -767,107 +790,215 @@ Table&nbsp;1
 </div>
 </div>
 </section>
-<section id="background-and-aims-objectives" class="level3" data-number="2.3">
-<h3 data-number="2.3" class="anchored" data-anchor-id="background-and-aims-objectives"><span class="header-section-number">2.3</span> Background and aims / objectives</h3>
-<p>A brief description of why the study is important, and what the aims or objectives are.</p>
-<p>Consider who the reader is. If this is for a statistician to implement, 2 pages of biology, chemistry and/or anatomy are not helpful. The point is not to copy everything from the protocol (if one exists), but to provide the necessary context for the analyses.</p>
+<section id="background-and-aims-objectives" class="level3" data-number="2.2">
+<h3 data-number="2.2" class="anchored" data-anchor-id="background-and-aims-objectives"><span class="header-section-number">2.2</span> Background and aims / objectives</h3>
+<p>A brief description of why the study is important, what the aims or objectives are, and which study design is applied. Include any pre-specified hypotheses. It should be clear if the aim is causal, descriptive or predictive in nature.</p>
+<p>Consider who the reader is. If this is for a statistician to implement, 2 pages of biology, chemistry and/or anatomy are not helpful. The purpose is not to copy everything from the protocol (if one exists), but to provide the necessary context for the analyses.</p>
 </section>
-<section id="sample-size" class="level3" data-number="2.4">
-<h3 data-number="2.4" class="anchored" data-anchor-id="sample-size"><span class="header-section-number">2.4</span> Sample size</h3>
-<p>In observational (registry-based) studies, sample size/power calculations are irrelevant as they are beyond the control of the researcher. However, it is still relevant to consider how large a population can be expected. The statistician might not realize before looking at the data, that the population should be counted in tens rather that tens of thousands, in which case all the fancy methods that have been planned might not be possible. If the population is expected to be small (whatever that means), this should be clear to the ones planning the analyses, so they can tell<a href="#fn9" class="footnote-ref" id="fnref9" role="doc-noteref"><sup>9</sup></a> you what is feasible and what is not.</p>
+<section id="expected-sample-size-exposure--and-outcome-occurrence" class="level3" data-number="2.3">
+<h3 data-number="2.3" class="anchored" data-anchor-id="expected-sample-size-exposure--and-outcome-occurrence"><span class="header-section-number">2.3</span> Expected sample size, exposure- and outcome occurrence</h3>
+<p>In observational (registry-based) studies, sample size/power calculations are irrelevant as they are beyond the control of the researcher. However, it is still relevant to consider how large a population and how many outcomes can be expected. The statistician might not realize before looking at the data, that the population (or an exposure group if relevant) should be counted in tens rather that tens of thousands, in which case all the fancy methods that have been planned might not be possible. If the population is expected to be small (whatever that means), this should be clear to the ones planning the analyses, so they can tell<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a> you what is feasible and what is not.</p>
 </section>
-<section id="miscellaneous-methods" class="level3" data-number="2.5">
-<h3 data-number="2.5" class="anchored" data-anchor-id="miscellaneous-methods"><span class="header-section-number">2.5</span> Miscellaneous methods</h3>
-<p>Likely, there are several relevant pieces of information which are rather matter-of-fact in nature and need no further explanation:</p>
-<ul>
-<li>A list of registries to be used.</li>
-<li>Study-, recruitment-, washout-, … periods: if these are specified exactly once in the document, they only need to be changed once if they are revised while conducting the study.</li>
-<li>Time: how long is a month (e.g., 28, 30 or 30.5 days) and/or a year (e.g., 360, 365 or 365.25 days), if these are relevant units of time. Consider if a year should be the same as 12 months if both units are used in the project. Consider avoiding having both months and years as time units in the same project.</li>
-<li>Exposure groups: If there is an exposure/intervention/… and a control/comparison/reference… group, consider specifying these. E.g., the exposure group is SGLT2i-users and the control group is GLP-1RA-users.</li>
-<li>If the exposure is continuous, consider specifying the reference value. E.g., when comparing risk of dementia for different eGFR-values, a value of 75 mL/min/1.73m<sup>2</sup> could be used as the reference.</li>
-</ul>
+<section id="data-sources" class="level3" data-number="2.4">
+<h3 data-number="2.4" class="anchored" data-anchor-id="data-sources"><span class="header-section-number">2.4</span> Data sources</h3>
+<p>A list of registries and other data sources to be used, including (links to) detailed data documentation as relevant. Make sure no data source is included in the coding table without being specified here. If you use abbreviations for data sources, make sure to specify these abbreviations here.</p>
+</section>
+<section id="source-population" class="level3" data-number="2.5">
+<h3 data-number="2.5" class="anchored" data-anchor-id="source-population"><span class="header-section-number">2.5</span> Source population</h3>
+<p>Consider specifying what the source population is, i.e., population to which the conclusions from the study should apply.</p>
 </section>
 <section id="study-population-and-index-date" class="level3" data-number="2.6">
 <h3 data-number="2.6" class="anchored" data-anchor-id="study-population-and-index-date"><span class="header-section-number">2.6</span> Study population and index date</h3>
-<p>Specify step-by-step how the study population should be derived from the raw registry data. This will often require defining an index date from raw data (make sure it is clear what the index date is), and then a series of in- and exclusion criteria to be applied on this index date.<a href="#fn10" class="footnote-ref" id="fnref10" role="doc-noteref"><sup>10</sup></a></p>
-<p>Prepare a figure shell for a flowchart, and make sure the order of the criteria in the figure aligns with the order the criteria are listed in the text. Sometimes, it can be relevant to leave out some steps used to go from raw data to an index date from the flowchart.<a href="#fn11" class="footnote-ref" id="fnref11" role="doc-noteref"><sup>11</sup></a> However, all exclusion criteria that are applied subsequent to defining the index date should be included in the flowchart.</p>
+<p>Specify the study-, recruitment-, and other periods as relevant. I.e., calendar periods covering various phases of the study. Once specified you should refer to them throughout the document rather than repeating the dates. E.g., if the recruitment period is 1 January 2015 to 31 December 2024, you should “include individuals with condition X in the recruitment period” rather than “include individuals with condition X between 1 January 2015 and 31 December 2024”. Avoiding repetitions is helpful when updating/revising the SAP both during drafting and after the first version is completed, because it saves you from having to look for all instances of the elements that need to be changed. If there are many repetitions you might miss some, making the SAP internally inconsistent.</p>
+<p>Specify step-by-step how the study population should be derived from the raw registry data. This will often require defining an index date from raw data (make sure it is clear what the index date is), and then a series of in- and exclusion criteria to be applied on this index date.<a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a> The variables needed for inclusion/exclusion criteria should be clearly outlined in the coding table.</p>
+<p>Prepare a figure shell for a flowchart, and make sure the order of the criteria in the figure aligns with the order the criteria are listed in the text. Sometimes, it can be relevant to leave out some steps used to go from raw data to an index date from the flowchart.<a href="#fn8" class="footnote-ref" id="fnref8" role="doc-noteref"><sup>8</sup></a> However, all exclusion criteria that are applied subsequent to defining the index date should be included in the flowchart.</p>
 </section>
 <section id="variables" class="level3" data-number="2.7">
 <h3 data-number="2.7" class="anchored" data-anchor-id="variables"><span class="header-section-number">2.7</span> Variables</h3>
-<p>Depending on the study design, different types of variables are necessary to define. A table of codes to be used for the individual variable should always be provided. This table can be a separate file or an appendix within the SAP. (See also <a href="#sec-codingTable" class="quarto-xref">Section&nbsp;2.11</a> below.)</p>
-<p>Some variables will likely have different roles, and it might be relevant to have separate paragraphs outlining (as relevant):</p>
+<p>All variables should be listed in a coding table and therefore specific diagnosis codes etc. should not be included here. However, some variables might require elaboration which can be provided here, possibly in subsections reflecting the role of the relevant variables. Complex variables might require a diagram, step-by-step algorithm, or similar to make it very clear how they are defined.</p>
+<p>Below are lists with examples of elements to consider, these lists are not exhaustive.</p>
+<section id="exposure-or-baseline-variable-of-primary-interest" class="level4" data-number="2.7.1">
+<h4 data-number="2.7.1" class="anchored" data-anchor-id="exposure-or-baseline-variable-of-primary-interest"><span class="header-section-number">2.7.1</span> Exposure (or baseline variable of primary interest)</h4>
+<p>Depending of the nature of the study (is the aim causal, descriptive, or predictive) there may or may not be one central baseline variable. Even if there is, in principle it might not be correct to refer to it as an exposure. However, for simplicity the term exposure is used here.</p>
 <ul>
-<li>how different levels of the exposure variable will be defined,</li>
-<li>how the outcome is defined,
-<ul>
-<li>if time-to-event-data; list competing and censoring events,</li>
-</ul></li>
-<li>other covariates to be reported.</li>
+<li>Specification of the exposure in intention to treat- vs per protocol-type analyses or in dose-response analyses.</li>
+<li>Duration of prescriptions and grace period used to combine prescription data into on-treatment periods. (Arguably this can be considered as defining the outcome in a drug utilization study.)</li>
+<li>Number of prescriptions needed to be exposed, if more than one.</li>
+<li>If the exposure is categorical, i.e., you make comparisons across classes, you might specify what the reference level should be if this is not obvious (e.g., in comparative effectiveness studies it will generally be less obvious than in comparative safety studies).</li>
+<li>If the exposure is continuous, i.e., you make comparisons across a scale, you might want to specify what the reference value should be.</li>
+<li>Categorization of a continuous exposure into classes for analyses where continuous data cannot be applied, e.g., applying Kaplan-Meier or Aalen-Johansen estimators.</li>
 </ul>
-<p>Note that rather than listing all variables in the text, it can be advantageous to point to a table shell (typically for Table 1 describing baseline characteristics), and state that these are the covariates to be included.</p>
+</section>
+<section id="follow-up-and-outcomes" class="level4" data-number="2.7.2">
+<h4 data-number="2.7.2" class="anchored" data-anchor-id="follow-up-and-outcomes"><span class="header-section-number">2.7.2</span> Follow-up and outcomes</h4>
+<ul>
+<li>Details on when to start and stop follow-up. Make it clear if events on the index date are included or not. E.g.,
+<ul>
+<li>“For each primary and secondary event individuals will be followed from the index date (i.e., events on the index date are considered outcomes) until the first of: event of interest, death, emigration, end of study period or 5 years. In per protocol analyses, follow-up is also ended at switching and stopping (defined in the exposure subsection).”</li>
+</ul></li>
+<li>Primary and secondary outcomes, e.g., “The primary outcome is MACE, the three secondary outcomes are the individual parts of MACE: AMI, HF, and cardiovascular death.”</li>
+<li>Censoring and competing events, e.g., “Death (of non-cardiovascular causes for MACE and cardiovascular death; of any cause for AMI and HF) is the only competing event; emigration, end of study period and 5 years of follow-up are administrative (non-informative) censoring events. In per protocol analyses switching and stopping are considered informative censoring events.”</li>
+<li>Considerations about/justification for composite outcomes, if relevant.</li>
+<li>Units of time to be used. Typically, these are based on date-variables and as such days is the finest possible granularity:
+<ul>
+<li>If possible, use only days and at most one other unit, e.g., years, and specify how many days there are in this unit.</li>
+<li>If you need to include both months and years as units of time, consider if there should be exactly 12 months in a year, e.g., 1 month = 30 days and 1 year = 360 days.
+<ul>
+<li>Beware of problems that might arise when using both months and years in the same study. If 1 month = 30 days and 1 year = 365 days, and you decide to censor all follow-up at 60 months (= 1800 days) you cannot get a risk estimate at 5 years (= 1825 days).</li>
+</ul></li>
+</ul></li>
+</ul>
+</section>
+<section id="covariates" class="level4" data-number="2.7.3">
+<h4 data-number="2.7.3" class="anchored" data-anchor-id="covariates"><span class="header-section-number">2.7.3</span> Covariates</h4>
+<ul>
+<li>If you use laboratory data, and a biomarker is measured in different units, you should specify here which unit to use, along with details on conversion of units.</li>
+<li>Specify how to handle implausible values (e.g., extreme BMI), truncated values from laboratory data (e.g., biomarker reported as “&lt;30”), or how to handle biomarkers reported at the limit of the measurable interval (e.g., renin = 1.8 or 550 IU/L) as relevant.</li>
+<li>If there are several observations of a variable, e.g., HbA1c, during the baseline/lookback period, how should they be combined? E.g., use the most recent, the mean or the median.</li>
+<li>If a variable is derived from several others (e.g., CHA2DS2-VASc or TNM-coding) you may specify how to get from the separate variables to the combined variable.</li>
+</ul>
+</section>
+<section id="study-diagram" class="level4" data-number="2.7.4">
+<h4 data-number="2.7.4" class="anchored" data-anchor-id="study-diagram"><span class="header-section-number">2.7.4</span> Study diagram</h4>
+<p>A study diagram as suggested by <a href="https://doi.org/10.7326/M18-3079">Schneeweiss et al</a> can be helpful in summarizing the design of the study and the role played by distinct variables. Note that a study diagram is generally repetitious by nature, as it typically will not be sufficiently detailed to stand alone. Make sure that the study diagram aligns with the text and coding table and is updated during revisions. Therefore, for simple study designs, a study diagram might be more of a nuisance than a help in the SAP - at least during the drafting phase. It can still be relevant to include a study diagram in the supplementary material to the final manuscript. For highly complex designs, or in situations where a diagram with heavy annotation is necessary, the templates from Schneeweiss et al might not be sufficient, in which case you may have to design your own diagrams.</p>
+</section>
 </section>
 <section id="statistical-analyses" class="level3" data-number="2.8">
 <h3 data-number="2.8" class="anchored" data-anchor-id="statistical-analyses"><span class="header-section-number">2.8</span> Statistical analyses</h3>
-<p>This is the key element of the statistical part of the SAP.</p>
-<p>Some aspects need little explanation. E.g., populating the table shell for Table 1 with baseline characteristics (in generic studies), does not generally require any particular explanation. It might be relevant to explicitly state that continuous variables (except calendar time) will be reported by their median and interquartile interval (Q1-Q3); that for dichotomous variables only one level (e.g., only the number of individuals <em>with</em> heart failure, not those without) will be reported, while for multilevel categorical variables, all levels will be reported.</p>
-<p>The relevant analyses should be specified. Things to consider:</p>
+<p>This section will often have several subsections depending on the type of study, but it should provide details for the methods required for all analyses with reference to previously specified variables, along with table and figure shells (listed in subsequent sections). All analyses should be represented in either a table or figure shell and vice versa.</p>
+<section id="baseline-characteristics" class="level4" data-number="2.8.1">
+<h4 data-number="2.8.1" class="anchored" data-anchor-id="baseline-characteristics"><span class="header-section-number">2.8.1</span> Baseline characteristics</h4>
+<p>Describe how to report on baseline characteristics (typically with reference to a table shell). This subsection can often be brief, simply specifying if continuous variables should be reported by their median with interquartile interval or with mean and standard deviations; if one or both levels of dichotomous variables should be reported, e.g., both the number with and without a specific condition; how missingness should be reported, e.g., including the proportion with missing data in the table or in a footnote, and if proportions within a categorical level should be among those with non-missing data or among the entire population. (E.g., smoking: classified as smoker, nonsmoker, missing; if 24% have missing smoking status, 38% are classified as smokers and 38% as nonsmokers, should the proportion of smoking be 38% / 76% = 50% or should it be 38%?)</p>
+</section>
+<section id="outcome-analyses" class="level4" data-number="2.8.2">
+<h4 data-number="2.8.2" class="anchored" data-anchor-id="outcome-analyses"><span class="header-section-number">2.8.2</span> Outcome analyses</h4>
+<p>If there is an outcome in the study, specify how it should be analyzed:</p>
 <ul>
-<li>which type of (regression) model, if any, should be used,</li>
-<li>how should variables be included into the models (e.g., continuous variables can be included linearly, as splines, or using some other transformation),</li>
-<li>how should assumptions be assessed, and what should be done if they do not hold,</li>
-<li>which non-parametric methods (Kaplan-Meier, Aalen-Johansen, …) should be used,</li>
-<li>how should missing data be handled (this can be a section on its own),</li>
-<li>how will uncertainty be estimated if it cannot simply be extracted from standard output (e.g., bootstrapping),</li>
-<li>sensitivity- and subgroup analyses should have their own sections, but questionable assumptions in the main analyses which will be challenged in sensitivity analyses could be mentioned here,</li>
-<li>which software packages to use (R, SAS, STATA, …).</li>
+<li>Types of regression models used (if any). This includes outcome models, as well as models to estimate propensity scores, disease risk scores or other models in two-step procedures.</li>
+<li>How should variables be included in regression models, e.g., continuous variables can be included linearly, as splines, or using some other transformation. Which interactions should be included, if any.</li>
+<li>Which non-parametric methods to use, if applicable, e.g., Kaplan-Meier, Aalen-Johansen, or mean cumulative count.</li>
+<li>How to assess uncertainty in estimates if the statistical software does not provide an unbiased one by default, e.g., robust sandwich methods or bootstrapping could be used - specify the number of bootstrap samples, and how to derive point estimates and confidence intervals based on the sampling distribution obtained from bootstrapping.</li>
+<li>How to assess testable assumptions (like proportional hazards), and what to do if they are not sufficiently met.</li>
+<li>If there will be missing data, briefly mention how it will be handled with elaboration in a separate section.</li>
+<li>A brief mention of sensitivity analyses can be considered but will generally need elaboration in a separate subsection.</li>
+<li>Consider specifying the software and packages to use. (This can be important in multicenter studies.)</li>
+<li>Consider specifying a seed<a href="#fn9" class="footnote-ref" id="fnref9" role="doc-noteref"><sup>9</sup></a> to be applied when randomness is used in analyses (e.g., for bootstrap sampling, for sampling of controls in case-control analyses, or for multiple imputation) for exact replication of results.</li>
 </ul>
-<p>To reduce the risk of p-hacking, it can be a good idea to pre-specify interim results to evaluate before moving on. See <a href="#sec-sanity" class="quarto-xref">Section&nbsp;2.1</a>.</p>
-<section id="missing-data" class="level4" data-number="2.8.1">
-<h4 data-number="2.8.1" class="anchored" data-anchor-id="missing-data"><span class="header-section-number">2.8.1</span> Missing data</h4>
-<p>If missing data are expected it will generally be a good idea to write something about this in advance. Not just how to handle missing data, but also which variables are expected to contain missing data and to what extent. Knowing these numbers, will make it easier for the statistician to have an opinion on the feasibility of the study and methods.</p>
 </section>
-<section id="stratified-analyses" class="level4" data-number="2.8.2">
-<h4 data-number="2.8.2" class="anchored" data-anchor-id="stratified-analyses"><span class="header-section-number">2.8.2</span> Stratified analyses</h4>
-<p>Specify if the analyses should be repeated within strata of some variables. Also specify if the results should be compared across strata, i.e., if effect-heterogeneity is assessed in some formal way, e.g., by estimating a parameter for an interaction term, with eyeballing being the implicit alternative.</p>
-</section>
-<section id="sensitivity-analyses-including-subgroup-analyses" class="level4" data-number="2.8.3">
-<h4 data-number="2.8.3" class="anchored" data-anchor-id="sensitivity-analyses-including-subgroup-analyses"><span class="header-section-number">2.8.3</span> Sensitivity analyses including subgroup analyses</h4>
-<p>It might be necessary to run bias analyses to handle, e.g., unmeasured confounding or selection bias. These should be mentioned here. Furthermore, having gotten this far, surely, some arbitrary choices will have been made, and the impact of some of these might be relevant to consider in sensitivity analyses. Examples could be</p>
+<section id="missing-data" class="level4" data-number="2.8.3">
+<h4 data-number="2.8.3" class="anchored" data-anchor-id="missing-data"><span class="header-section-number">2.8.3</span> Missing data</h4>
+<p>If missing data is an issue, specify</p>
 <ul>
-<li>use of secondary diagnoses for outcome identification,</li>
-<li>length of follow-up,</li>
-<li>washout- or grace periods,</li>
-<li>recruitment period,</li>
-<li>lookback period for variables,</li>
-<li>in- or exclusion of specific patient groups.</li>
+<li>How much missingness is expected for variables that are expected to be incomplete. (This will help assess which methods are appropriate to use.)</li>
+<li>How to handle missingness:
+<ul>
+<li>Complete case analyses.</li>
+<li>Multiple imputation; specify how to derive the number of imputations and how to do the imputations.</li>
+<li>Single random imputation; specify how to do the imputation.</li>
+<li>Single (mean) value imputation.</li>
+<li>Full-flexed Bayesian methods. If missing data is known not to be an issue you can specify why. E.g. absence of recording of diagnoses in the registry will be regarded as absence of the condition and not be seen as missing data.</li>
+</ul></li>
 </ul>
-<p>If residual confounding is a concern, restriction to specific subgroups can be used.<a href="#fn12" class="footnote-ref" id="fnref12" role="doc-noteref"><sup>12</sup></a> E.g., if obesity, alcohol consumption, smoking or other variables that are hard to measure are important confounders, an analysis restricted to individuals who are known or presumed to be similar with respect to these variables (have a record compatible with obesity, alcoholism, COPD, etc.) may be important to run.<a href="#fn13" class="footnote-ref" id="fnref13" role="doc-noteref"><sup>13</sup></a></p>
-<p>Splitting and reanalyzing the population on calendar time can be relevant. Perhaps the demographics of the population, or the indication of a treatment changes over time, introducing a shift in the confounding pattern. However, calendar time in itself is generally hard to interpret as an effect modifier. At best it is a proxy for some other variable. Therefore calendar time stratification arguably belongs under subgroup (sensitivity) analyses rather than stratified analyses.</p>
+</section>
+<section id="sec-subgroup" class="level4" data-number="2.8.4">
+<h4 data-number="2.8.4" class="anchored" data-anchor-id="sec-subgroup"><span class="header-section-number">2.8.4</span> Subgroup analyses</h4>
+<p>The terminology across fields is not completely consistent. Here, “subgroup analyses” refers to analyses where the population is split into subgroups so that each observation from the overall group belongs to exactly one subgroup. The aim of subgroup analyses will generally be to assess if the effect or association observed in the overall group differs across levels of the subgroups, e.g., if there is effect measure modification/treatment effect heterogeneity. Analyses aiming at assessing robustness with regards to potential residual confounding should be listed under <a href="#sec-sensitivityAnalyses" class="quarto-xref">Section&nbsp;2.8.5</a>.</p>
+<p>Specify exactly which analyses are to be repeated within subgroups, e.g., is it only the main or also (selected) sensitivity analyses; all or only primary outcomes. List the variables used to define subgroups. If some of these variables are continuous which threshold(s) should be used for categorization. Specify how effect measure modification should be quantified if relevant.</p>
+</section>
+<section id="sec-sensitivityAnalyses" class="level4" data-number="2.8.5">
+<h4 data-number="2.8.5" class="anchored" data-anchor-id="sec-sensitivityAnalyses"><span class="header-section-number">2.8.5</span> Sensitivity analyses</h4>
+<p>While the estimands of subgroup analyses, as outlined above, and the primary analysis differ, e.g., treatment effect heterogeneity vs.&nbsp;treatment effect, sensitivity analyses aim at assessing the robustness of the estimate for the estimands in the (main) analyses.</p>
+<p>Describe which sensitivity analyses should be performed. All sensitivity analyses should be justifiable, and it is recommended to specify why the individual sensitivity analysis is carried out, e.g., which assumption is challenged by a given sensitivity analysis. Some decisions might be arbitrary but of such minor importance that running a sensitivity analysis will be qualitatively redundant.</p>
+<p>Some examples of sensitivity analyses are listed below. Clearly stipulate which sensitivity analyses should be combined. Bear in mind that the number of analyses will grow exponentially with the length of the list if all combinations of sensitivity analyses are conducted.</p>
+<ul>
+<li>Quantitative bias analyses to address residual confounding, misclassification (of any variable) or selection bias.</li>
+<li>If some assumptions in the main analyses are questionable, you might rerun the analyses under different assumptions.</li>
+<li>Repeating analyses where arbitrary choices are varied, e.g., the length of grace period, the use of outpatient data and/or secondary diagnoses for outcomes, etc.</li>
+<li>Varying censoring mechanisms and competing risks. E.g., prophylactic mastectomy and oophorectomy are essentially competing events to breast and ovarian cancers, however, it is possible though unlikely to develop cancer in residual tissue. Similar considerations can be made for amputations of limbs or live organ donations - do such procedures change the risk of the outcome to an extent where they are considered competing events; should individuals be censored; or should they still be followed beyond this procedure?</li>
+<li>Complete case analyses if the main analysis relies on imputation, or vice versa.</li>
+<li>If the confounding structure is assumed to vary across calendar time, analyzing calendar periods separately might be relevant.<a href="#fn10" class="footnote-ref" id="fnref10" role="doc-noteref"><sup>10</sup></a></li>
+<li>Similar considerations can be made across other variables. E.g., if the confounding structure is assumed to differ across sexes regression models might be misspecified for the overall population if insufficient interaction terms are included, therefore the analyses could be repeated within each sex. Note that the aim of this analysis would not be the same as the aim of a subgroup analysis by sex as outlined in <a href="#sec-subgroup" class="quarto-xref">Section&nbsp;2.8.4</a>. One is about residual confounding the other about effect measure modification.</li>
+<li>Repeating analyses within restricted populations.<a href="#fn11" class="footnote-ref" id="fnref11" role="doc-noteref"><sup>11</sup></a></li>
+<li>Negative control analysis if there is a negative exposure or negative outcome available.</li>
+</ul>
 </section>
 </section>
-<section id="table-shells" class="level3" data-number="2.9">
-<h3 data-number="2.9" class="anchored" data-anchor-id="table-shells"><span class="header-section-number">2.9</span> Table shells</h3>
-<p>Make a set of tables that are empty but otherwise ready to be published. There should a table shell for each table to be included in the manuscript or supplementary materials of the publication.</p>
+<section id="sec-sanity" class="level3" data-number="2.9">
+<h3 data-number="2.9" class="anchored" data-anchor-id="sec-sanity"><span class="header-section-number">2.9</span> Intermediate reporting of results within the study group</h3>
+<p>Specify in advance if there are intermediate results, e.g., population size, baseline characteristics, etc., to be shared within the research group before further analyses are carried out. The purpose would be to prevent knowledge about the results of the primary analyses from influencing which or how analyses are conducted. These intermediate steps should be seen as quality control and an attempt to avoid p-hacking. E.g., if it is obvious from table 1 that a variable is incorrectly captured, then that variable can be revised before including it in any further analyses. In studies using propensity score weighting or matching for balancing baseline variables, it will often be natural to assess the achieved balance before running outcome analyses.</p>
+<p>It may be preferable not to have this as a separate section but instead to integrate these intermediate results across the SAP where they appear naturally when running the analyses.</p>
 </section>
-<section id="figure-shells" class="level3" data-number="2.10">
-<h3 data-number="2.10" class="anchored" data-anchor-id="figure-shells"><span class="header-section-number">2.10</span> Figure shells</h3>
+<section id="compliance-with-rules-from-data-providers" class="level3" data-number="2.10">
+<h3 data-number="2.10" class="anchored" data-anchor-id="compliance-with-rules-from-data-providers"><span class="header-section-number">2.10</span> Compliance with rules from data providers</h3>
+<p>This section is relevant in all projects, but of particular importance in collaborations with external partners with limited knowledge of registry-based research conducted at Statistics Denmark or the Health Data Authorities.</p>
+<p>Describe how to ensure compliance with the rules specified by data providers, e.g., Statistics Denmark. E.g.:</p>
+<ul>
+<li>Numbers less than 5 will be masked, other counts will be reported accurately. (Preferable when only a small number of output tables are required.)</li>
+<li>All counts will be rounded to nearest 10 - rates and percentages will be computed based on rounded numbers. (Perhaps preferable when many output tables are required, e.g., because there are many different outcomes. Not feasible in small study population where <span class="math inline">\(n=15\)</span> and <span class="math inline">\(n=24\)</span> might be too different to both be reported as <span class="math inline">\(n=20\)</span>.).</li>
+<li>Percentiles of a continuous variable will be reported with a number of decimals ensuring at least 5 individuals can be expected to have this value.</li>
+</ul>
+</section>
+<section id="quality-control" class="level3" data-number="2.11">
+<h3 data-number="2.11" class="anchored" data-anchor-id="quality-control"><span class="header-section-number">2.11</span> Quality control</h3>
+<p>This section should describe the procedures implemented to ensure the accuracy and reliability of the statistical programming and results. Low-level quality control includes checking the full distribution of all (continuous) variables, high-level quality control includes having separate individuals implement the SAP independently and comparing results.</p>
+</section>
+<section id="table-shells" class="level3" data-number="2.12">
+<h3 data-number="2.12" class="anchored" data-anchor-id="table-shells"><span class="header-section-number">2.12</span> Table shells</h3>
+<p>Make a set of tables that are empty but otherwise ready to be published. There should a table shell for each table to be included in the manuscript or supplementary materials of the publication. Furthermore, if there are additional numbers to be used in the manuscript (“data not shown”), make table shells for these numbers as well.</p>
+</section>
+<section id="figure-shells" class="level3" data-number="2.13">
+<h3 data-number="2.13" class="anchored" data-anchor-id="figure-shells"><span class="header-section-number">2.13</span> Figure shells</h3>
 <p>As for table shells, there should be a specification of each figure to be included in the publication. Remember to make a figure shell for the flow chart!</p>
-<p>It is generally harder to make shells for figures than for tables, so consider copying/linking to figures from other publications that can be used as templates. Specify axis-labels, colors etc. if they need to be specific.<a href="#fn14" class="footnote-ref" id="fnref14" role="doc-noteref"><sup>14</sup></a></p>
+<p>It is generally harder to make shells for figures than for tables, so consider copying/linking to figures from other publications that can be used as templates. Specify axis-labels, colors etc. if they need to be specific.<a href="#fn12" class="footnote-ref" id="fnref12" role="doc-noteref"><sup>12</sup></a></p>
 </section>
-<section id="sec-codingTable" class="level3" data-number="2.11">
-<h3 data-number="2.11" class="anchored" data-anchor-id="sec-codingTable"><span class="header-section-number">2.11</span> Coding table</h3>
-<p>Provide all (diagnosis/procedure/ATC/SNOMED/NPU/…) codes needed to define the study population, exposure, outcome, and covariates, in a structured manner. The coding table can be a separate file (e.g., a spreadsheet) or part of the SAP. Make it easy to copy/import codes from the coding table to analytic scripts so they do not have to be transcribed manually.</p>
-<p>Columns to include in the coding table could be:</p>
+<section id="sec-codingTable" class="level3" data-number="2.14">
+<h3 data-number="2.14" class="anchored" data-anchor-id="sec-codingTable"><span class="header-section-number">2.14</span> Coding table</h3>
+<p>Provide all codes (e.g., diagnosis/procedure/ATC/SNOMED/NPU/etc.) needed to define the study population, exposure, outcome, and covariates, in a structured manner. This structure can include subsections within the table outlining the different roles different variables have (in-/exclusion criteria, exposure etc.) as in <a href="#tbl-codingtable" class="quarto-xref">Table&nbsp;2</a>. The coding table can be a separate file (e.g., a spreadsheet) or part of the SAP.</p>
+<p>State whether subcodes should be included by default or not. E.g., assume you want to include a variable for breast cancer and a record of DC50 or any of its subcodes are sufficient to define breast cancer, then:</p>
 <ul>
-<li>explicit variable names<a href="#fn15" class="footnote-ref" id="fnref15" role="doc-noteref"><sup>15</sup></a> (typically, these are irrelevant unless you want to annoy your statistical programmer, however, when using a common data model across sites they are essential for the input data),</li>
-<li>informal variable names,<a href="#fn16" class="footnote-ref" id="fnref16" role="doc-noteref"><sup>16</sup></a></li>
-<li>data source from which the codes are pulled, e.g., the Danish National Patient Registry (DNPR),</li>
-<li>the actual codes to be used, e.g., DN18,</li>
-<li>patient- and diagnosis type (applicable to Danish National Patient Registry); in-, out-, ER-patients, primary or secondary diagnoses,</li>
-<li>lookback from index date for baseline variables,</li>
-<li>notes on issues that are relevant for a specific variable that does not warrant a column in it self. E.g., thresholds for biomarkers defining conditions like CKD (eGFR) or type 2 diabetes mellitus (HbA1c); or that a diagnosis code for mycosis fungoides must be made a department of dermatology to be included.</li>
+<li>If subcodes are included by default then it will be sufficient to specify DC50 in the coding table.</li>
+<li>If subcodes are not included by default,
+<ul>
+<li>you can specify DC50 and a note that for this variable/code subcodes should be included, or</li>
+<li>you can specify the complete list of codes starting with DC50 (at time of writing): DC50 DC500 DC500A DC500B DC501 DC502 DC503 DC504 DC505 DC506 DC508 DC509.
+<ul>
+<li>Note that subcodes might change over time, i.e., if you do not have a list with all historic subcodes you might miss records.</li>
+</ul></li>
+</ul></li>
 </ul>
-<p>Further structure can be added as in <a href="#tbl-codingtable" class="quarto-xref">Table&nbsp;2</a> where variables are sorted by their role (exposure, in-/exclusion, outcomes, etc.). Note that seemingly similar variables can be defined differently depending on their purpose at different stages in the study. In <a href="#tbl-codingtable" class="quarto-xref">Table&nbsp;2</a>, sensitive algorithms are used to define plague and cholera as exclusion criteria, whereas more specific algorithms are used for outcomes.</p>
+<p>Make it easy to copy/import codes from the coding table to analytic scripts:</p>
+<ul>
+<li>Avoid unnecessary characters that need to be deleted, like “*” in “DK70*” or “.” in “DK70.0”.</li>
+<li>Be consistent
+<ul>
+<li>for ICD10-codes either always include the leading D or never include it,</li>
+<li>use the same separator between codes in lists: “I20, I21, I22” or “I20 I21 I22”.</li>
+</ul></li>
+<li>To the extent possible avoid intervals: “DC77-DC79” is hardly faster to write than “DC77 DC78 DC79”, however, “DC00-DC43” is sensible.</li>
+<li>Make sure you distinguish between “O” and “0”.</li>
+</ul>
+<p>Strive for brevity:</p>
+<ul>
+<li>In “DK70 DK700 DK701 DK702 DK703 DK704 DK709” the first code is a parent code of the others, so the list is equivalent to “DK70” when subcodes are included.</li>
+<li>Sort the codes and remove duplicates within variables.
+<ul>
+<li>Historically statisticians have received SAPs where a code is included more than once for the same variable - presumably because codes are copied from various different previous projects with little or no thought about overlaps. If codes from three previous projects are reused (copied and pasted) to define condition C in the current project, and “DJ25” is copied from all three previous projects, and it is decided that it should not be used after all, it needs to be deleted 3 times. There is a large chance this will not happen if the list of codes for C is long and unstructured, in which case the statistician is still going to use “DJ25” to define C.</li>
+</ul></li>
+</ul>
+<p>The coding table should have a row for each variable used in the study. In many projects some variables will require data from different registries in which case the cells in the row need to be split (e.g., diabetes can be defined from hospital, prescription, and laboratory data requiring the diabetes row has three subrows).</p>
+<p>The columns in the coding table could include but are not limited to:</p>
+<ul>
+<li>Variable names reflecting how they are included in table and/or figure shells and the SAP, e.g., “Glucose lowering drugs”.</li>
+<li>Data source from which the codes are extracted, e.g., the Danish National Patient Registry/DNPR.</li>
+<li>The actual codes to be used, e.g., “DJ25”.</li>
+<li>Patient- and diagnosis type (applicable to Danish National Patient Registry); in-, out-, ER-patients, primary or secondary diagnoses.</li>
+<li>Lookback from index date for baseline variables or variables used for in- or exclusion (this may vary between variables).</li>
+<li>Notes on issues that are relevant for a specific variable that does not warrant a column in itself. E.g., thresholds for biomarkers defining conditions like chronic kidney disease (eGFR) or type 2 diabetes mellitus (HbA1c); or that a diagnosis code for mycosis fungoides must be made at a department of dermatology to be included.</li>
+<li>Supporting variables; which variables from the registries should be used to define the specific study variable? In the coding table example below, “department of infectious diseases” needs to be defined, this can be described in the notes, or it could be defined in a column of supporting variables. Supporting variables could also specify which date variables to use for diagnoses, surgical procedures, and treatments. However, if a general rule on dates (e.g., “d_inddto/dato_start are used for diagnoses, d_odto/dato_start used for surgical procedures and in-hospital treatments”) can be applied, “Supporting variables” may be redundant as a column in the coding table as there will essentially be no variation in its information.</li>
+<li>Usually, explicit variable names to be used when programming, e.g., “gld180” (for “Glucose lowering drugs within 180 days”) are unnecessary to specify. However, they are important when using a common data model and all sites need to produce structurally similar datasets for analysis. Make sure the variable names comply with the software package to be used and be mindful that some software packages are case sensitive.</li>
+</ul>
+<p>The details on defining variables using data from several recordings or data sources should be described in the appropriate sections elsewhere in the SAP rather than within the coding table.</p>
+<p>If a prevalent outcome is an exclusion criterion, you can consider specifying it separately under outcomes and exclusion criteria. This might be relevant if only inpatient records should be used for outcomes, but all records should be used for exclusion. To avoid repetitions, the codes to be used can be specified under exclusion criteria only; under outcomes it can be stated that the codes to be used are the same as for the exclusion criteria (or vice versa).</p>
 <div class="cell">
 <div id="tbl-codingtable" class="cell quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
@@ -876,23 +1007,23 @@ Table&nbsp;2: Suggested structure for a coding table. Code column intentionally 
 </figcaption>
 <div aria-describedby="tbl-codingtable-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="tfvdblepbi" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#tfvdblepbi table {
+<div id="loqbcaurbv" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#loqbcaurbv table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#tfvdblepbi thead, #tfvdblepbi tbody, #tfvdblepbi tfoot, #tfvdblepbi tr, #tfvdblepbi td, #tfvdblepbi th {
+#loqbcaurbv thead, #loqbcaurbv tbody, #loqbcaurbv tfoot, #loqbcaurbv tr, #loqbcaurbv td, #loqbcaurbv th {
   border-style: none;
 }
 
-#tfvdblepbi p {
+#loqbcaurbv p {
   margin: 0;
   padding: 0;
 }
 
-#tfvdblepbi .gt_table {
+#loqbcaurbv .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -918,12 +1049,12 @@ Table&nbsp;2: Suggested structure for a coding table. Code column intentionally 
   border-left-color: #D3D3D3;
 }
 
-#tfvdblepbi .gt_caption {
+#loqbcaurbv .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#tfvdblepbi .gt_title {
+#loqbcaurbv .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -935,7 +1066,7 @@ Table&nbsp;2: Suggested structure for a coding table. Code column intentionally 
   border-bottom-width: 0;
 }
 
-#tfvdblepbi .gt_subtitle {
+#loqbcaurbv .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -947,7 +1078,7 @@ Table&nbsp;2: Suggested structure for a coding table. Code column intentionally 
   border-top-width: 0;
 }
 
-#tfvdblepbi .gt_heading {
+#loqbcaurbv .gt_heading {
   background-color: #FFFFFF;
   text-align: left;
   border-bottom-color: #FFFFFF;
@@ -959,13 +1090,13 @@ Table&nbsp;2: Suggested structure for a coding table. Code column intentionally 
   border-right-color: #D3D3D3;
 }
 
-#tfvdblepbi .gt_bottom_border {
+#loqbcaurbv .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#tfvdblepbi .gt_col_headings {
+#loqbcaurbv .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -980,7 +1111,7 @@ Table&nbsp;2: Suggested structure for a coding table. Code column intentionally 
   border-right-color: #D3D3D3;
 }
 
-#tfvdblepbi .gt_col_heading {
+#loqbcaurbv .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1000,7 +1131,7 @@ Table&nbsp;2: Suggested structure for a coding table. Code column intentionally 
   overflow-x: hidden;
 }
 
-#tfvdblepbi .gt_column_spanner_outer {
+#loqbcaurbv .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1012,15 +1143,15 @@ Table&nbsp;2: Suggested structure for a coding table. Code column intentionally 
   padding-right: 4px;
 }
 
-#tfvdblepbi .gt_column_spanner_outer:first-child {
+#loqbcaurbv .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#tfvdblepbi .gt_column_spanner_outer:last-child {
+#loqbcaurbv .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#tfvdblepbi .gt_column_spanner {
+#loqbcaurbv .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1032,11 +1163,11 @@ Table&nbsp;2: Suggested structure for a coding table. Code column intentionally 
   width: 100%;
 }
 
-#tfvdblepbi .gt_spanner_row {
+#loqbcaurbv .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#tfvdblepbi .gt_group_heading {
+#loqbcaurbv .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1062,7 +1193,7 @@ Table&nbsp;2: Suggested structure for a coding table. Code column intentionally 
   text-align: left;
 }
 
-#tfvdblepbi .gt_empty_group_heading {
+#loqbcaurbv .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1077,15 +1208,15 @@ Table&nbsp;2: Suggested structure for a coding table. Code column intentionally 
   vertical-align: middle;
 }
 
-#tfvdblepbi .gt_from_md > :first-child {
+#loqbcaurbv .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#tfvdblepbi .gt_from_md > :last-child {
+#loqbcaurbv .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#tfvdblepbi .gt_row {
+#loqbcaurbv .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1104,7 +1235,7 @@ Table&nbsp;2: Suggested structure for a coding table. Code column intentionally 
   overflow-x: hidden;
 }
 
-#tfvdblepbi .gt_stub {
+#loqbcaurbv .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1117,7 +1248,7 @@ Table&nbsp;2: Suggested structure for a coding table. Code column intentionally 
   padding-right: 5px;
 }
 
-#tfvdblepbi .gt_stub_row_group {
+#loqbcaurbv .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1131,15 +1262,15 @@ Table&nbsp;2: Suggested structure for a coding table. Code column intentionally 
   vertical-align: top;
 }
 
-#tfvdblepbi .gt_row_group_first td {
+#loqbcaurbv .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#tfvdblepbi .gt_row_group_first th {
+#loqbcaurbv .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#tfvdblepbi .gt_summary_row {
+#loqbcaurbv .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1149,16 +1280,16 @@ Table&nbsp;2: Suggested structure for a coding table. Code column intentionally 
   padding-right: 5px;
 }
 
-#tfvdblepbi .gt_first_summary_row {
+#loqbcaurbv .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#tfvdblepbi .gt_first_summary_row.thick {
+#loqbcaurbv .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#tfvdblepbi .gt_last_summary_row {
+#loqbcaurbv .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1168,7 +1299,7 @@ Table&nbsp;2: Suggested structure for a coding table. Code column intentionally 
   border-bottom-color: #D3D3D3;
 }
 
-#tfvdblepbi .gt_grand_summary_row {
+#loqbcaurbv .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1178,7 +1309,7 @@ Table&nbsp;2: Suggested structure for a coding table. Code column intentionally 
   padding-right: 5px;
 }
 
-#tfvdblepbi .gt_first_grand_summary_row {
+#loqbcaurbv .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1188,7 +1319,7 @@ Table&nbsp;2: Suggested structure for a coding table. Code column intentionally 
   border-top-color: #D3D3D3;
 }
 
-#tfvdblepbi .gt_last_grand_summary_row_top {
+#loqbcaurbv .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1198,11 +1329,11 @@ Table&nbsp;2: Suggested structure for a coding table. Code column intentionally 
   border-bottom-color: #D3D3D3;
 }
 
-#tfvdblepbi .gt_striped {
+#loqbcaurbv .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#tfvdblepbi .gt_table_body {
+#loqbcaurbv .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1211,7 +1342,7 @@ Table&nbsp;2: Suggested structure for a coding table. Code column intentionally 
   border-bottom-color: #D3D3D3;
 }
 
-#tfvdblepbi .gt_footnotes {
+#loqbcaurbv .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1225,7 +1356,7 @@ Table&nbsp;2: Suggested structure for a coding table. Code column intentionally 
   border-right-color: #D3D3D3;
 }
 
-#tfvdblepbi .gt_footnote {
+#loqbcaurbv .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1234,7 +1365,7 @@ Table&nbsp;2: Suggested structure for a coding table. Code column intentionally 
   padding-right: 5px;
 }
 
-#tfvdblepbi .gt_sourcenotes {
+#loqbcaurbv .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1248,7 +1379,7 @@ Table&nbsp;2: Suggested structure for a coding table. Code column intentionally 
   border-right-color: #D3D3D3;
 }
 
-#tfvdblepbi .gt_sourcenote {
+#loqbcaurbv .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1256,72 +1387,72 @@ Table&nbsp;2: Suggested structure for a coding table. Code column intentionally 
   padding-right: 5px;
 }
 
-#tfvdblepbi .gt_left {
+#loqbcaurbv .gt_left {
   text-align: left;
 }
 
-#tfvdblepbi .gt_center {
+#loqbcaurbv .gt_center {
   text-align: center;
 }
 
-#tfvdblepbi .gt_right {
+#loqbcaurbv .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#tfvdblepbi .gt_font_normal {
+#loqbcaurbv .gt_font_normal {
   font-weight: normal;
 }
 
-#tfvdblepbi .gt_font_bold {
+#loqbcaurbv .gt_font_bold {
   font-weight: bold;
 }
 
-#tfvdblepbi .gt_font_italic {
+#loqbcaurbv .gt_font_italic {
   font-style: italic;
 }
 
-#tfvdblepbi .gt_super {
+#loqbcaurbv .gt_super {
   font-size: 65%;
 }
 
-#tfvdblepbi .gt_footnote_marks {
+#loqbcaurbv .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#tfvdblepbi .gt_asterisk {
+#loqbcaurbv .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#tfvdblepbi .gt_indent_1 {
+#loqbcaurbv .gt_indent_1 {
   text-indent: 5px;
 }
 
-#tfvdblepbi .gt_indent_2 {
+#loqbcaurbv .gt_indent_2 {
   text-indent: 10px;
 }
 
-#tfvdblepbi .gt_indent_3 {
+#loqbcaurbv .gt_indent_3 {
   text-indent: 15px;
 }
 
-#tfvdblepbi .gt_indent_4 {
+#loqbcaurbv .gt_indent_4 {
   text-indent: 20px;
 }
 
-#tfvdblepbi .gt_indent_5 {
+#loqbcaurbv .gt_indent_5 {
   text-indent: 25px;
 }
 
-#tfvdblepbi .katex-display {
+#loqbcaurbv .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#tfvdblepbi div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#loqbcaurbv div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -1488,8 +1619,8 @@ Table&nbsp;2: Suggested structure for a coding table. Code column intentionally 
 </div>
 </div>
 </section>
-<section id="references" class="level3" data-number="2.12">
-<h3 data-number="2.12" class="anchored" data-anchor-id="references"><span class="header-section-number">2.12</span> References</h3>
+<section id="references" class="level3" data-number="2.15">
+<h3 data-number="2.15" class="anchored" data-anchor-id="references"><span class="header-section-number">2.15</span> References</h3>
 <p>List of literature referenced in the SAP</p>
 </section>
 </section>
@@ -1548,7 +1679,7 @@ Figure&nbsp;2: Hypothetical herpes zoster diagnosis patterns
 <li>What is the prognosis after incident herpes zoster?</li>
 </ul>
 <p>where you only want to include incident cases, so at least patient 4 should also be excluded. Depending on the positive predictive value of diagnoses codes for herpes zoster at non-dermatology departments, patients 1 and 3 can be in- or excluded.</p>
-<p>If specificity is prioritized, i.e., you want to increase certainty of the condition being incident, then you probably want to exclude patients with a prevalent diagnosis at a non-dermatology department at the cost of population size, including only patient 2 from <a href="#fig-timelines" class="quarto-xref">Figure&nbsp;2</a>. To do this, you can use the ordering:</p>
+<p>If specificity is prioritized, i.e., you want to increase certainty of the condition being incident, then you probably want to exclude patients with a prevalent diagnosis from non-dermatology departments at the cost of population size, including only patient 2 from <a href="#fig-timelines" class="quarto-xref">Figure&nbsp;2</a>. To do this, you can use the ordering:</p>
 <ol type="1">
 <li>restrict to the first observation per patient (this excludes no patient), the time of the diagnosis marks the index date,</li>
 <li>exclude patients with index dates outside of the study period (this excludes patients 1, 4 and 6),</li>
@@ -1561,6 +1692,7 @@ Figure&nbsp;2: Hypothetical herpes zoster diagnosis patterns
 <li>restrict to the first diagnosis per patient, this marks the index date,</li>
 <li>restrict to index dates within the study period (patients 4 and 6 are excluded).</li>
 </ol>
+<p>Note that the patients in <a href="#fig-timelines" class="quarto-xref">Figure&nbsp;2</a> should not be a representative sample from the source population. They should ideally represent all qualitatively different patient trajectories regardless of how frequent these trajectories are seen in the clinic/data.</p>
 </section>
 <section id="external-links" class="level2" data-number="5">
 <h2 data-number="5" class="anchored" data-anchor-id="external-links"><span class="header-section-number">5</span> External links</h2>
@@ -1578,251 +1710,253 @@ Figure&nbsp;2: Hypothetical herpes zoster diagnosis patterns
 <li id="fn2"><p><a href="https://xkcd.com/882/">xkcd on p-hacking</a><a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn3"><p><a href="https://en.wikipedia.org/wiki/HARKing">Wikipedia on HARKing</a>.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn4"><p>Examples from Danish registries include laboratory data which hold dates and time stamps (hours and minutes), whereas the National Health Insurance Service Registry only includes week number.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn5"><p>That is putting it mildly.<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn6"><p>Ultimately, you might realize the study is unfeasible and you can cancel it before wasting any more time.<a href="#fnref6" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn7"><p>Naturally, reviewer 2 might not like the results and they might p-hack by proxy (you).<a href="#fnref7" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn8"><p>In <a href="#tbl-changelog" class="quarto-xref">Table&nbsp;1</a> an entry is made for the completion of the first version of the SAP for timeline purposes. This is not necessary and can be omitted.<a href="#fnref8" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn9"><p>The alternative is that they will yell at/about you for wasting their time.<a href="#fnref9" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn10"><p>Sometimes there will be more than one day that is important. E.g., for a population with post-surgical infection, it might be necessary to apply some criteria on the date of the surgery and others on the date of the infection.<a href="#fnref10" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn11"><p>Consider a project where you want to include all infections of a certain type, e.g., pneumonia. A person might be admitted to a hospital and transferred between departments, and so several records of the same pneumonia may be created in the registries. Another person might have pneumonia several times, and each distinct infection should be included. How you get from raw data, to a data set where each case of pneumonia is included once is essential in the data management plan but it might not be helpful to the audience for the finished paper.<a href="#fnref11" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn12"><p>Note the difference between a subgroup analysis and a stratified analysis. The implicit aim of a stratified analysis is to assess effect modification, and all individuals are included, being in exactly one of the strata (assuming no missing data). Subgroup analyses on the other hand, might include only those with a certain characteristic, e.g., presence of a confounding factor which can be found with high positive predictive value but low sensitivity. Such a factor will likely result in residual confounding in the main analysis, but not within the subgroup having the factor. Note that residual confounding would be expected among those without the factor making that subgroup less relevant to analyse.<a href="#fnref12" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn13"><p>Depending on the strength of the confounder it could be considered if the primary analysis should be within the restricted population, coming at the cost of generalizability and a reduced population size which may affect precision. This consideration should be made before running the analyses.<a href="#fnref13" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn14"><p>It will often be quick to change these parameters, but if you know in advance what they should be you might as well spell it out explicitly.<a href="#fnref14" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn15"><p>I.e., the name the variable should have in the analytic script, e.g., <code>gld_180d</code>. If explicit variable names are used, they have to conform to the statistical software package used.<a href="#fnref15" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn16"><p>I.e., the name as you would refer to it in text, e.g., ‘glucose lowering drugs within 180 days’.<a href="#fnref16" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn5"><p>In <a href="#tbl-changelog" class="quarto-xref">Table&nbsp;1</a> an entry is made for the completion of the first version of the SAP for timeline purposes. This is not necessary and can be omitted.<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn6"><p>The alternative is that they will yell at/about you for wasting their time.<a href="#fnref6" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn7"><p>Sometimes there will be more than one day that is important. E.g., for a population with post-surgical infection, it might be necessary to apply some criteria on the date of the surgery and others on the date of the infection.<a href="#fnref7" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn8"><p>Consider a project where you want to include all infections of a certain type, e.g., pneumonia. A person might be admitted to a hospital and transferred between departments, and so several records of the same pneumonia may be created in the registries. Another person might have pneumonia several times, and each distinct infection should be included. How you get from raw data, to a dataset where each case of pneumonia is included once is essential in the data management plan but it might not be helpful to the audience for the finished paper.<a href="#fnref8" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn9"><p>It will generally be over the top to specify which seed to use, simply specifying that a seed should be used will often be sufficient. However, if the data are small, the choice of seed can potentially impact the results qualitatively in which case it can be helpful to specify a seed in advance. Do note, however, that <a href="https://blog.genesmindsmachines.com/p/if-your-random-seed-is-42-i-will">seeds need to be arbitrary</a><a href="#fnref9" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn10"><p>Note that even though this could be mistaken as a subgroup analysis it is listed under sensitivity analyses. Effect measure modification does not make sense to do across calendar time, because no future individual will belong the any of the subgroups covered by a specific time period. Only if calendar time can be considered a proxy of an unmeasured variable that can be seen for future patients will treatment effect heterogeneity across calendar time periods make sense in a subgroup analysis. NB Seasons are conceptually different from calendar time.<a href="#fnref10" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn11"><p>If a known confounder, e.g., smoking, is hard to measure in the data, and a proxy for smoking exists so that those with this proxy can be assumed to smoke, but those without cannot be assumed not to smoke (there is a high positive predictive value but a low negative predictive value), smoking status cannot be imputed in those without the proxy, and restriction to the subpopulation of smokers may provide a less biased (but also less generalizable and less precise) estimate than in the full population. Depending on the strength and prevalence of the confounder it may be preferable to conduct the main analysis within the restricted rather than the broader population.<a href="#fnref11" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn12"><p>It will often be quick to change these parameters, but if you know in advance what they should be you might as well spell it out explicitly.<a href="#fnref12" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
-window.document.addEventListener("DOMContentLoaded", function (event) {
-  const toggleBodyColorMode = (bsSheetEl) => {
-    const mode = bsSheetEl.getAttribute("data-mode");
-    const bodyEl = window.document.querySelector("body");
-    if (mode === "dark") {
-      bodyEl.classList.add("quarto-dark");
-      bodyEl.classList.remove("quarto-light");
-    } else {
-      bodyEl.classList.add("quarto-light");
-      bodyEl.classList.remove("quarto-dark");
-    }
-  }
-  const toggleBodyColorPrimary = () => {
-    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
-    if (bsSheetEl) {
-      toggleBodyColorMode(bsSheetEl);
-    }
-  }
-  toggleBodyColorPrimary();  
-  const icon = "";
-  const anchorJS = new window.AnchorJS();
-  anchorJS.options = {
-    placement: 'right',
-    icon: icon
-  };
-  anchorJS.add('.anchored');
-  const isCodeAnnotation = (el) => {
-    for (const clz of el.classList) {
-      if (clz.startsWith('code-annotation-')) {                     
-        return true;
-      }
-    }
-    return false;
-  }
-  const onCopySuccess = function(e) {
-    // button target
-    const button = e.trigger;
-    // don't keep focus
-    button.blur();
-    // flash "checked"
-    button.classList.add('code-copy-button-checked');
-    var currentTitle = button.getAttribute("title");
-    button.setAttribute("title", "Copied!");
-    let tooltip;
-    if (window.bootstrap) {
-      button.setAttribute("data-bs-toggle", "tooltip");
-      button.setAttribute("data-bs-placement", "left");
-      button.setAttribute("data-bs-title", "Copied!");
-      tooltip = new bootstrap.Tooltip(button, 
-        { trigger: "manual", 
-          customClass: "code-copy-button-tooltip",
-          offset: [0, -8]});
-      tooltip.show();    
-    }
-    setTimeout(function() {
-      if (tooltip) {
-        tooltip.hide();
-        button.removeAttribute("data-bs-title");
-        button.removeAttribute("data-bs-toggle");
-        button.removeAttribute("data-bs-placement");
-      }
-      button.setAttribute("title", currentTitle);
-      button.classList.remove('code-copy-button-checked');
-    }, 1000);
-    // clear code selection
-    e.clearSelection();
-  }
-  const getTextToCopy = function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-  }
-  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-    text: getTextToCopy
-  });
-  clipboard.on('success', onCopySuccess);
-  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-      text: getTextToCopy,
-      container: window.document.getElementById('quarto-embedded-source-code-modal')
-    });
-    clipboardModal.on('success', onCopySuccess);
-  }
-    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-    var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp('/' + window.location.host + '/');
-    var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
-    }
-    // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
-    for (var i=0; i<links.length; i++) {
-      const link = links[i];
-      if (!isInternal(link.href)) {
-        // undo the damage that might have been done by quarto-nav.js in the case of
-        // links that we want to consider external
-        if (link.dataset.originalHref !== undefined) {
-          link.href = link.dataset.originalHref;
-        }
-      }
-    }
-  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
-    const config = {
-      allowHTML: true,
-      maxWidth: 500,
-      delay: 100,
-      arrow: false,
-      appendTo: function(el) {
-          return el.parentElement;
-      },
-      interactive: true,
-      interactiveBorder: 10,
-      theme: 'quarto',
-      placement: 'bottom-start',
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
     };
-    if (contentFn) {
-      config.content = contentFn;
-    }
-    if (onTriggerFn) {
-      config.onTrigger = onTriggerFn;
-    }
-    if (onUntriggerFn) {
-      config.onUntrigger = onUntriggerFn;
-    }
-    window.tippy(el, config); 
-  }
-  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
-  for (var i=0; i<noterefs.length; i++) {
-    const ref = noterefs[i];
-    tippyHover(ref, function() {
-      // use id or data attribute instead here
-      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
-      try { href = new URL(href).hash; } catch {}
-      const id = href.replace(/^#\/?/, "");
-      const note = window.document.getElementById(id);
-      if (note) {
-        return note.innerHTML;
-      } else {
-        return "";
-      }
-    });
-  }
-  const xrefs = window.document.querySelectorAll('a.quarto-xref');
-  const processXRef = (id, note) => {
-    // Strip column container classes
-    const stripColumnClz = (el) => {
-      el.classList.remove("page-full", "page-columns");
-      if (el.children) {
-        for (const child of el.children) {
-          stripColumnClz(child);
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
         }
       }
+      return false;
     }
-    stripColumnClz(note)
-    if (id === null || id.startsWith('sec-')) {
-      // Special case sections, only their first couple elements
-      const container = document.createElement("div");
-      if (note.children && note.children.length > 2) {
-        container.appendChild(note.children[0].cloneNode(true));
-        for (let i = 1; i < note.children.length; i++) {
-          const child = note.children[i];
-          if (child.tagName === "P" && child.innerText === "") {
-            continue;
-          } else {
-            container.appendChild(child.cloneNode(true));
-            break;
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
           }
         }
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(container);
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
         }
-        return container.innerHTML
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
       } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
         if (window.Quarto?.typesetMath) {
           window.Quarto.typesetMath(note);
         }
-        return note.innerHTML;
-      }
-    } else {
-      // Remove any anchor links if they are present
-      const anchorLink = note.querySelector('a.anchorjs-link');
-      if (anchorLink) {
-        anchorLink.remove();
-      }
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(note);
-      }
-      if (note.classList.contains("callout")) {
-        return note.outerHTML;
-      } else {
-        return note.innerHTML;
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
       }
     }
-  }
-  for (var i=0; i<xrefs.length; i++) {
-    const xref = xrefs[i];
-    tippyHover(xref, undefined, function(instance) {
-      instance.disable();
-      let url = xref.getAttribute('href');
-      let hash = undefined; 
-      if (url.startsWith('#')) {
-        hash = url;
-      } else {
-        try { hash = new URL(url).hash; } catch {}
-      }
-      if (hash) {
-        const id = hash.replace(/^#\/?/, "");
-        const note = window.document.getElementById(id);
-        if (note !== null) {
-          try {
-            const html = processXRef(id, note.cloneNode(true));
-            instance.setContent(html);
-          } finally {
-            instance.enable();
-            instance.show();
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
           }
         } else {
-          // See if we can fetch this
-          fetch(url.split('#')[0])
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
           .then(res => res.text())
           .then(html => {
             const parser = new DOMParser();
             const htmlDoc = parser.parseFromString(html, "text/html");
-            const note = htmlDoc.getElementById(id);
+            const note = htmlDoc.querySelector('main.content');
             if (note !== null) {
-              const html = processXRef(id, note);
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
               instance.setContent(html);
             } 
           }).finally(() => {
@@ -1830,185 +1964,161 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             instance.show();
           });
         }
-      } else {
-        // See if we can fetch a full url (with no hash to target)
-        // This is a special case and we should probably do some content thinning / targeting
-        fetch(url)
-        .then(res => res.text())
-        .then(html => {
-          const parser = new DOMParser();
-          const htmlDoc = parser.parseFromString(html, "text/html");
-          const note = htmlDoc.querySelector('main.content');
-          if (note !== null) {
-            // This should only happen for chapter cross references
-            // (since there is no id in the URL)
-            // remove the first header
-            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
-              note.children[0].remove();
-            }
-            const html = processXRef(null, note);
-            instance.setContent(html);
-          } 
-        }).finally(() => {
-          instance.enable();
-          instance.show();
-        });
-      }
-    }, function(instance) {
-    });
-  }
-      let selectedAnnoteEl;
-      const selectorForAnnotation = ( cell, annotation) => {
-        let cellAttr = 'data-code-cell="' + cell + '"';
-        let lineAttr = 'data-code-annotation="' +  annotation + '"';
-        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
-        return selector;
-      }
-      const selectCodeLines = (annoteEl) => {
-        const doc = window.document;
-        const targetCell = annoteEl.getAttribute("data-target-cell");
-        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
-        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
-        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
-        const lineIds = lines.map((line) => {
-          return targetCell + "-" + line;
-        })
-        let top = null;
-        let height = null;
-        let parent = null;
-        if (lineIds.length > 0) {
-            //compute the position of the single el (top and bottom and make a div)
-            const el = window.document.getElementById(lineIds[0]);
-            top = el.offsetTop;
-            height = el.offsetHeight;
-            parent = el.parentElement.parentElement;
-          if (lineIds.length > 1) {
-            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-            height = bottom - top;
-          }
-          if (top !== null && height !== null && parent !== null) {
-            // cook up a div (if necessary) and position it 
-            let div = window.document.getElementById("code-annotation-line-highlight");
-            if (div === null) {
-              div = window.document.createElement("div");
-              div.setAttribute("id", "code-annotation-line-highlight");
-              div.style.position = 'absolute';
-              parent.appendChild(div);
-            }
-            div.style.top = top - 2 + "px";
-            div.style.height = height + 4 + "px";
-            div.style.left = 0;
-            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-            if (gutterDiv === null) {
-              gutterDiv = window.document.createElement("div");
-              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-              gutterDiv.style.position = 'absolute';
-              const codeCell = window.document.getElementById(targetCell);
-              const gutter = codeCell.querySelector('.code-annotation-gutter');
-              gutter.appendChild(gutterDiv);
-            }
-            gutterDiv.style.top = top - 2 + "px";
-            gutterDiv.style.height = height + 4 + "px";
-          }
-          selectedAnnoteEl = annoteEl;
-        }
-      };
-      const unselectCodeLines = () => {
-        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
-        elementsIds.forEach((elId) => {
-          const div = window.document.getElementById(elId);
-          if (div) {
-            div.remove();
-          }
-        });
-        selectedAnnoteEl = undefined;
-      };
-        // Handle positioning of the toggle
-    window.addEventListener(
-      "resize",
-      throttle(() => {
-        elRect = undefined;
-        if (selectedAnnoteEl) {
-          selectCodeLines(selectedAnnoteEl);
-        }
-      }, 10)
-    );
-    function throttle(fn, ms) {
-    let throttle = false;
-    let timer;
-      return (...args) => {
-        if(!throttle) { // first call gets through
-            fn.apply(this, args);
-            throttle = true;
-        } else { // all the others get throttled
-            if(timer) clearTimeout(timer); // cancel #2
-            timer = setTimeout(() => {
-              fn.apply(this, args);
-              timer = throttle = false;
-            }, ms);
-        }
-      };
-    }
-      // Attach click handler to the DT
-      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
-      for (const annoteDlNode of annoteDls) {
-        annoteDlNode.addEventListener('click', (event) => {
-          const clickedEl = event.target;
-          if (clickedEl !== selectedAnnoteEl) {
-            unselectCodeLines();
-            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
-            if (activeEl) {
-              activeEl.classList.remove('code-annotation-active');
-            }
-            selectCodeLines(clickedEl);
-            clickedEl.classList.add('code-annotation-active');
-          } else {
-            // Unselect the line
-            unselectCodeLines();
-            clickedEl.classList.remove('code-annotation-active');
-          }
-        });
-      }
-  const findCites = (el) => {
-    const parentEl = el.parentElement;
-    if (parentEl) {
-      const cites = parentEl.dataset.cites;
-      if (cites) {
-        return {
-          el,
-          cites: cites.split(' ')
-        };
-      } else {
-        return findCites(el.parentElement)
-      }
-    } else {
-      return undefined;
-    }
-  };
-  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-  for (var i=0; i<bibliorefs.length; i++) {
-    const ref = bibliorefs[i];
-    const citeInfo = findCites(ref);
-    if (citeInfo) {
-      tippyHover(citeInfo.el, function() {
-        var popup = window.document.createElement('div');
-        citeInfo.cites.forEach(function(cite) {
-          var citeDiv = window.document.createElement('div');
-          citeDiv.classList.add('hanging-indent');
-          citeDiv.classList.add('csl-entry');
-          var biblioDiv = window.document.getElementById('ref-' + cite);
-          if (biblioDiv) {
-            citeDiv.innerHTML = biblioDiv.innerHTML;
-          }
-          popup.appendChild(citeDiv);
-        });
-        return popup.innerHTML;
+      }, function(instance) {
       });
     }
-  }
-});
-</script>
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
 </div> <!-- /content -->
 
 

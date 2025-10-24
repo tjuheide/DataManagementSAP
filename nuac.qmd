@@ -3,7 +3,7 @@ title: "SGLT2i vs GLP-1RA and the risk of Plague and Cholera "
 number-sections: true
 ---
 
-Here is an example of how a statistical analysis plan (SAP) for study applying a new user, active comparator-design could be set up.
+Here is an example of how a statistical analysis plan (SAP) for study applying a new user, active comparator-design could be set up. Some details are intentionally left out - essentially because I am a lazy scoundrel but more importantly because the methods presented here should not be considered a guide on how to conduct such a study.
 
 ## Log of changes
 
@@ -34,142 +34,215 @@ gt(df) |>
 
 ```
 
-## Background
-SGLT2-inhibitors have been linked with various infections.[^1] Whether it affects the risk of plague or cholera remains unknown.
+## Background and aim
 
-[^1]: In an actual SAP you should provide references throughout the document as is relevant. In this example no references will be provided.
+SGLT2-inhibitors have been linked with various infections.[^1] Whether it affects the risk of plague or cholera remains unknown. We aim to estimate the causal effect of SGLT2i-initiation on the risk of plague and cholera.
 
-## Aim
-To estimate the 5-year relative risk of plague and cholera after initiation of SGLT2i compared to GLP-1RA, which serves as an active comparator to reduce confounding and is assumed not to affect the risk of either kind of infection.[^2]
+[^1]: In an actual SAP you should provide references throughout the document as is relevant. In this example none will be provided.
+
+We will conduct a new user active comparator study to estimate the 5-year relative risk of plague and cholera after initiation of SGLT2i compared to GLP-1RA. GLP-1RAs will serve as an active comparator to reduce confounding and is assumed not to affect the risk of either kind of infection.[^2]
 
 [^2]: This is likely a stupid study to conduct in Denmark. That is intentional.
 
+We hypothesize that there will be no clinically meaningful difference between the two groups.
+
 ## Sample size
-We expect the sample size to be 30-60,000 with at least 10,000 individuals in each exposure group.
+
+We expect the sample size to be 30-60,000 with at least 10,000 individuals in each exposure group. We assume there will be approximately 100 events.
 
 ## Methods
+
 We will conduct a new user active comparator study using population-based Danish registry data.
 
 ### Data sources
+
 We will use data from:
 
-*	The Danish National Patient Registry (patient registry)
-*	The Danish National Prescription Registry (prescription registry)
-*	The Register of Laboratory Results for Research (laboratory registry)
-*	The Civil Registration System (CRS)
+-   The Danish National Patient Registry (patient registry)
+-   The Danish National Prescription Registry (prescription registry)
+-   The Register of Laboratory Results for Research (laboratory registry)
+-   The Civil Registration System (CRS)
 
 all of which are well known to the statistical programmer and will not be described or documented further here.[^3]
 
 [^3]: A data dictionary or other forms of documentation can be essential if the data sources are unknown to the statistical programmer, or if data can be made publicly available so that others can reproduce your results.
 
-### Study and recruitment period {#sec-period}
-The study period will be 1 January 2016 through 31 December 2024.
-The recruitment period will be 1 January 2016 through 31 December 2021.
+### Source population
 
-### Time
-A month is 30 days, and a year is 360 days.[^4]
-
-[^4]: This might be over the top but at some point your statistical programmer will have to decide on how to compute age, length of follow-up etc. if units of time are unspecified. Avoiding "months" will often be a good idea if possible, then a year can be 365 days (or 365.25 days to account for leap years) without having confusion as to how long a month needs to be for a year to equal 12 months.
-
-### Exposure groups
-*	SGLT2i (exposure)
-*	GLP-1RA (comparator)
+The source population is Danish residents with type 2 diabetes mellitus, eligible to initiate either SGLT2is or GLP-1RAs. SGLT2is are also used in patients with other conditions such as heart failure and chronic kidney disease, however, our results will not be directly applicable to these populations, where GLP-1RA is not indicated per se. However, individuals with heart failure or CKD will not be excluded.
 
 ### Study population and index date
-We will include individuals initiating SGLT2i or GLP-1RA during the study period using the inclusion-/exclusion steps below. The population is restricted to individuals with type 2 diabetes mellitus (T2DM) because SGLT2i is also indicated for heart failure and chronic kidney disease (CKD). We assume that restricting to this specific population of individual with a priori increased risk of infections will reduce confounding. Individuals with heart failure or CKD will not be excluded in the primary analysis.
 
-1.	Extract data on the exposures from the prescription registry.
-2.	Select the first ever date per person, this marks the index date of the individual.
-3.	Exclude individuals who, on the index date:
-    a.	initiate both drugs
-    b.	have incomplete CRS data (sex or date of birth missing)
-    c.	are aged < 18 years
-    d.	do not have T2DM
-    e.	have type 1 diabetes mellitus
-    f.	have had either plague or cholera in the previous 3 months
-    g.	do not live in Denmark.
-4.	Include individuals whose index date lies in the recruitment period.[^5]
+The study period will be 1 January 2016 through 31 December 2024, and the recruitment period will be 1 January 2016 through 31 December 2021.
 
-[^5]: Note how the dates are not written here - they are defined in @sec-period and we seek to avoid repetitions.
+We will include individuals initiating SGLT2i or GLP-1RA during the study period using the inclusion-/exclusion steps below.
 
-Individuals will be assigned to exposure groups based on the prescription they received on the index date. At this point, check that there are at least 10,000 individuals in each exposure group. If this is not the case, we need to make sure that the correct codes have been used.
+1.  Extract all available data on the exposures from the prescription registry.
+2.  Select the first ever date per person, this marks the index date of the individual.
+3.  Exclude individuals who, on the index date:
+    a.  do not have T2DM
+    b.  initiate both drugs
+    c.  have type 1 diabetes mellitus
+    d.  have incomplete CRS data (sex or date of birth missing, no data on citizenship or country of origin)
+    e.  are aged \< 18 years
+    f.  have had either plague or cholera in the previous 3 months
+    g.  do not live in Denmark.
+4.  Include individuals whose index date lies in the recruitment period.[^4]
 
-\[Here you might want to include a study diagram like @fig-studydiagram.[^6] However, it is repetitious by nature and as such it may not serve any particular purpose when the design is simple. If the design is more complex, a study diagram can serve as visual aid in explaining it.\]
+[^4]: Note how the dates are not written here - they are defined above and we seek to avoid repetitions.
 
-[^6]: The colors and notation in @fig-studydiagram are not the ones typically used. No particular thought has been put into the current design.
+Individuals will be assigned to exposure groups based on the prescription they received on the index date.
+
+*At this point, check that there are at least 10,000 individuals in each exposure group. If this is not the case, we need to make sure that the correct codes have been used.*
+
+\[Here you might want to include a study diagram like @fig-studydiagram.[^5] However, it is repetitious by nature and as such it may not serve any particular purpose when the design is simple. If the design is more complex, a study diagram can serve as visual aid in explaining it.\]
+
+[^5]: The colors and notation in @fig-studydiagram are not the ones typically used. No particular thought has been put into the current design.
 
 ![Study diagram](./figs/studydiagram.png){#fig-studydiagram}
 
-### Follow-up and outcomes
-For plague and cholera (the events of interest), separately, individuals will be followed from their index date until the first of: event of interest, emigration from Denmark, death, end of study period or 5 years, whichever comes first.
+### Variables
 
-See the Outcomes section in @tbl-codingtable for definitions of plague and cholera. Death and emigration will be captured in the CRS.
+See @tbl-codingtable for codes used to define different variables.
 
-### Statistical analyses
+#### Exposure {#sec-exposure}
+
+In the main analyses we will analyze the data in an observational analogue to an intention-to-treat (ITT) analysis.
+
+In a sensitivity analysis, we will run an analogue of a per-protocol (PP) analysis. For this analysis we will use the variable $\text{volapk}$ from the prescription registry as a measure of how many days the individual prescription covers. I.e., the date a prescription is assumed to be empty is $\text{volapk}$ days after the prescription is filled. We will use a grace period of 90 days to allow for gaps between prescriptions. I.e., someone filling just one prescription will be assumed to be exposed from the date of the prescription until $\text{volapk} + [\text{length of grace period]}$ days after the date of the prescription. If a new prescription is filled during the period covered by the previous one, we will consider the two prescriptions as one continuous treatment episode, and set the time the combined episode ends as the date the latter of the two prescriptions is estimated to end.[^6]
+
+[^6]: Alternatives include stacking, i.e., using the sum of $\text{volapk}$ (taking into account grace periods) of overlapping treatment episodes to estimate when an individual is no longer exposed; or, assuming the second prescription will sometimes run out before the first, use the latter date one of the two treatment episodes end (e.g., the first one covers 90 days, the second is filled 47 days later and covers 30 days, what is done in this study is to use the end of the second prescription - day 77 - even though the first prescription runs until day 90) and then add a grace period from this date.
+
+#### Follow-up and outcome
+
+We will use both years and months as units of follow-up time. A year will be 360 days and a month will be 30 days to ensure that 1 year is 12 months.
+
+Follow-up will start on the index date, i.e., events observed on the index date will be counted as outcomes.
+
+In ITT analyses, for each outcome of interest (plague and cholera separately) follow-up will end on the first of: event of interest, emigration from Denmark, death, end of study period or 5 years, whichever comes first. Death is the only competing risk in this study. Emigration and end of study period are assumed to be non-informative censoring events.
+
+In PP analyses follow-up is as for ITT analyses, with addition of these informative censoring events: switch to (filling a prescription of) the other exposure group and treatment cessation (see @sec-exposure). Handling of informative censoring will be done by inverse probability of censoring weighting as described in @sec-ppanalyses.
+
+Plague and cholera are considered as co-primary outcomes, there is no secondary outcome.
+
+#### Covariates
+
+Comorbidities and comedication will be considered binary variables (with no missingness by definition) defined by presence of one or more codes in registries.
+
+Country of origin will be based on data from the Civil Registration System, and divided into Nordic (reference), other European country, Africa, Asia, other.[^7]
+
+[^7]: Here should be an elaboration on how to use the different variables to determine the country of origin: there are variables for both nationality and country of birth, potentially data on ((great) grand) parents' could be used as well.
+
+Biomarkers include HbA1c, eGFR, and uACR, the median value during the lookback period will be used. Missing values will be imputed (see @sec-stats).
+
+HbA1c will be reported in \[here a unit should be specified\], conversion from \[alternative unit\] is done using the formula \[formula\].
+
+eGFR will be calculated from creatinine using the CKD-EPI[yy] formula \[the formula should be inserted\]. Creatinine measurements taken during acute illness will be excluded. Acute illness is defined as dates on which the individual was an inpatient or visited the emergency room.[^8]
+
+[^8]: The term inpatient is not defined in the Danish National Patient Registry v3, therefore, there ought to be a definition of what is meant by it here. This is intentionally excluded from this example.
+
+uACR will only be included from directly reported values. I.e., we will not seek to compute uACR based on albumin and creatinine values.
+
+For all biomarkers we will only use observations with an actual value in the registries. E.g., values reported like "\<10" or "\>550" will not be included.[^9]
+
+[^9]: It would probably be a good idea to consider doing something to assess the quality of the data here. What is the observed range, and is is within the plausible values of these biomarkers? What is the range these biomarkers can be measured at? Are there many with an observations at the limits? If so, is it a concern; do you think the value has been truncated, and should you do something about that?
+
+### Statistical analyses {#sec-stats}
+
+#### Descriptive analyses
+
 The flowchart (@fig-flowchart) will be populated.
 
-The population will be described as outlined in @tbl-tblshell1. Continuous variables will be reported by their median and interquartile intervals (Q1-Q3), while categorical variables will be reported with counts and percentages. For dichotomous variables, only one level will be presented (e.g., only the number of females, not males, and only numbers with prevalent heart failure, not numbers without, will be reported), whereas all levels will be presented for variables with more than two levels.
+The population will be described as outlined in @tbl-tblshell1. Continuous variables will be reported by their median and interquartile intervals (Q1-Q3), while categorical variables will be reported with counts and percentages. For dichotomous variables, only one level will be presented (e.g., only the number of females, not males, and only numbers with prevalent heart failure, not numbers without, will be reported), whereas all levels will be presented for variables with more than two levels. The proportion of missing data will be reported in the table for each biomarker (the only variables for which data can be missing).
 
-The outcomes will be analyzed using time to event methods, applying stabilized inverse probability of treatment (sIPT) weighting and multivariable adjustment to handle confounding. Specifically, sIPT weighted cause-specific Cox regression with confounder adjustment (see below) will be used to estimate hazard ratios (HRs) for each event of interest, along with 95% confidence intervals (95% CIs). The results will be reported as outlined in @tbl-tblshell2. Using the Aalen-Johansen estimator and sIPT-weighting, we will plot absolute risks against time, as outlined in @fig-riskcurves. No crude/unadjusted outcome analyses will be conducted.
+#### Outcome analyses
+
+For the analyses described below all confidence intervals (CIs) will be estimated using bootstrapping with 500 repetitions, and all weights will be truncated at 10 to reduce variability from overfitted weight models. The confidence interval limits will be determined by percentiles of the sampling distribution from the bootstrap analyses.[^10] When constructing bootstrap samples we will use the seed 1486187913 for reproducibility.[^11]
+
+[^10]: An alternative could be to compute the standard deviation based on an appropriate transformation of the results, and using this standard deviation as an estimate of the standard error.
+
+[^11]: Specifying the seed in the SAP may be over the top, particularly if your sample and number of outcomes are large, as you are unlikely to have time to fish for a pleasing seed. However, specifying that a seed should be used for reproducibility is relevant, and [seeds need to be arbitrary](https://blog.genesmindsmachines.com/p/if-your-random-seed-is-42-i-will)
+
+##### ITT analyses
+
+For ITT analyses, the outcomes will be analyzed using time to event methods, applying stabilized inverse probability of treatment (sIPT) weighting and multivariable adjustment to handle confounding. Specifically, sIPT weighted cause-specific Cox regression with confounder adjustment (see below) will be used to estimate hazard ratios (HRs) for each event of interest, along with 95% CIs. The results will be reported as outlined in @tbl-tblshell2. Using the Aalen-Johansen estimator and sIPT-weighting, we will plot absolute risks against time, as outlined in @fig-riskcurves. No crude/unadjusted outcome analyses will be conducted.
 
 The sIPT weights will be estimated using logistic regression including the exposure as the dependent variable, and the variables listed in @tbl-tblshell1 as independent variables. Continuous variables will be included as restricted cubic splines with knots placed at the deciles of their distributions (to be reconsidered if insufficient balance is achieved after sIPT weighting). Interaction terms will be included for age and sex; age and heart failure; heart failure and duration of T2DM; age and CKD; CKD and duration of T2DM; and country of origin and age.
 
-We will use absolute standardized mean differences (ASMDs) to assess balance of baseline variables before and after sIPT weighting (@fig-ASMD). All sIPT weighted ASMDs must be below 0.1 and the ASMDs for age, sex, country of origin, heart failure, and CKD must be less than 0.01 to proceed to the outcome analyses. If this is not achieved, possible alternatives[^7] to an overall logistic regression model will be discussed and investigated.
+We will use absolute standardized mean differences (ASMDs) to assess balance of baseline variables before and after sIPT weighting (@fig-ASMD). All sIPT weighted ASMDs must be below 0.1 and the ASMDs for age, sex, country of origin, heart failure, and CKD must be less than 0.01 to proceed to the outcome analyses. If this is not achieved, possible alternatives[^12] to an overall logistic regression model will be discussed and investigated.
 
-[^7]: Consider specifying.
+[^12]: Consider specifying.
 
-*Based on the populated versions of @tbl-tblshell1, @fig-flowchart, and @fig-ASMD, the entire author group must agree that the study population is reasonable with respect to size and characteristics, and that balance between exposure groups is sufficient, before any outcome analysis is carried out.*[^8]
+*Based on the populated versions of @tbl-tblshell1, @fig-flowchart, and @fig-ASMD, the entire author group must agree that the study population is reasonable with respect to size and characteristics, and that balance between exposure groups is sufficient, before any outcome analysis is carried out.*[^13]
 
-[^8]: To prevent p-hacking or HARKing, consider deciding *a priori* on certain intermediate milestones where analyses will be paused, and findings/results so far will be discussed in the group. In this way you can prevent yourself from changing the analyses after seeing the primary results, when it could have been done at an earlier stage.
+[^13]: To prevent p-hacking or HARKing, consider deciding *a priori* on certain intermediate milestones where analyses will be paused, and findings/results so far will be discussed in the group. In this way you can prevent yourself from changing the analyses after seeing the primary results, when it could have been done at an earlier stage.
 
-For added robustness, sIPT weighting will be combined with multivariable adjustment when applying the cause-specific Cox regression. However, we expect relatively few outcomes, so we will only adjust for sex, age and country of origin, and age will be included as restricted cubic splines with 4 knots placed as suggested by Frank Harrell in Regression modelling strategies.
+For added robustness, sIPT weighting will be combined with multivariable adjustment when applying the cause-specific Cox regression. However, we expect relatively few outcomes, so we will only adjust for sex, age (included as a linear term) and country of origin.
 
-The proportionality assumption will be assessed using Schoenfeld residuals. If proportionality cannot be achieved, the 5-year risk estimates from the Aalen-Johansen estimator for each exposure group will be compared to obtain a 5-year risk ratio.[^9]
+The proportionality assumption will be assessed using Schoenfeld residuals. If proportionality cannot be achieved, the 5-year risk estimates from the Aalen-Johansen estimator for each exposure group will be compared to obtain a 5-year risk ratio.[^14]
 
-[^9]: Often this is what you would do anyway when using PS-weighting or -matching. Cox-regression is primarily mentioned to point out that PS-methods can be combined with a multivariable outcome-model.
+[^14]: Often this is what you would do anyway when using PS-weighting or -matching. Cox-regression is primarily mentioned to point out that PS-methods can be combined with a multivariable outcome-model.
 
-For stratified analyses and sensitivity analyses restricted to subgroups, we will re-estimate the sIPT weights. We will assess the balance of baseline variables in these subgroup analyses using ASMDs. However, we will not re-evaluate the methods if sufficient balance cannot be achieved. Instead, any imbalance will be reported in the manuscript or supplementary material. Outcome analyses will be conducted regardless of the ASMD-values.
+##### PP analyses[^15] {#sec-ppanalyses}
 
-All 95% CIs will be estimated using bootstrapping with 500 repetitions.
+The PP analyses will be conducted similarly; the same baseline sIPT weights will be used and the same type of outcome analyses will be conducted but with time-varying weights: To handle informative censoring, inverse probability of censoring (IPC) weighting will be applied. I.e., follow-up will be coarsened into months so that anything happening during the first month of follow-up will be considered to happen at time 1, anything happening in the second month will be considered to happen at time 2 etc. (Events on the index date happen at time 0.) For each individual in the study population, all variables will be updated for each month of follow-up (using a last observation carried forward approach if no new observation is seen for biomarkers, comorbidities can go from absent to present but not the other way, comedication can go from absent to present and from present to absent if it is not seen within the lookback period at a given time during follow-up). The IPC weights will be estimated within each exposure group, using a pooled logistic regression (running one model across all months of follow-up) using the time-updated variables. The model will include the same variables as the baseline model used to estimate sIPT weights and a variable for month of follow-up which will be included as a spline with 4 knots placed as suggested by Frank Harrell in Regression Model Strategies. Based on the model, the month-specific probability of adhering[^16] to the protocol, $p_a$, will be computed so that the month-specific IPC weight will be $1/p_a$. The IPC weights will be computed as the cumulative product of month-specific IPC weights. The final weights to include in outcome analyses will be the product of the sIPT and IPC weights. When estimating $p_a$, individuals who died or were censored by non-informative mechanisms during that month will not be included.
 
-The statistical analyses will be conducted using [SAS/R/Stata] version X.X or higher.
+[^15]: This would have to be revised in an actual SAP, and the exact methods specified should not be taken as gospel. E.g., stabilization of IPC weights should be considered. What is included here is simply a hint as to what needs to be considered before estimating IPC weights.
+
+[^16]: Technically what is used is not the probability of being censored but the probability of remaining uncensored. The term IPC is somewhat misleading.
 
 #### Missing data
-We expect the level of missingness to be low.
 
-*	For comorbidities and comedication, absence of a record within the lookback period is assumed to be indicative of absence of the condition; missingness will be 0% by definition.
-*	Known age and sex are required for inclusion; missingness will be 0% by definition.
-*	We include biomarkers that are expected to be measured regularly for individuals with T2DM, missingness is expected to be less than 20% for all biomarkers.
+We expect the level of missingness to be low, except for uACR.
 
-We will apply multiple imputation,[^10] constructing and analyzing 10 data sets. Results across imputed data sets will be aggregated using Rubin's rule.
+-   For comorbidities and comedication, absence of a record within the lookback period is assumed to be indicative of absence of the condition; missingness will be 0% by definition.
+-   Known age, sex and country of origin are required for inclusion; missingness will be 0% by definition.
+-   We include biomarkers that are expected to be measured regularly for individuals with T2DM, missingness is expected to be close to 20% for uACR and less than 5% for other biomarkers.
 
-[^10]: More details should be provided.
+We will apply multiple imputation to handle missing data.[^17] Results across imputed datasets will be aggregated using Rubin's rule. We will use the seed 51389184 when running the imputation model.[^18]
 
-#### Stratified analyses
-We will estimate risks and conduct cause specific Cox-regressions stratifying on sex, country of origin and age (<65 years versus 65+ years). These results will be reported as outlined in @fig-forestplot. To assess treatment effect heterogeneity, we will include interaction terms for the exposure and each of these variables in separate cause specific Cox models and report the point estimate and 95% CI.[^11]
+[^17]: More details should be provided - which imputation method to use, which variables to include, how many imputations, etc.
 
-[^11]: Or however you want to do that. If you simply go for eyeballing you might want to rewrite/shorten this section a bit.
+[^18]: See comment regarding seed for bootstrapping.
+
+#### Subgroup analyses
+
+We will estimate risks and conduct cause specific Cox-regressions in subgroups defined by sex, country of origin and age (\<65 years versus 65+ years). These results will be reported as outlined in @fig-forestplot. To assess treatment effect heterogeneity, we will include interaction terms for the exposure and each of these variables in separate cause specific Cox models and report the point estimate and 95% CI.[^19] If the proportionality assumption is violated, risk ratios will be estimated based on the Aalen-Johansen estimator, and the interaction terms will be estimated by dividing risk ratios across strata. Should this be the case, weights will be re-estimated within each subgroup. We will assess the balance of baseline variables in these subgroups using ASMDs. However, we will not re-evaluate the methods if sufficient balance cannot be achieved. Instead, any imbalance will be reported in the manuscript or supplementary material. Outcome analyses will be conducted regardless of the ASMD-values.
+
+[^19]: Or however you want to do that. If you simply go for eyeballing you might want to rewrite/shorten this section a bit.
 
 #### Sensitivity analyses
-These sensitivity analyses are to be applied to the overall analysis only, stratifications will not be repeated within subgroups or in on-treatment analyses. Result will be reported as outlined in @tbl-tblshell3.
 
-We will conduct a complete case analysis.
+These sensitivity analyses are to be applied to the overall ITT analysis only. Result will be reported as outlined in @tbl-tblshell3.
+
+We will conduct a complete case analysis, as we are uncertain about the assumptions relating to missingness.
 
 As we lack data on BMI, and we assume GLP-1RA is associated with higher levels of BMI, we will repeat the analysis within individuals with an obesity diagnosis.
 
-We will restrict the analysis to individuals without a diagnosis of heart failure or CKD, to increase the likelihood that the indication for drug initiation was T2DM.
+We will restrict the analysis to individuals without a diagnosis of heart failure or CKD, to increase the likelihood that the indication for SGLT2i-initiation was T2DM.
 
-Finally, we will conduct an on-treatment analysis. For this analysis an individual will be censored on the date they switch from one exposure drug to the other, or if they discontinue the treatment they initiated on the index date (index treatment). Discontinuation will be defined as a period of 120 days with no new prescription of the index treatment.[^12]
+For sensitivity analyses restricted to subgroups, we will re-estimate the sIPT weights and we will assess balance by reporting ASMD but potential imbalance will not lead to change in analytic methods.
 
-[^12]: In an actual study, you might want to do something about informative censoring, e.g., apply inverse probability of censoring weighting.
+We will rerun outcome analyses truncating weights at 50, to assess robustness (re-estimating the weights will not be necessary if the exact estimates are retained). In relation to this, the number of individuals with truncated weights, along with the median of truncated sIPT weights before truncation will be assessed if more than 20 weights are truncated. For products of sIPT and IPC weights used in PP analyses we will assess the median of the maximum truncated weight for each individual among individuals with at least one truncated weight, assuming at least 20 individuals have truncated weights.
+
+The statistical analyses will be conducted using \[SAS/R/Stata\] version X.X or higher.
+
+### Compliance with rules from data providers
+
+Numbers less than 5 will be masked from table 1. As the population will be large and we are not reporting any decimal places, specifying quartiles of continuous variables will not be an issue.
+
+If there are less than 5 events in a group that group will not be analyzed with respect to this event.
+
+## Quality control
+
+Two statisticians are assigned to this project. They will not do double programming but code written by one will be checked by the other.
 
 ## Table shells
-
 
 ```{r, echo = FALSE}
 #| label: tbl-tblshell1
 #| tbl-cap: |
-#|   (Naturally, all variables should be listed in a proper SAP.)
+#|   Percentages should be reported with 1 decimal place, continuous variables should be reported without decimal places.\n(Naturally, all variables should be listed in a proper SAP.)
 
 library(gt)
 
@@ -267,7 +340,7 @@ tblshell3 <- tibble::tribble(
          "",                      "", "GLP-1RA",      "",               "",             "",
          "", "Without heart failure or CKD",  "SGLT2i",      "",               "",        "(ref)",
          "",                      "", "GLP-1RA",      "",               "",             "",
-         "",          "On-treatment",  "SGLT2i",      "",               "",        "(ref)",
+         "",          "Per protocol",  "SGLT2i",      "",               "",        "(ref)",
          "",                      "", "GLP-1RA",      "",               "",             "",
   "Cholera",         "Complete case",  "SGLT2i",      "",               "",        "(ref)",
          "",                      "", "GLP-1RA",      "",               "",             "",
@@ -275,12 +348,12 @@ tblshell3 <- tibble::tribble(
          "",                      "", "GLP-1RA",      "",               "",             "",
          "", "Without heart failure or CKD",  "SGLT2i",      "",               "",        "(ref)",
          "",                      "", "GLP-1RA",      "",               "",             "",
-         "",          "On-treatment",  "SGLT2i",      "",               "",        "(ref)",
+         "",          "Per protocol",  "SGLT2i",      "",               "",        "(ref)",
          "",                      "", "GLP-1RA",      "",               "",             ""
   )
 
 gt(tblshell3) |>
-  tab_header(title = "Table shell 3. Sensitivity analyses, risk and HRs at 5 years within subgroups and in the on-treatment analysis.") |>
+  tab_header(title = "Table shell 3. Sensitivity and per protocol analyses: Risk and HRs at 5 years.") |>
   cols_align(align = "left", columns = everything()) |>
   opt_align_table_header(align = c("left")) |>
   tab_style(
@@ -307,9 +380,10 @@ gt(tblshell3) |>
 NB. @fig-ASMD, @fig-riskcurves, and @fig-forestplot are simplified mock-ups of what needs to be made for the study. Do not pay particular attention the colors used here.
 
 ### Flowchart
+
 Provide numbers for the flowchart.
 
-```{r, echo = FALSE, fig.width = 10, fig.height = 7.3}
+```{r, echo = FALSE, fig.width = 10, fig.height = 7.3, warning = FALSE}
 #| label: fig-flowchart
 #| fig-cap: |
 #|   Flowchart
@@ -325,12 +399,12 @@ flowdata <- data.frame(
     "     SGLT2i     ",
     "     GLP-1RA     ",
     rep("Exclusion:\n
-a. initiate both drugs, n =\n
-b. incomplete CRS data, n =\n
-c. aged < 18 years, n =\n
-d. no have T2DM, n =\n
-e. type 1 diabetes mellitus, n =\n
-     f. plague or cholera in the previous 3 months, n =      \n
+a. do not have T2DM, n =\n
+b. initiate both drugs, n =\n
+c. have type 1 diabetes mellitus, n =\n
+d. have incomplete CRS data, n =\n
+e. are aged < 18 years, n =\n
+f. plague or cholera in the previous 3 months, n =      \n
 g. not living in Denmark, n =\n", 2),
     rep("     Initiatied treatment in recruitment period     \nn = ",2)
   )
@@ -346,7 +420,7 @@ lines <- data.frame(
 ggplot(flowdata, aes(x = x, y = layer, label = text)) +
   geom_segment(data = lines,
                aes(x = xstart, xend = xend, y = ystart, yend = yend, label = NULL)) +
-  geom_label() +
+  geom_label(fill = "white") +
   theme_void() +
   coord_cartesian(xlim = c(-1.5, 1.5))
 
@@ -354,7 +428,7 @@ ggplot(flowdata, aes(x = x, y = layer, label = text)) +
 
 ### Absolute standardized mean differences
 
-The ASMD plot will be included in the supplementary materials. Note that there will be ASMDs for each imputed data set, please include all ASMDs (across imputations) in one figure as seen below. Much less variation between imputations is expected than seen here. Please include and order variables as they appear in @tbl-tblshell1.
+The ASMD plot will be included in the supplementary materials. Note that there will be ASMDs for each imputed dataset, please include all ASMDs (across imputations) in one figure as seen below. Much less variation between imputations is expected than seen here. Please include and order variables as they appear in @tbl-tblshell1.
 
 ```{r, echo = FALSE, warning = FALSE}
 #| label: fig-ASMD
@@ -452,11 +526,12 @@ The risk curves should be provided in one figure including 2 panels. Replace "In
 
 ### Forest plots
 
-Make one for plague and cholera separately. Add a column to the right, presenting the estimates and 95% CIs for the interaction term for stratified analyses (as text). Replace "Intervention" and "Control" by "SGLT2i" and "GLP-1RA", and "Risk ratio" by "Hazard ratio" in the column header. Colors TBD depending on target journal. Note the strata shown here do not align with those to be done in this study.
+Make one for plague and cholera separately. Add a column to the right, presenting the estimates and 95% CIs for the interaction term from subgroup analyses (as text). Replace "Intervention" and "Control" by "SGLT2i" and "GLP-1RA", and "Risk ratio" by "Hazard ratio" in the column header. Colors TBD depending on target journal. Note the strata shown here do not align with those to be done in this study.
 
 ![Forest plot template.](./figs/forestplot.png){#fig-forestplot}
 
 ## Appendix
+
 ```{r, echo = FALSE}
 #| label: tbl-codingtable
 #| tbl-cap: | 

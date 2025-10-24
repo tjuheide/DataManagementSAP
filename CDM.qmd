@@ -15,7 +15,7 @@ It will be an advantage if they are regular users of the same software so they w
 
 [^1]: If they use SPSS you should reconsider if they are up to the task. If they use Excel you need to report them to the proper authorities.
 
-If you use R or similar software, where you regularly load packages not part of the base program, you need to be sure that all packages you use are available to you collaborators. Using packages installed from GitHub can be problematic if collaborators are only able to get packages from, e.g., CRAN. What is a standard package to you, might not be to your collaborators.
+If you use R or similar software, where you regularly load packages not part of the base program, you need to be sure that all packages you use are available to your collaborators. Using packages installed from GitHub can be problematic if collaborators are only able to get packages from, e.g., CRAN. What is a standard package to you, might not be to your collaborators.
 
 ### Site specific regulations and research environments
 
@@ -27,7 +27,7 @@ Assuming centers work at remote servers, similar to SDS or DST, they will be sub
 
 -   Sensitive data; the minimum count allowed in a cell can vary between sites. If your script handles `N < n0` in an automated fashion, `n0` should either be the maximum limit across sites (for consistency), or easy for collaborators to change in the scripts. Likewise, percentiles (in particular minimum and maximum), figures with outliers (scatter plots, skewed distributions), risk curves with large jumps, etc. may or may not be an issue at various sites. It will be the responsibility of your collaborators to make sure they adhere to local regulations, but do what you can to help.
 
-[^2]: You should not save data in spreadsheet formats! Excel loves converting things into dates. Ask the geneticists what happens.
+[^2]: Ouputting tables to spreadsheets is fine, but you should not save data in spreadsheet formats! Excel loves converting things into dates.
 
 Still assuming your collaborators work at a remote server, they will need to forward your scripts to their data provider. This process may not be trivial. **Take the time you need to write and validate and double check your scripts before sharing them!** You will probably have to make a revision at some point, but it should not be 2 days after sending the first batch of analytic scripts. Possibly, one of the centers is a regular collaborator which you can use for feedback and sparring, or they might have less administrative delay. Consider sharing your code with them first to sort out bugs before sharing with all.
 
